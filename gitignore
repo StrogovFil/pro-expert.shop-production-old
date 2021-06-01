@@ -1,0 +1,31 @@
+# development environment
+.idea
+.DS_Store
+.vscode
+# import & export
+/bitrix/
+/pdf/*.xml
+/*.xml
+
+web.config
+webstat
+
+# upload, logs, backups, temp & test, old
+/upload
+/_log/git
+/*.sql
+*.tmp
+*.zip
+*.tar
+*.txt
+*.tar.gz
+__*
+syslog
+*_old*
+/logs/
+/logs
+/files
+/images
+
+# Testing
+/test/
