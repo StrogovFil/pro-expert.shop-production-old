@@ -18,7 +18,7 @@ use \Bitrix\Main\Localization\Loc;
  * @var string $imgTitle
  * @var string $productTitle
  * @var string $buttonSizeClass
- * @var CatalogSectionComponent $component 
+ * @var CatalogSectionComponent $component
  */
 //$res = CIBlockElement::GetList(array(), array('ID'=>$item['ID']), false, false, array('ID', 'IBLOCK_ID', 'NAME', 'DETAIL_PAGE_URL'));
 //$arElement = $res->GetNext();
@@ -215,7 +215,7 @@ use \Bitrix\Main\Localization\Loc;
 					<div class="product-item-button-container" id="<?=$itemIds['BASKET_ACTIONS']?>">
 						<button class="btn catalog-item-buy <?=$buttonSizeClass?> <?if($item['PROPERTIES']['NO_PRICE']['VALUE'] == 'Y'){?>hbtn<?}?>" id="<?=$itemIds['BUY_LINK']?>"
 							href="javascript:void(0)" rel="nofollow">
-							<?$arParams['MESS_BTN_ADD_TO_BASKET'] = "Отложить";?>
+							<?$arParams['MESS_BTN_ADD_TO_BASKET'] = "Купить";?>
 							<?=($arParams['ADD_TO_BASKET_ACTION'] === 'BUY' ? $arParams['MESS_BTN_BUY'] : $arParams['MESS_BTN_ADD_TO_BASKET'])?>
 						</button>
 					</div>

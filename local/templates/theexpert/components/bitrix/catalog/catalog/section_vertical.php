@@ -362,10 +362,10 @@ elseif (!empty($arFields) && $iBlockId == 1)
                 );
                 ?>
                 <div class="filters-sort">
-                    Сортировать по:&emsp;
-                    <a href="?sort=name&order=<?=$strOrder?>" class="filter-sort-<?=$strOrder?> filter-sort-item <?if($_REQUEST['sort'] == 'name' || $_REQUEST['sort'] == ''){?>filter-sort-active<?}?>">алфавиту <i class="icon icon-dropdown"></i></a>
-                    <a href="?sort=id&order=<?=$strOrder?>" class="filter-sort-<?=$strOrder?> filter-sort-item <?if($_REQUEST['sort'] == 'id'){?>filter-sort-active<?}?>">новизне <i class="icon icon-dropdown"></i></a>
-                    <a href="?sort=price&order=<?=$strOrder?>" class="filter-sort-<?=$strOrder?> filter-sort-item <?if($_REQUEST['sort'] == 'price'){?>filter-sort-active<?}?>">цене <i class="icon icon-dropdown"></i></a>
+                    Сортировать:&emsp;
+                    <a href="?sort=name&order=<?=$strOrder?>" class="filter-sort-<?=$strOrder?> filter-sort-item <?if($_REQUEST['sort'] == 'name' || $_REQUEST['sort'] == ''){?>filter-sort-active<?}?>">по алфавиту <i class="icon icon-dropdown"></i></a>
+                    <?/*<a href="?sort=id&order=<?=$strOrder?>" class="filter-sort-<?=$strOrder?> filter-sort-item <?if($_REQUEST['sort'] == 'id'){?>filter-sort-active<?}?>">по новизне <i class="icon icon-dropdown"></i></a>*/?>
+                    <a href="?sort=price&order=<?=$strOrder?>" class="filter-sort-<?=$strOrder?> filter-sort-item <?if($_REQUEST['sort'] == 'price'){?>filter-sort-active<?}?>">по цене <i class="icon icon-dropdown"></i></a>
                 </div>
             </div>
         <? endif ?>
