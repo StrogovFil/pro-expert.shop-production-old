@@ -273,6 +273,27 @@ section.bottomblock{
     display: none !important;
 }
 
+.child-menu {
+    display: none;
+    margin: 15px 0;
+    position: absolute;
+    padding: 20px 0;
+    text-align: left;
+    -webkit-box-shadow: 0 5px 10px 2px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0 5px 10px 2px rgba(34, 60, 80, 0.2);
+    box-shadow: 0 5px 10px 2px rgba(34, 60, 80, 0.2);
+    background: #fff;
+}
+
+.child-menu.is-active {
+    display: block;
+}
+
+.child-menu li {
+    display: block;
+    padding: 12px 30px;
+}
+
 @media (max-width: 1500px){
     .header-top-inner .form-header-input {
         width: 30%;

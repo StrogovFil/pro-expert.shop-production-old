@@ -631,6 +631,23 @@ $(".header-top-icons-search").on("click",function(e){
 	});
 });
 
+$(".js-submenu").on("click",function(e){
+	e.preventDefault();
+	$(this).siblings(".child-menu").addClass("is-active");
+	$($(this)).on("click",function(e){
+		e.preventDefault();
+		if($(this).siblings(".child-menu").hasClass("is-active")) {
+			location.href='/catalog/';
+		}
+	});
+	$(document).mouseup(function (e) {
+		var container = $(".child-menu");
+		if (container.has(e.target).length === 0){
+			$(".child-menu").removeClass("is-active");
+		}
+	});
+});
+
 $(".search_input_close,.fon_input").on("click",function(){
 	$(".fon_input").css({
 		display:'none'
