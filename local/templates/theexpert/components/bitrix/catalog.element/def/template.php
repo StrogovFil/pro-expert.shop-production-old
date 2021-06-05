@@ -158,12 +158,12 @@ if (!empty($arParams['LABEL_PROP_POSITION']))
 }
 ?>
 <div class="product-top" id="<?=$itemIds['ID']?>" itemscope itemtype="http://schema.org/Product">
-            <div class="container">
+            <div class="container box-detail">
                 <div class="product-top-images">
                     <div class="product-top-images-inner">
                         <div class="product-top-images-main">
                             <div id="galleryMain" class="owl-carousel">
-								<?								
+								<?
 								if (!empty($actualItem['MORE_PHOTO']))
 								{
 									foreach ($actualItem['MORE_PHOTO'] as $key => $photo)
@@ -177,7 +177,7 @@ if (!empty($arParams['LABEL_PROP_POSITION']))
                         </div>
                         <div class="product-top-images-thumb">
                             <div id="galleryThumbs" class="owl-carousel">
-                                <?								
+                                <?
 								if (!empty($actualItem['MORE_PHOTO']))
 								{
 									foreach ($actualItem['MORE_PHOTO'] as $key => $photo)
@@ -203,7 +203,8 @@ if (!empty($arParams['LABEL_PROP_POSITION']))
                     <div class="product-top-text">
                         <?=htmlspecialchars_decode($actualItem['PREVIEW_TEXT'])?>
                     </div>
-                    <div class="product-form">
+                    <div class="product-form" style="display: flex;justify-content: center">
+                        <?/*
                         <div class="product-form-top">
 							<div class="product-form-price">
 											<?
@@ -264,6 +265,7 @@ if (!empty($arParams['LABEL_PROP_POSITION']))
 											<?
 										}?>
                         </div>
+                        */?>
 						<div class="product-form-bottom" data-entity="main-button-container">
 											<div id="<?=$itemIds['BASKET_ACTIONS_ID']?>" style="display: <?=($actualItem['CAN_BUY'] ? '' : 'none')?>;">
 												<?
@@ -288,7 +290,9 @@ if (!empty($arParams['LABEL_PROP_POSITION']))
 													<?
 												}
 												?>
+                                                <?/*
 												<a href="#" class="product-form-help"><span>от 14 дней</span> <i class="icon icon-warning"></i></a>
+                                                */?>
 											</div>
 											<?
 											if ($showSubscribe)

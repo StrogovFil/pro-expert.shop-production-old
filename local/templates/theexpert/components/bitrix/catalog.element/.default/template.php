@@ -189,13 +189,13 @@ while ($arStore = $obStore->Fetch())
 		{
 			$iStoreId = $arStore['STORE_ID'];
 			$strBuyDesc = $arStore['STORE_NAME'];
-			
+
 			if ($iStoreId > 1)
 				$strDeliveryStatus = GetMessage('CT_BCE_CATALOG_DELIVERY_TIME');
 			else
 				$strDeliveryStatus = 'На складе';
 		}
-		
+
 		$arStores[] = $arStore;
 	}
 }
@@ -213,7 +213,7 @@ if ($USER->IsAdmin()){
 
 
 <div class="product-top" id="<?=$itemIds['ID']?>" itemscope itemtype="http://schema.org/Product">
-			<div class="container">
+			<div class="container box-detail">
 				<div class="product-top-images">
 					<div class="product-top-images-inner">
 						<div class="product-top-images-main">
@@ -418,12 +418,12 @@ if ($USER->IsAdmin()){
 										foreach($arProperty['DISPLAY_VALUE'] as $key => $strPropertyValue)
 										{
 											if ($key) echo ', ';
-											
+
 											echo $strPropertyValue;
 										}
 									}
 									else
-									{ 
+									{
 										echo '&nbsp',$arProperty['DISPLAY_VALUE'];
 									} ?>
 										</td>
@@ -460,7 +460,7 @@ if ($USER->IsAdmin()){
 							<div class="accordion-row-body">
 								<table class="product-accordion-properties q2">
 							<? $arNeedProperties = array('CHARACTERISTIC', 'SIZE_Y', 'SIZE_X', 'SIZE_Z', 'SIZE_O', 'DIA', 'MATERIALS', 'COVER', 'FRAME', 'CTOPS', 'RIM', 'PILLAR', 'VOLTAGE', 'POWER', 'LUMEN', 'TEMPERATURE', 'RIPPLE', 'FIXATION', 'LENS', 'PROTECTION', 'COLOR', 'STYLE','OPTION');
-							
+
 							foreach($actualItem['DISPLAY_PROPERTIES'] as $arProperty)
 							{
 								if (in_array($arProperty['CODE'], $arNeedProperties))
@@ -473,12 +473,12 @@ if ($USER->IsAdmin()){
 										foreach($arProperty['DISPLAY_VALUE'] as $key => $strPropertyValue)
 										{
 											if ($key) echo ', ';
-											
+
 											echo $strPropertyValue;
 										}
 									}
 									else
-									{ 
+									{
 										echo $arProperty['DISPLAY_VALUE'];
 									} ?>
 										</td>
@@ -486,7 +486,7 @@ if ($USER->IsAdmin()){
 									<? //echo '<pre>';print_r($arProperty); echo '</pre>';
 								}
 							}
-							
+
 							//print_r($actualItem['DISPLAY_PROPERTIES']); ?>
 								<?=htmlspecialchars_decode($actualItem['DISPLAY_PROPERTIES']['CHARACTERISTIC']['VALUE']['TEXT'])?>
 								</table>
@@ -514,7 +514,8 @@ if ($USER->IsAdmin()){
 			</div>
 
 
-					<div class="product-form">
+					<div class="product-form" style="display: flex;justify-content: center">
+                        <?/*
 						<div class="product-form-top">
 							<div class="product-form-price">
 								<?
@@ -575,6 +576,7 @@ if ($USER->IsAdmin()){
 								<?
 							}?>
 						</div>
+                        */?>
 						<div data-entity="main-button-container">
 							<div class="product-form-bottom" id="<?=$itemIds['BASKET_ACTIONS_ID']?>" style="display: <?=($actualItem['CAN_BUY'] ? '' : 'none')?>;">
 								<span class="product-form-buy-from"><?=$strBuyDesc?></span>
@@ -600,10 +602,12 @@ if ($USER->IsAdmin()){
 									<?
 								}
 								?>
+                                <?/*
 								<a href="/dostavka-i-oplata/" class="product-form-help">
 									<span><?=$strDeliveryStatus?></span> <i class="icon icon-warning"></i>
 									<div class="product-form-help-informer"><?=GetMessage('CT_BCE_CATALOG_HELP_INFORMER')?></div>
 								</a>
+                                */?>
 							</div>
 							<?
 							if ($showSubscribe)
@@ -644,7 +648,7 @@ if ($USER->IsAdmin()){
 		</div>
 		<?if ($actualItem['DETAIL_TEXT']):?>
 		<div class="product-middle">
-			<div class="container">
+			<div class="container middle-box">
 				<div class="product-text container-inner">
 					<?=htmlspecialchars_decode($actualItem['DETAIL_TEXT'])?>
 				</div>
@@ -686,7 +690,7 @@ if ($USER->IsAdmin()){
 							<div class="accordion-row-body">
 								<table class="product-accordion-properties q3">
 							<? $arNeedProperties = array('CHARACTERISTIC', 'SIZE_Y', 'SIZE_X', 'SIZE_Z', 'SIZE_O', 'DIA', 'MATERIALS', 'COVER', 'FRAME', 'CTOPS', 'RIM', 'PILLAR', 'VOLTAGE', 'POWER', 'LUMEN', 'TEMPERATURE', 'RIPPLE', 'FIXATION', 'LENS', 'PROTECTION', 'COLOR', 'STYLE','OPTION');
-							
+
 							foreach($actualItem['DISPLAY_PROPERTIES'] as $arProperty)
 							{
 								if (in_array($arProperty['CODE'], $arNeedProperties))
@@ -699,12 +703,12 @@ if ($USER->IsAdmin()){
 										foreach($arProperty['DISPLAY_VALUE'] as $key => $strPropertyValue)
 										{
 											if ($key) echo ', ';
-											
+
 											echo $strPropertyValue;
 										}
 									}
 									else
-									{ 
+									{
 										echo $arProperty['DISPLAY_VALUE'];
 									} ?>
 										</td>
@@ -712,7 +716,7 @@ if ($USER->IsAdmin()){
 									<? //echo '<pre>';print_r($arProperty); echo '</pre>';
 								}
 							}
-							
+
 							//print_r($actualItem['DISPLAY_PROPERTIES']); ?>
 								<?=htmlspecialchars_decode($actualItem['DISPLAY_PROPERTIES']['CHARACTERISTIC']['VALUE']['TEXT'])?>
 								</table>

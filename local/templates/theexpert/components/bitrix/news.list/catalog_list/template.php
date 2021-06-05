@@ -20,7 +20,7 @@ $this->setFrameMode(true);
 	?>
 	<div class="catalog-category" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
 		<div class="catalog-category-default">
-			<div class="catalog-category-icon">
+			<div class="catalog-category-icon catalog-type">
 			<?if($arParams["DISPLAY_PICTURE"]!="N" && is_array($arItem["PREVIEW_PICTURE"])):?>
 				<img border="0" onerror="this.onerror = null; this.src = '<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>'" src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" width="<?=$arItem["PREVIEW_PICTURE"]["WIDTH"]?>" height="<?=$arItem["PREVIEW_PICTURE"]["HEIGHT"]?>" alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>" title="<?=$arItem["PREVIEW_PICTURE"]["TITLE"]?>" />
 			<?endif;?>
@@ -28,7 +28,7 @@ $this->setFrameMode(true);
 			<div class="catalog-category-title"><?=$arItem["NAME"]?></div>
 		</div>
 		<div class="catalog-category-hover">
-			<a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="catalog-category-icon">
+			<a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="catalog-category-icon catalog-type">
 			<?if($arParams["DISPLAY_PICTURE"]!="N" && is_array($arItem["PREVIEW_PICTURE"])):?>
 				<img border="0" onerror="this.onerror = null; this.src = '<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>'" src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" width="<?=$arItem["PREVIEW_PICTURE"]["WIDTH"]?>" height="<?=$arItem["PREVIEW_PICTURE"]["HEIGHT"]?>" alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>" title="<?=$arItem["PREVIEW_PICTURE"]["TITLE"]?>" />
 			<?endif;?>

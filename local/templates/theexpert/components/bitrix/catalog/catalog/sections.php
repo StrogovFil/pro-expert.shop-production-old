@@ -23,7 +23,7 @@ $arIBlock = $dbIBlock->GetNext();
         <div class="container">
             <div class="page-title-group">
                 <h1 class="h1 page-title"><?=$arIBlock['NAME']?></h1>
-                <div class="page-title-small nomob"><?=$arIBlock['DESCRIPTION']?></div>
+<!--                <div class="page-title-small nomob">--><?//=$arIBlock['DESCRIPTION']?><!--</div>-->
             </div>
             <ul class="catalog-menu">
                 <li><a href="#" class="catalog-tabs btn <?if(isset($_COOKIE['catab']) && $_COOKIE['catab'] == 2){echo('btn-white');}else{}?>" data-id="0">Товары</a></li>
@@ -55,8 +55,8 @@ $arIBlock = $dbIBlock->GetNext();
 </div>
 <div class="catalog-tab" data-id="1" style="display: none;">
 <?$APPLICATION->IncludeComponent(
-	"bitrix:news.list", 
-	"catalog_list", 
+	"bitrix:news.list",
+	"catalog_list",
 	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "N",
@@ -122,8 +122,8 @@ $arIBlock = $dbIBlock->GetNext();
 </div>
 <div class="catalog-tab" data-id="2" style="display: <?if(isset($_COOKIE['catab']) && $_COOKIE['catab'] == 2){}else{echo('none');}?>">
 <?$APPLICATION->IncludeComponent(
-	"bitrix:news.list", 
-	"catalog_list", 
+	"bitrix:news.list",
+	"catalog_list",
 	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "N",
