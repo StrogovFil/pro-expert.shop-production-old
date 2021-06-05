@@ -69,6 +69,13 @@
         Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/script.js');
         $APPLICATION->ShowHead();
     ?>
+    <?
+    $curPage = $APPLICATION->GetCurPage(true);
+    $link = str_replace("index.php", "", $curPage);
+    if (preg_match('/^\/catalog/', $curPage)) {
+        echo '<link rel="canonical" href="' . $link . '"/>';
+    }
+    ?>
 </head>
 <body>
 <?php $APPLICATION->ShowPanel(); ?>
