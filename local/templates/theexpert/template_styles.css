@@ -323,6 +323,19 @@ section.bottomblock{
     padding-bottom: 1.5rem;
 }
 
+.main-rubricator-item-title {
+    right: 0;
+}
+
+.main-rubricator-item:hover > .main-rubricator-item-title {
+    background-color: rgba(0,0,0,0.5);
+    transition: all 0.5s;
+}
+
+.main-rubricator-item:hover .main-rubricator-item-title span {
+    z-index: 1;
+}
+
 @media (max-width: 1500px){
     .header-top-inner .form-header-input {
         width: 30%;
