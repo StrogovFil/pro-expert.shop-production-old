@@ -5,7 +5,7 @@
 	<div class="main-special-row">
 		<div class="main-special-col">
  <a href="/catalog/ofisnaya-mebel/" class="main-special-item"> <span class="main-special-item-bg"></span>
-			<div class="main-special-item-pic" style="background-image: url('/images/office_furniture.jpg');">
+			<div class="main-special-item-pic" style="background-image: url('/local/templates/theexpert/images/office_furniture.jpg');">
  <img src="/local/templates/theexpert/images/office_furniture.jpg" alt="">
 			</div>
 			<div class="main-special-item-title">
@@ -17,7 +17,7 @@
 		</div>
 		<div class="main-special-col">
  <a href="/catalog/steny-peregorodki/" class="main-special-item main-special-item-even"> <span class="main-special-item-bg"></span>
-			<div class="main-special-item-pic" style="background-image: url('/images/partitions.jpg');">
+			<div class="main-special-item-pic" style="background-image: url('/local/templates/theexpert/images/partitions.jpg');">
  <img src="/local/templates/theexpert/images/partitions.jpg" alt="">
 			</div>
 			<div class="main-special-item-title">
@@ -29,7 +29,7 @@
 		</div>
 		<div class="main-special-col">
  <a href="/catalog/akusticheskie-sistemy/" class="main-special-item"> <span class="main-special-item-bg"></span>
-			<div class="main-special-item-pic" style="background-image: url('/images/acoustics.jpg');">
+			<div class="main-special-item-pic" style="background-image: url('/local/templates/theexpert/images/acoustics.jpg');">
  <img src="/local/templates/theexpert/images/acoustics.jpg" alt="">
 			</div>
 			<div class="main-special-item-title">
@@ -41,7 +41,7 @@
 		</div>
 		<div class="main-special-col">
  <a href="/catalog/svet/" class="main-special-item main-special-item-even"> <span class="main-special-item-bg"></span>
-			<div class="main-special-item-pic" style="background-image: url('/images/lighting.jpg');">
+			<div class="main-special-item-pic" style="background-image: url('/local/templates/theexpert/images/lighting.jpg');">
  <img src="/local/templates/theexpert/images/lighting.jpg" alt="">
 			</div>
 			<div class="main-special-item-title">
@@ -53,7 +53,7 @@
 		</div>
 		<div class="main-special-col">
  <a href="/catalog/elementy-dekora-i-aksessuary/" class="main-special-item"> <span class="main-special-item-bg"></span>
-			<div class="main-special-item-pic" style="background-image: url('/images/accessories.jpg');">
+			<div class="main-special-item-pic" style="background-image: url('/local/templates/theexpert/images/accessories.jpg');">
  <img src="/local/templates/theexpert/images/accessories.jpg" alt="">
 			</div>
 			<div class="main-special-item-title">
@@ -65,7 +65,7 @@
 		</div>
 		<div class="main-special-col">
  <a href="/catalog/otdelochnye-materially/" class="main-special-item main-special-item-even"> <span class="main-special-item-bg"></span>
-			<div class="main-special-item-pic" style="background-image: url('/images/finishing.jpg');">
+			<div class="main-special-item-pic" style="background-image: url('/local/templates/theexpert/images/finishing.jpg');">
  <img src="/local/templates/theexpert/images/finishing.jpg" alt="">
 			</div>
 			<div class="main-special-item-title">

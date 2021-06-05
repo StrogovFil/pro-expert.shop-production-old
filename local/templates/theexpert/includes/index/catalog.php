@@ -1,7 +1,7 @@
 <section class="main-rubricator" data-bleed="100" data-parallax="scroll" data-z-index="1" data-speed="0.5" data-image-src="">
         <div class="main-rubricator-inner container">
             <div class="main-rubricator-cell">
-                <a href="/catalog/place-ofisy/" class="main-rubricator-item main-rubricator-item-red" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/images/1.jpg');">
+                <a href="/catalog/place-ofisy/" class="main-rubricator-item main-rubricator-item-red" style="background-image: url();">
                     <div class="main-rubricator-item-title">Офисные пространства</div>
                 </a>
             </div>
