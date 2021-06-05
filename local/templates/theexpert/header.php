@@ -21,36 +21,36 @@
     <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <!--suppress CssInvalidPropertyValue -->
-    <style>
-        @-webkit-viewport {
-            width: device-width;
-        }
-
-        @-moz-viewport {
-            width: device-width;
-        }
-
-        @-ms-viewport {
-            width: device-width;
-        }
-
-        @-o-viewport {
-            width: device-width;
-        }
-
-        @viewport {
-            width: device-width;
-        }
-    </style>
-    <script>
-        if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
-            var msViewportStyle = document.createElement('style');
-            msViewportStyle.appendChild(document.createTextNode('@-ms-viewport { width: auto! important }'));
-            document.querySelector('head').appendChild(msViewportStyle);
-        }
-    </script>
+<!--    <style>-->
+<!--        @-webkit-viewport {-->
+<!--            width: device-width;-->
+<!--        }-->
+<!---->
+<!--        @-moz-viewport {-->
+<!--            width: device-width;-->
+<!--        }-->
+<!---->
+<!--        @-ms-viewport {-->
+<!--            width: device-width;-->
+<!--        }-->
+<!---->
+<!--        @-o-viewport {-->
+<!--            width: device-width;-->
+<!--        }-->
+<!---->
+<!--        @viewport {-->
+<!--            width: device-width;-->
+<!--        }-->
+<!--    </style>-->
+<!--    <script>-->
+<!--        if (navigator.userAgent.match(/IEMobile\/10\.0/)) {-->
+<!--            var msViewportStyle = document.createElement('style');-->
+<!--            msViewportStyle.appendChild(document.createTextNode('@-ms-viewport { width: auto! important }'));-->
+<!--            document.querySelector('head').appendChild(msViewportStyle);-->
+<!--        }-->
+<!--    </script>-->
     <!--/ All-devices friendly block -->
-    <title><?php echo $APPLICATION->ShowTitle(); ?></title>
+    <title><?php $APPLICATION->ShowTitle(); ?></title>
     <?php
         // Подключение CSS
         Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/style_2.css');
@@ -165,24 +165,24 @@
                         </form>
                         <?php
                             $APPLICATION->IncludeComponent(
-                                "bitrix:menu",
-                                "menu.header",
-                                array(
-                                    "ALLOW_MULTI_SELECT" => "N",
-                                    "DELAY" => "N",
-                                    "MAX_LEVEL" => "2",
-                                    "CHILD_MENU_TYPE" => "left",
-                                    "MENU_CACHE_TIME" => "3600",
-                                    "MENU_CACHE_TYPE" => "N",
-                                    "MENU_CACHE_USE_GROUPS" => "Y",
-                                    "ROOT_MENU_TYPE" => "top",
-                                    "USE_EXT" => "Y",
-                                    "COMPONENT_TEMPLATE" => "menu.header",
-                                    "MENU_CACHE_GET_VARS" => array(
-                                    )
-                                ),
-                                false
-                            );
+                            "bitrix:menu",
+                            "menu.header",
+                            array(
+                                "ALLOW_MULTI_SELECT" => "N",
+                                "DELAY" => "N",
+                                "MAX_LEVEL" => "2",
+                                "CHILD_MENU_TYPE" => "left",
+                                "MENU_CACHE_TIME" => "3600",
+                                "MENU_CACHE_TYPE" => "N",
+                                "MENU_CACHE_USE_GROUPS" => "Y",
+                                "ROOT_MENU_TYPE" => "top",
+                                "USE_EXT" => "Y",
+                                "COMPONENT_TEMPLATE" => "menu.header",
+                                "MENU_CACHE_GET_VARS" => array(
+                                )
+                            ),
+                            false
+                        );
                         ?>
                         <div class="header-menu-phone">
                             <?php

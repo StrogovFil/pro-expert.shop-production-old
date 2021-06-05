@@ -294,6 +294,14 @@ section.bottomblock{
     padding: 12px 30px;
 }
 
+.header-base-inner.container {
+
+}
+
+.catalog-items-bordered.container .catalog-items-col .bx_catalog_tile_title {
+    display: none;
+}
+
 @media (max-width: 1500px){
     .header-top-inner .form-header-input {
         width: 30%;

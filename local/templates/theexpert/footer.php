@@ -25,8 +25,8 @@
                         <div class="footer-base-card-phone">
                             <?php
                                 $APPLICATION->IncludeComponent(
-	"bitrix:main.include", 
-	".default", 
+	"bitrix:main.include",
+	".default",
 	array(
 		"AREA_FILE_SHOW" => "file",
 		"AREA_FILE_SUFFIX" => "inc",
@@ -107,7 +107,7 @@
             <div class="container">
                 <div class="modal-buy-top clearfix">
                     <div class="modal-buy-top-pic">
-                        <img src="" alt="" data-main-picture>
+                        <!--<img src="" alt="Товар в корзине" data-main-picture>-->
                     </div>
                     <div class="modal-buy-top-content">
                         <div class="h1 modal-buy-top-title">Товар добавлен в&nbsp;корзину</div>

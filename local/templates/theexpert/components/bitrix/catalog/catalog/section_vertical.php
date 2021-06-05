@@ -293,7 +293,7 @@ elseif (!empty($arFields) && $iBlockId == 1)
                             <?else:?>
                             <div class="topblock-header-icon"></div>
                             <?endif*/?>
-                            <div class="h3 topblock-title"><?=$arSection['NAME']?></div>
+                            <h1 class="h3 topblock-title"><?=$arSection['NAME']?></h1>
                             <div class="topblock-header-note">Всего <?=$cnt?></div>
                         </div>
                         <div class="topblock-text"><?=$arSection['DESCRIPTION']?></div>

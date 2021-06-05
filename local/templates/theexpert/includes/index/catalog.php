@@ -8,11 +8,10 @@
             <div class="main-rubricator-cell">
                 <a href="/catalog/place-oteli-i-apartamenty/" class="main-rubricator-item main-rubricator-item-top main-rubricator-item-dark" style="background-image: url();">
                     <div class="main-rubricator-item-title">Отели <br> и апартаменты</div>
+                </a>
                  <a href="/catalog/place-zagorodnye-doma/" class="main-rubricator-item main-rubricator-item-bottom" style="background-image: url();">
                     <div class="main-rubricator-item-title">Загородные дома</div>
                 </a>
-
-               
             </div>
             <div class="main-rubricator-cell">
                 <a href="/catalog/place-sportivnye-uchrezhdeniya-i-stadiony/" class="main-rubricator-item main-rubricator-item-top" style="background-image: url();">

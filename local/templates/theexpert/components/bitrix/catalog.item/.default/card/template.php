@@ -213,8 +213,7 @@ use \Bitrix\Main\Localization\Loc;
 				{
 					?>
 					<div class="product-item-button-container" id="<?=$itemIds['BASKET_ACTIONS']?>">
-						<button class="btn catalog-item-buy <?=$buttonSizeClass?> <?if($item['PROPERTIES']['NO_PRICE']['VALUE'] == 'Y'){?>hbtn<?}?>" id="<?=$itemIds['BUY_LINK']?>"
-							href="javascript:void(0)" rel="nofollow">
+						<button class="btn catalog-item-buy <?=$buttonSizeClass?> <?if($item['PROPERTIES']['NO_PRICE']['VALUE'] == 'Y'){?>hbtn<?}?>" id="<?=$itemIds['BUY_LINK']?>">
 							<?$arParams['MESS_BTN_ADD_TO_BASKET'] = "Купить";?>
 							<?=($arParams['ADD_TO_BASKET_ACTION'] === 'BUY' ? $arParams['MESS_BTN_BUY'] : $arParams['MESS_BTN_ADD_TO_BASKET'])?>
 						</button>
@@ -244,7 +243,7 @@ use \Bitrix\Main\Localization\Loc;
 						}
 						?>
 						<button class="btn catalog-item-buy <?=$buttonSizeClass?>"
-							id="<?=$itemIds['NOT_AVAILABLE_MESS']?>" href="javascript:void(0)" rel="nofollow">
+							id="<?=$itemIds['NOT_AVAILABLE_MESS']?>">
 							<?=$arParams['MESS_NOT_AVAILABLE']?>
 						</button>
 					</div>
@@ -276,13 +275,12 @@ use \Bitrix\Main\Localization\Loc;
 						}
 						?>
 						<button class="btn catalog-item-buy <?=$buttonSizeClass?>"
-							id="<?=$itemIds['NOT_AVAILABLE_MESS']?>" href="javascript:void(0)" rel="nofollow"
+							id="<?=$itemIds['NOT_AVAILABLE_MESS']?>"
 							<?=($actualItem['CAN_BUY'] ? 'style="display: none;"' : '')?>>
 							<?=$arParams['MESS_NOT_AVAILABLE']?>
 						</button>
 						<div id="<?=$itemIds['BASKET_ACTIONS']?>" <?=($actualItem['CAN_BUY'] ? '' : 'style="display: none;"')?>>
-							<button class="btn catalog-item-buy <?=$buttonSizeClass?>" id="<?=$itemIds['BUY_LINK']?>"
-								href="javascript:void(0)" rel="nofollow">
+							<button class="btn catalog-item-buy <?=$buttonSizeClass?>" id="<?=$itemIds['BUY_LINK']?>">
 								<?=($arParams['ADD_TO_BASKET_ACTION'] === 'BUY' ? $arParams['MESS_BTN_BUY'] : $arParams['MESS_BTN_ADD_TO_BASKET'])?>
 							</button>
 						</div>
@@ -293,7 +291,7 @@ use \Bitrix\Main\Localization\Loc;
 				{
 					?>
 					<div class="product-item-button-container">
-						<button class="btn catalog-item-buy <?=$buttonSizeClass?>" href="<?=$item['DETAIL_PAGE_URL']?>">
+						<button class="btn catalog-item-buy <?=$buttonSizeClass?>">
 							<?=$arParams['MESS_BTN_DETAIL']?>
 						</button>
 					</div>
