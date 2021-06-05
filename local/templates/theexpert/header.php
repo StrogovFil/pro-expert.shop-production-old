@@ -1,10 +1,8 @@
-<?php
-    if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
+<?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
         die();
     }
     use Bitrix\Main\Localization\Loc;
     use Bitrix\Main\Page\Asset;
-
     Loc::loadMessages(__FILE__);
 ?>
 <!doctype html>
@@ -52,12 +50,10 @@
         }
     </script>
     <!--/ All-devices friendly block -->
-
     <title><?php echo $APPLICATION->ShowTitle(); ?></title>
     <?php
         // Подключение CSS
         Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/style_2.css');
-
         // Подключение JS
         Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery-2.2.4.min.js');
         Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery.superslides.min.js');
@@ -71,32 +67,18 @@
         Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/btn-up.js');
         Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery.cookie.js');
         Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/script.js');
-
         $APPLICATION->ShowHead();
     ?>
 </head>
 <body>
 <?php $APPLICATION->ShowPanel(); ?>
-<div class="fon_input">
-        </div>
-        <form class="form-header-input" action="/search/index.php">
-                <div class="header_input_search">
-                    <div class="input-group-search">
-                        <input class="header_input" type="text" placeholder="" name="q">
-                        <button type="submit" class="search_ikon">найти</button>
-                    </div>
-                </div>
-                <div class="search_input_close ">
-                    <!-- <i class="icon icon-menu-close"></i>  -->
-                </div>
-        </form>
+<div class="fon_input"></div>
 <div class="allwrap">
     <header id="header" class="header">
         <div class="header-top">
             <div class="header-top-inner clearfix">
                 <div class="header-top-phone">
-                    <?php
-                        $APPLICATION->IncludeComponent(
+                    <?$APPLICATION->IncludeComponent(
                             "bitrix:main.include",
                             "",
                             [
@@ -107,6 +89,15 @@
                         );
                     ?>
                 </div>
+                <form class="form-header-input" action="/search/index.php">
+                    <div class="header_input_search">
+                        <div class="input-group-search">
+                            <input class="header_input" type="text" placeholder="" name="q">
+                            <div class="search_input_close"><i class="icon icon-menu-close"></i></div>
+                            <button type="submit" class="search_ikon header-top-icons-search"><i class="icon icon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
 				<?$APPLICATION->IncludeComponent(
 					"bitrix:sale.basket.basket.line",
 					"header",
@@ -142,8 +133,7 @@
             <div class="header-base-inner container">
                 <div class="header-base-logo">
                     <a href="/">
-                        <?php
-                            $APPLICATION->IncludeComponent(
+                        <?$APPLICATION->IncludeComponent(
                                 "bitrix:main.include",
                                 "",
                                 [
@@ -163,6 +153,16 @@
                         <a href="javascript:void(0); " class="header-menu-close">
                             <i class="icon icon-menu-close"></i>
                         </a>
+                        <form class="form-header-input mobile-form" action="/search/index.php">
+                            <div class="header_input_search">
+                                <div class="input-group-search">
+                                    <span class="search--icon"><i class="icon icon-search"></i></span>
+                                    <input class="header_input" type="text" placeholder="" name="q">
+                                    <div class="search_input_close"><i class="icon icon-menu-close"></i></div>
+                                    <button type="submit" class="search_ikon header-top-icons-search"><i class="icon icon-search"></i></button>
+                                </div>
+                            </div>
+                        </form>
                         <?php
                             $APPLICATION->IncludeComponent(
                                 "bitrix:menu",
