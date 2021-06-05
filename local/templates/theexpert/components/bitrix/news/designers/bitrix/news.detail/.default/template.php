@@ -50,8 +50,8 @@ global $arrFilterProduct;
 $arrFilterProduct = array("ACTIVE" => "Y", 'PROPERTY_DESIGNERS' => $arResult["ID"]);
 
 $APPLICATION->IncludeComponent(
-	"bitrix:catalog.section", 
-	"product_designer", 
+	"bitrix:catalog.section",
+	"product_designer",
 	array(
 		"ACTION_VARIABLE" => "action",
 		"ADD_PICT_PROP" => "-",
@@ -173,74 +173,71 @@ $APPLICATION->IncludeComponent(
                 </div>
 	</div>
 </section>
-<section class="interesting" data-bleed="100" data-parallax="scroll" data-z-index="1" data-speed="0.5"
-             data-image-src="<?=SITE_TEMPLATE_PATH?>/images/interesting-1.jpeg"
-             style="background-image: url('<?=SITE_TEMPLATE_PATH?>/images/interesting-1.jpeg');">
-        <div class="container">
-            <div class="h1 interesting-title">Статьи дизайнера</div>
-<?
-global $arrArticlesFilter;
-$arrArticlesFilter = array("ACTIVE" => "Y", 'PROPERTY_DESIGNERS' => $arResult["ID"]);
-
-$APPLICATION->IncludeComponent(
-	"bitrix:news.list",
-	"news_bottom_slider",
-	Array(
-		"ACTIVE_DATE_FORMAT" => "d.m.Y",
-		"ADD_SECTIONS_CHAIN" => "N",
-		"AJAX_MODE" => "N",
-		"AJAX_OPTION_ADDITIONAL" => "",
-		"AJAX_OPTION_HISTORY" => "N",
-		"AJAX_OPTION_JUMP" => "N",
-		"AJAX_OPTION_STYLE" => "Y",
-		"CACHE_FILTER" => "Y",
-		"CACHE_GROUPS" => "Y",
-		"CACHE_TIME" => "36000000",
-		"CACHE_TYPE" => "A",
-		"CHECK_DATES" => "Y",
-		"DETAIL_URL" => "/#IBLOCK_CODE#/#SECTION_CODE#/#CODE#/",
-		"DISPLAY_BOTTOM_PAGER" => "N",
-		"DISPLAY_DATE" => "Y",
-		"DISPLAY_NAME" => "Y",
-		"DISPLAY_PICTURE" => "Y",
-		"DISPLAY_PREVIEW_TEXT" => "Y",
-		"DISPLAY_TOP_PAGER" => "N",
-		"FIELD_CODE" => '',
-		"PROPERTY_CODE" => '',
-		"FILTER_NAME" => "arrArticlesFilter",
-		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
-		"IBLOCK_ID" => 10,
-		"IBLOCK_TYPE" => 'informatsionnyy-razdel',
-		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-		"INCLUDE_SUBSECTIONS" => "Y",
-		"MESSAGE_404" => "",
-		"NEWS_COUNT" => "4",
-		"PAGER_BASE_LINK_ENABLE" => "N",
-		"PAGER_DESC_NUMBERING" => "N",
-		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-		"PAGER_SHOW_ALL" => "N",
-		"PAGER_SHOW_ALWAYS" => "N",
-		"PAGER_TEMPLATE" => ".default",
-		"PAGER_TITLE" => "Новости",
-		"PARENT_SECTION" => '',
-		"PARENT_SECTION_CODE" => '',
-		"PREVIEW_TRUNCATE_LEN" => "120",
-		"SET_BROWSER_TITLE" => "N",
-		"SET_LAST_MODIFIED" => "N",
-		"SET_META_DESCRIPTION" => "N",
-		"SET_META_KEYWORDS" => "N",
-		"SET_STATUS_404" => "N",
-		"SET_TITLE" => "N",
-		"SHOW_404" => "N",
-		"SORT_BY1" => "RAND()",
-		"SORT_BY2" => "SORT",
-		"SORT_ORDER1" => "DESC",
-		"SORT_ORDER2" => "ASC",
-		"STRICT_SECTION_CHECK" => "Y"
-	)
-);?>
-            <div class="interesting-btn">
-				<a href="/informatsionnyy-razdel/?designer=<?=$arResult["ID"]?>" class="btn">Все статьи</a>
-            </div>
+<section class="interesting" data-bleed="100" data-parallax="scroll" data-z-index="1" data-speed="0.5" data-image-src="<?=SITE_TEMPLATE_PATH?>/images/interesting-1.jpeg" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/images/interesting-1.jpeg');">
+    <div class="container">
+        <div class="h1 interesting-title">Cтатьи, новости, обзоры</div>
+            <?
+            global $arrArticlesFilter;
+            $arrArticlesFilter = array("ACTIVE" => "Y", 'PROPERTY_DESIGNERS' => $arResult["ID"]);
+            $APPLICATION->IncludeComponent(
+                "bitrix:news.list",
+                "news_bottom_slider",
+                Array(
+                    "ACTIVE_DATE_FORMAT" => "d.m.Y",
+                    "ADD_SECTIONS_CHAIN" => "N",
+                    "AJAX_MODE" => "N",
+                    "AJAX_OPTION_ADDITIONAL" => "",
+                    "AJAX_OPTION_HISTORY" => "N",
+                    "AJAX_OPTION_JUMP" => "N",
+                    "AJAX_OPTION_STYLE" => "Y",
+                    "CACHE_FILTER" => "Y",
+                    "CACHE_GROUPS" => "Y",
+                    "CACHE_TIME" => "36000000",
+                    "CACHE_TYPE" => "A",
+                    "CHECK_DATES" => "Y",
+                    "DETAIL_URL" => "/#IBLOCK_CODE#/#SECTION_CODE#/#CODE#/",
+                    "DISPLAY_BOTTOM_PAGER" => "N",
+                    "DISPLAY_DATE" => "Y",
+                    "DISPLAY_NAME" => "Y",
+                    "DISPLAY_PICTURE" => "Y",
+                    "DISPLAY_PREVIEW_TEXT" => "Y",
+                    "DISPLAY_TOP_PAGER" => "N",
+                    "FIELD_CODE" => '',
+                    "PROPERTY_CODE" => '',
+                    "FILTER_NAME" => "arrArticlesFilter",
+                    "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+                    "IBLOCK_ID" => 10,
+                    "IBLOCK_TYPE" => 'informatsionnyy-razdel',
+                    "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+                    "INCLUDE_SUBSECTIONS" => "Y",
+                    "MESSAGE_404" => "",
+                    "NEWS_COUNT" => "4",
+                    "PAGER_BASE_LINK_ENABLE" => "N",
+                    "PAGER_DESC_NUMBERING" => "N",
+                    "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+                    "PAGER_SHOW_ALL" => "N",
+                    "PAGER_SHOW_ALWAYS" => "N",
+                    "PAGER_TEMPLATE" => ".default",
+                    "PAGER_TITLE" => "Новости",
+                    "PARENT_SECTION" => '',
+                    "PARENT_SECTION_CODE" => '',
+                    "PREVIEW_TRUNCATE_LEN" => "120",
+                    "SET_BROWSER_TITLE" => "N",
+                    "SET_LAST_MODIFIED" => "N",
+                    "SET_META_DESCRIPTION" => "N",
+                    "SET_META_KEYWORDS" => "N",
+                    "SET_STATUS_404" => "N",
+                    "SET_TITLE" => "N",
+                    "SHOW_404" => "N",
+                    "SORT_BY1" => "RAND()",
+                    "SORT_BY2" => "SORT",
+                    "SORT_ORDER1" => "DESC",
+                    "SORT_ORDER2" => "ASC",
+                    "STRICT_SECTION_CHECK" => "Y"
+                )
+            );?>
+        <div class="interesting-btn">
+            <a href="/informatsionnyy-razdel/" class="btn">Все статьи</a>
         </div>
-    </section>
+    </div>
+</section>

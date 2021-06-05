@@ -1,10 +1,10 @@
 <!-- Profile -->
     <section class="main-profile" data-bleed="100" data-parallax="scroll" data-z-index="1" data-speed="0.5" >
         <div class="container">
-            <h2 class="h1 main-profile-title">Статьи <br>обзоры <br>новости</h2>
+            <a href="/informatsionnyy-razdel/" class="h1 main-profile-title">Статьи <br>обзоры <br>новости</a>
 <?$APPLICATION->IncludeComponent(
-	"bitrix:news.list", 
-	"news_index", 
+	"bitrix:news.list",
+	"news_index",
 	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "N",

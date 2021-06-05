@@ -32,8 +32,8 @@ else
             </div>
         </div>
         <div class="article">
-			<div class="container">
-                <div class="page-textblock">
+			<div class="container article-box">
+                <div class="page-textblock text-box">
                     <div class="container-inner article-decorated-1 article-avatar-wrap">
 						<?if (isset($arResult["DISPLAY_PROPERTIES"]['DESIGNERS']['LINK_ELEMENT_VALUE'])):
 							foreach($arResult["DISPLAY_PROPERTIES"]['DESIGNERS']['LINK_ELEMENT_VALUE'] as $key => $value):
@@ -43,7 +43,7 @@ else
 									<span class="article-avatar-pic" style="background-image: url('<?=$pathPicture?>');">
 										<img src="<?=$pathPicture?>" alt="">
 									</span>
-									<span class="article-avatar-title"><?=$value['NAME']?></span>								
+									<span class="article-avatar-title"><?=$value['NAME']?></span>
 								</a>
 							<?endforeach;
 						endif;?>

@@ -196,26 +196,28 @@ if ($arParams['HIDE_SECTION_DESCRIPTION'] !== 'Y')
 				switch ($rowData['VARIANT'])
 				{
 					case 0:
-											$item = reset($rowItems);
-											$APPLICATION->IncludeComponent(
-												'bitrix:catalog.item',
-												'',
-												array(
-													'RESULT' => array(
-														'ITEM' => $item,
-														'AREA_ID' => $areaIds[$item['ID']],
-														'TYPE' => $rowData['TYPE'],
-														'BIG_LABEL' => 'N',
-														'BIG_DISCOUNT_PERCENT' => 'N',
-														'BIG_BUTTONS' => 'N',
-														'SCALABLE' => 'N'
-													),
-													'PARAMS' => $generalParams
-														+ array('SKU_PROPS' => $arResult['SKU_PROPS'][$item['IBLOCK_ID']])
-												),
-												$component,
-												array('HIDE_ICONS' => 'Y')
-											);
+                        $item = reset($rowItems);
+                        $url = str_replace($item['CODE'], 'product-'.$item['CODE'], $item['DETAIL_PAGE_URL']);
+                        $item['DETAIL_PAGE_URL'] = $url;
+                        $APPLICATION->IncludeComponent(
+                            'bitrix:catalog.item',
+                            '',
+                            array(
+                                'RESULT' => array(
+                                    'ITEM' => $item,
+                                    'AREA_ID' => $areaIds[$item['ID']],
+                                    'TYPE' => $rowData['TYPE'],
+                                    'BIG_LABEL' => 'N',
+                                    'BIG_DISCOUNT_PERCENT' => 'N',
+                                    'BIG_BUTTONS' => 'N',
+                                    'SCALABLE' => 'N'
+                                ),
+                                'PARAMS' => $generalParams
+                                    + array('SKU_PROPS' => $arResult['SKU_PROPS'][$item['IBLOCK_ID']])
+                            ),
+                            $component,
+                            array('HIDE_ICONS' => 'Y')
+                        );
 						break;
 
 					case 1:

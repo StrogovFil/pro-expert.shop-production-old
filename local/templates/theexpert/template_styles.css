@@ -302,9 +302,36 @@ section.bottomblock{
     display: none;
 }
 
+.container.article-box {
+    margin-bottom: 60px;
+}
+
+.page-textblock.text-box {
+    padding-top: 30px;
+}
+
+.article-bordered .person {
+    padding-bottom: 0;
+}
+
+.article-bordered .container {
+    margin-bottom: 50px;
+}
+
+.interesting {
+    padding-top: 8.5rem;
+    padding-bottom: 1.5rem;
+}
+
 @media (max-width: 1500px){
     .header-top-inner .form-header-input {
         width: 30%;
+    }
+}
+
+@media (max-width: 1105px){
+    .container.article-box {
+        margin-bottom: 30px;
     }
 }
 
@@ -321,6 +348,12 @@ section.bottomblock{
 }
 
 @media (max-width: 767px){
+    .page-textblock.text-box {
+        padding-bottom: 0px;
+    }
+    .page-textblock.text-box {
+        padding-top: 30px;
+    }
     .header-top-inner {
         display: flex;
         flex-direction: row-reverse;
