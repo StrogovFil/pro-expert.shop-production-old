@@ -382,6 +382,15 @@ section.bottomblock{
     margin-top: 0;
 }
 
+.header-menu-container .big-size-item {
+    font-size: 1.5rem;
+}
+
+.breadcrumb {
+    font-size: 1.4rem;
+    padding: 0;
+}
+
 @media (max-width: 1500px){
     .header-top-inner .form-header-input {
         width: 30%;
@@ -408,7 +417,7 @@ section.bottomblock{
 
 @media (max-width: 767px){
     .page-textblock.text-box {
-        padding-bottom: 0px;
+        padding-bottom: 0;
     }
     .page-textblock.text-box {
         padding-top: 30px;

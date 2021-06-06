@@ -1,9 +1,10 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Дизайнеры продуктов");
-?><?$APPLICATION->IncludeComponent(
-	"bitrix:news", 
-	"designers", 
+?>
+<?$APPLICATION->IncludeComponent(
+	"bitrix:news",
+	"designers",
 	array(
 		"ADD_ELEMENT_CHAIN" => "Y",
 		"ADD_SECTIONS_CHAIN" => "Y",
@@ -106,4 +107,5 @@ $APPLICATION->SetTitle("Дизайнеры продуктов");
 		)
 	),
 	false
-);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?>
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

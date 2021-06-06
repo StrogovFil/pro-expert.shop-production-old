@@ -27,11 +27,11 @@ function GetEntityDataClass($hlBlockId)
     {
         return false;
     }
-	
-    $hlblock = HighloadBlockTable::getById($hlBlockId)->fetch();   
+
+    $hlblock = HighloadBlockTable::getById($hlBlockId)->fetch();
     $entity = HighloadBlockTable::compileEntity($hlblock);
     $entityDataClass = $entity->getDataClass();
-	
+
     return $entityDataClass;
 }
 
@@ -57,7 +57,7 @@ else
 			);?>
         </div>
     </nav>
-    
+
     <!-- Product -->
     <section class="page product">
         <? if ($arParams["USE_COMPARE"] === "Y")
@@ -80,7 +80,7 @@ else
 				array("HIDE_ICONS" => "Y")
 			);
 		}
-		
+
 		$componentElementParams = array(
 			'IBLOCK_TYPE' => $arParams['IBLOCK_TYPE'],
 			'IBLOCK_ID' => $arParams['IBLOCK_ID'],
@@ -247,14 +247,14 @@ else
 		{
 			$componentElementParams['USER_CONSENT_IS_LOADED'] = $arParams['USER_CONSENT_IS_LOADED'];
 		}
-		
+
 		$elementId = $APPLICATION->IncludeComponent(
 			'bitrix:catalog.element',
 			'',
 			$componentElementParams,
 			$component
 		);
-		
+
 		$GLOBALS['CATALOG_CURRENT_ELEMENT_ID'] = $elementId;
 		?>
     </section>
@@ -265,33 +265,33 @@ else
 	$collectionId = false;
 	$collectionName = '';
 	$arCollectionProducts = $arCollectionSections = array();
-	
+
 	$obCollection = \CIBlockElement::GetProperty(
 		$arParams['IBLOCK_ID'],
 		$elementId,
 		array("sort" => "asc"),
 		array("CODE" => "COLLECTION")
 	);
-	
+
 	if ($arCollection = $obCollection->Fetch())
 	{
 		$entityDataClass = GetEntityDataClass(CollectionHighloadBlockId);
-		
+
 		$obData = $entityDataClass::getList(
 			array(
 			   'select' => array('UF_NAME'),
 			   'filter' => array('UF_XML_ID' => $arCollection['VALUE'])
 			)
 		);
-		
+
 		if ($arData = $obData->Fetch())
 		{
 			$collectionName = $arData['UF_NAME'];
 		}
-		
+
 		$collectionId = $arCollection['VALUE'];
 	}
-	
+
 	if ($collectionId)
 	{
 		$dbCollectionProducts = \CIBlockElement::GetList(
@@ -299,13 +299,13 @@ else
 			array('PROPERTY_COLLECTION' => $collectionId),
 			array('ID', 'IBLOCK_ID', 'IBLOCK_SECTION_ID')
 		);
-		
+
 		while($arCollectionProduct = $dbCollectionProducts->Fetch())
 		{
 			$arCollectionProducts[] = $arCollectionProduct;
 		}
 	}
-	
+
 	if (!empty($arCollectionProducts))
 	{
 		foreach($arCollectionProducts as $arProduct)
@@ -316,7 +316,7 @@ else
 			}
 		}
 	}
-	
+
 	if (!empty($arCollectionSections) && $collectionId)
 	{ ?>
 	<!-- Collection -->
@@ -330,7 +330,7 @@ else
 					<? foreach($arCollectionSections as $key => $sectionId)
 					{
 						$obCollectSection = \CIBlockSection::GetByID($sectionId);
-						
+
 						if ($arCollectSection = $obCollectSection->Fetch())
 						{ ?>
 						<div<?if (!$key) { echo ' class="active"'; }?>>
@@ -344,9 +344,9 @@ else
 				<div class="tab-content<?if (!$key) { echo '  active'; }?>">
 					<?
 						global ${'arrCollectFilter_' . $sectionId};
-						
+
 						$filterName = "arrCollectFilter_{$sectionId}";
-						
+
 						${$filterName}['IBLOCK_SECTION_ID'] = $sectionId;
 						${$filterName}['PROPERTY_COLLECTION'] = $collectionId;
 						//${$filterName}['!=ID'] = $elementId;
@@ -382,7 +382,7 @@ else
 								"PAGER_PARAMS_NAME" => $arParams["PAGER_PARAMS_NAME"] . $sectionId,
 								"INSTANT_RELOAD" => "Y",
 								'DISPLAY_ELEMENT_COUNT' => 'Y',
-								"SHOW_ALL_WO_SECTION" => 'Y',
+							//	"SHOW_ALL_WO_SECTION" => 'Y',
 
 							)
 							//$component,
@@ -475,7 +475,7 @@ else
 					'HIDE_NOT_AVAILABLE' => $arParams["HIDE_NOT_AVAILABLE"],
 					'HIDE_NOT_AVAILABLE_OFFERS' => $arParams["HIDE_NOT_AVAILABLE_OFFERS"],
 					'HIDE_SECTION_DESCRIPTION' => 'Y',
-					'SHOW_ALL_WO_SECTION' => 'Y',
+				//	'SHOW_ALL_WO_SECTION' => 'Y',
 
 					'LABEL_PROP' => $arParams['LABEL_PROP'],
 					'LABEL_PROP_MOBILE' => $arParams['LABEL_PROP_MOBILE'],
@@ -555,8 +555,8 @@ else
 					<?
 					$GLOBALS['arrFilter'] = array('ID' => $iddArr);
 					$APPLICATION->IncludeComponent(
-						"bitrix:catalog.section", 
-						"product_slider", 
+						"bitrix:catalog.section",
+						"product_slider",
 						array(
 							"ACTION_VARIABLE" => "action",
 							"ADD_PICT_PROP" => "-",
@@ -648,7 +648,7 @@ else
 							"SET_STATUS_404" => "Y",
 							"SET_TITLE" => "N",
 							"SHOW_404" => "N",
-							"SHOW_ALL_WO_SECTION" => "Y",
+						//	"SHOW_ALL_WO_SECTION" => "Y",
 							"SHOW_CLOSE_POPUP" => "N",
 							"SHOW_DISCOUNT_PERCENT" => "N",
 							"SHOW_FROM_SECTION" => "N",
@@ -813,7 +813,7 @@ else
 
 				$obCache->EndDataCache($recommendedData);
 			}
-			
+
 			if (!empty($recommendedData))
 			{
 			?>
@@ -944,8 +944,8 @@ else
 							);
 							?>
 			</div>
-				<? } 
-				
+				<? }
+
 				if (Loader::includeModule('catalog')
 					&& (!isset($arParams['DETAIL_SHOW_VIEWED']) || $arParams['DETAIL_SHOW_VIEWED'] != 'N'))
 				{

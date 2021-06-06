@@ -62,7 +62,7 @@ $cnt = CIBlockSection::GetSectionElementsCount($arIBlock['ID']);
                 <div class="topblock-content-inner">
                     <div class="topblock-header">
                         <div class="h3 topblock-title"><?=$arIBlock['NAME']?></div>
-                        <div class="topblock-header-note">Всего <?=$cnt?></div>
+<!--                        <div class="topblock-header-note">Всего --><?//=$cnt?><!--</div>-->
                     </div>
                     <div class="topblock-text"><?=$arIBlock['DESCRIPTION']?></div>
                 </div>

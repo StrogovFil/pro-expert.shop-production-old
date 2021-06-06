@@ -31,7 +31,7 @@ if (isset($_REQUEST['order']))
 		$strOrder = 'ASC';
 	else
 		$strOrder = 'DESC';
-	
+
 	$arParams['CATALOG_PARAMS']["ELEMENT_SORT_ORDER"] = $_REQUEST['order'];
 }
 else
@@ -69,13 +69,13 @@ $obProducts = CIBlockElement::GetList(
 while($arProduct = $obProducts->Fetch())
 {
 	$arProductSection = array('DEPTH_LEVEL' => 2, 'IBLOCK_SECTION_ID' => $arProduct['IBLOCK_SECTION_ID']);
-	
+
 	while($arProductSection['DEPTH_LEVEL'] != 1)
 	{
 		$obProductSection = CIBlockSection::GetByID($arProductSection['IBLOCK_SECTION_ID']);
 		$arProductSection = $obProductSection->GetNext();
 	}
-	
+
 	$arProductSections[$arProductSection['ID']] = $arProductSection;
 	$arProducts[] = $arProduct;
 }
@@ -304,7 +304,7 @@ else
 					'BACKGROUND_IMAGE' => (isset($arParams['CATALOG_PARAMS']['SECTION_BACKGROUND_IMAGE']) ? $arParams['CATALOG_PARAMS']['SECTION_BACKGROUND_IMAGE'] : ''),
 					'COMPATIBLE_MODE' => (isset($arParams['CATALOG_PARAMS']['COMPATIBLE_MODE']) ? $arParams['CATALOG_PARAMS']['COMPATIBLE_MODE'] : ''),
 					'DISABLE_INIT_JS_IN_COMPONENT' => (isset($arParams['CATALOG_PARAMS']['DISABLE_INIT_JS_IN_COMPONENT']) ? $arParams['CATALOG_PARAMS']['DISABLE_INIT_JS_IN_COMPONENT'] : ''),
-					'SHOW_ALL_WO_SECTION' => 'Y',
+				//	'SHOW_ALL_WO_SECTION' => 'Y',
 				)
 );
 			?>
