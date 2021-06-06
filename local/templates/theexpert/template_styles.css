@@ -333,6 +333,49 @@ section.bottomblock{
     right: -2rem;
 }
 
+.article-avatar {
+    top: 0;
+}
+
+.article-decorated-1:before {
+    height: 108px;
+    top: 0;
+    bottom: unset;
+}
+
+.article .carousel-auto-wrap.about-carousel {
+    max-height: 300px;
+}
+
+.article .carousel-auto-wrap .owl-nav {
+    max-height: 300px;
+}
+
+.article-avatar-wrap h5 {
+    font-size: 2.6rem;
+    line-height: 1.35;
+    font-family: "Proxima Nova";
+    color: #757575 !important;
+    font-weight: 300 !important;
+    text-transform: initial;
+}
+
+.article-avatar-wrap h5 b {
+    font-weight: 300 !important;
+}
+
+.article-avatar-wrap h5 span {
+    color: #757575 !important;
+}
+
+.breadcrumb-wrap {
+    z-index: 5;
+}
+
+.page.product {
+    margin-top: 0;
+}
+
 .breadcrumb-wrap .container {
     margin-bottom: 20px;
 }

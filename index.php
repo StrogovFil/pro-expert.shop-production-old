@@ -1,6 +1,7 @@
 <?require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
-
-$APPLICATION->SetTitle("");?><?$APPLICATION->IncludeComponent(
+$APPLICATION->SetPageProperty("title", "Pro Expert");
+$APPLICATION->SetTitle("Pro Expert");?>
+<?$APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"sliderOnMain",
 	Array(
@@ -57,8 +58,8 @@ $APPLICATION->SetTitle("");?><?$APPLICATION->IncludeComponent(
 		"STRICT_SECTION_CHECK" => "N"
 	)
 );?><?$APPLICATION->IncludeComponent(
-	"bitrix:main.include", 
-	".default", 
+	"bitrix:main.include",
+	".default",
 	array(
 		"AREA_FILE_RECURSIVE" => "Y",
 		"AREA_FILE_SHOW" => "file",
