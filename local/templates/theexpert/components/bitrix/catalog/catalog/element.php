@@ -382,7 +382,7 @@ else
 								"PAGER_PARAMS_NAME" => $arParams["PAGER_PARAMS_NAME"] . $sectionId,
 								"INSTANT_RELOAD" => "Y",
 								'DISPLAY_ELEMENT_COUNT' => 'Y',
-							//	"SHOW_ALL_WO_SECTION" => 'Y',
+								"SHOW_ALL_WO_SECTION" => 'Y',
 
 							)
 							//$component,
@@ -475,7 +475,7 @@ else
 					'HIDE_NOT_AVAILABLE' => $arParams["HIDE_NOT_AVAILABLE"],
 					'HIDE_NOT_AVAILABLE_OFFERS' => $arParams["HIDE_NOT_AVAILABLE_OFFERS"],
 					'HIDE_SECTION_DESCRIPTION' => 'Y',
-				//	'SHOW_ALL_WO_SECTION' => 'Y',
+					'SHOW_ALL_WO_SECTION' => 'Y',
 
 					'LABEL_PROP' => $arParams['LABEL_PROP'],
 					'LABEL_PROP_MOBILE' => $arParams['LABEL_PROP_MOBILE'],
@@ -648,7 +648,7 @@ else
 							"SET_STATUS_404" => "Y",
 							"SET_TITLE" => "N",
 							"SHOW_404" => "N",
-						//	"SHOW_ALL_WO_SECTION" => "Y",
+							"SHOW_ALL_WO_SECTION" => "Y",
 							"SHOW_CLOSE_POPUP" => "N",
 							"SHOW_DISCOUNT_PERCENT" => "N",
 							"SHOW_FROM_SECTION" => "N",
