@@ -528,8 +528,8 @@ elseif (!empty($arFields) && $iBlockId == 1)
             ?>
         </div>
     </section>
-<? }
-$GLOBALS['CATALOG_CURRENT_SECTION_ID'] = $intSectionID;?>
+<?}?>
+<?//$GLOBALS['CATALOG_CURRENT_SECTION_ID'] = $intSectionID;?>
 <?/*$APPLICATION->IncludeComponent("bitrix:news.list", "catalog_news", array(
 	"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "N",
@@ -594,19 +594,20 @@ $GLOBALS['CATALOG_CURRENT_SECTION_ID'] = $intSectionID;?>
 	"ACTIVE_COMPONENT" => "N"
 	)
 );*/?>
-    <?$APPLICATION->IncludeComponent(
-        "bitrix:main.include",
-        "",
-        Array(
-            "AREA_FILE_RECURSIVE" => "Y",
-            "AREA_FILE_SHOW" => "file",
-            "AREA_FILE_SUFFIX" => "",
-            "EDIT_TEMPLATE" => "",
-            "PATH" => SITE_TEMPLATE_PATH . "/includes/catalog/insert.php"
-        )
-    );
 
+<?$APPLICATION->IncludeComponent(
+    "bitrix:main.include",
+    "",
+    Array(
+        "AREA_FILE_RECURSIVE" => "Y",
+        "AREA_FILE_SHOW" => "file",
+        "AREA_FILE_SUFFIX" => "",
+        "EDIT_TEMPLATE" => "",
+        "PATH" => SITE_TEMPLATE_PATH . "/includes/catalog/insert.php"
+    )
+);?>
 
+<?/*
 if (!count($arFields))
 {
     $dbSections = CIBlockSection::GetList(
@@ -633,9 +634,7 @@ if (!count($arFields))
         $sectCnt = CIBlockSection::GetSectionElementsCount($arSection['ID']);
         $pathPicture = CFile::GetPath($arSection['PREVIEW_PICTURE']);
 ?>
-    <section class="bottomblock" data-bleed="100" data-parallax="scroll" data-z-index="1" data-speed="0.5"
-             data-image-src="<?=SITE_TEMPLATE_PATH?>/images/bottom-block-1.jpeg "
-             style="background-image: url('<?=SITE_TEMPLATE_PATH?>/images/bottom-block-1.jpeg ');">
+    <section class="bottomblock" data-bleed="100" data-parallax="scroll" data-z-index="1" data-speed="0.5" data-image-src="<?=SITE_TEMPLATE_PATH?>/images/bottom-block-1.jpeg " style="background-image: url('<?=SITE_TEMPLATE_PATH?>/images/bottom-block-1.jpeg ');">
         <div class="container">
             <a href="<?=$arSection['SECTION_PAGE_URL']?>" class="bottomblock-icon">
                 <img src="<?=pathPicture?>" alt="" onerror="this.onerror = null; this.src = '<?=pathPicture?>'">
@@ -671,4 +670,4 @@ if (!count($arFields))
         </div>
     </section>
 <?  endif;
-}?>
+}*/?>

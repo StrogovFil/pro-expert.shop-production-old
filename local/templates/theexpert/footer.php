@@ -100,7 +100,7 @@
     <div id="addToCart" class="modal modal-buy">
         <div class="modal-header clearfix">
             <div class="modal-header-logo">
-                <!-- <img src="assets/tpl/images/logo.png" alt=""> -->
+                <!-- <img src="/local/templates/theexpert/images/logo.png" alt=""> -->
             </div>
         </div>
         <div class="modal-buy-body">

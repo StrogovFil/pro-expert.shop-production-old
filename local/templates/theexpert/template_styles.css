@@ -294,10 +294,6 @@ section.bottomblock{
     padding: 12px 30px;
 }
 
-.catalog-items-bordered.container .catalog-items-col .bx_catalog_tile_title {
-    display: none;
-}
-
 .container.article-box {
     margin-bottom: 60px;
 }
@@ -312,6 +308,18 @@ section.bottomblock{
 
 .article-bordered .container {
     margin-bottom: 50px;
+}
+
+.bx_catalog_tile .bx_catalog_tile_title {
+    font-size: 2.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+}
+
+.product-top .product-text22.container-inner22 {
+    display: flex;
+    flex-direction: column;
 }
 
 .interesting {

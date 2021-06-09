@@ -16,10 +16,6 @@
     <meta name="MobileOptimized" content="320">
     <meta name="format-detection" content="telephone=no">
     <meta name="format-detection" content="address=no">
-    <!--[if lt IE 9]>
-    <script src="//oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
     <!--suppress CssInvalidPropertyValue -->
 <!--    <style>-->
 <!--        @-webkit-viewport {-->

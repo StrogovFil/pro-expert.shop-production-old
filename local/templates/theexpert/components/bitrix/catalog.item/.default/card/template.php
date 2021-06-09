@@ -113,7 +113,7 @@ use \Bitrix\Main\Localization\Loc;
 	</a>
 	<div class="catalog-item-content">
 		<a href="<?=$item['DETAIL_PAGE_URL']?>" title="<?=$imgTitle?>" class="catalog-item-title"><span><?=$productTitle?></span></a>
-		<!-- <div class="catalog-item-description"><span><?//=$item['PREVIEW_TEXT']?></span></div> -->
+<!--		 <div class="catalog-item-description"><span>--><?//=$item['PREVIEW_TEXT']?><!--</span></div>-->
 		<div class="catalog-item-description">
 			<div><?=$item['DISPLAY_PROPERTIES']['BRAND']['DISPLAY_VALUE']?></div>
 			<div><?=$item['DISPLAY_PROPERTIES']['COUNTRIES']['DISPLAY_VALUE']?></div>

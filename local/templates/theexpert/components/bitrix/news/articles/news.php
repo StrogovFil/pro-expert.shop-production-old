@@ -171,8 +171,10 @@ if ($iRequestDesigner)
 	),
 	$component
 );?>
-        </div>
-    </section>
+    </div>
+</section>
+
+<?/*
 <?if (count($arSections)):
 $arSection = $arSections[0];
 $sectCnt = CIBlockSection::GetSectionElementsCount($arSection['ID']);
@@ -189,3 +191,4 @@ $sectCnt = CIBlockSection::GetSectionElementsCount($arSection['ID']);
         </div>
     </section>
 <?endif?>
+*/?>

@@ -80,13 +80,13 @@ if ($normalCount > 0):
 							</td>
 					<?
 					endforeach;
-					
+
 					if ($bSumColumn && $sumId):
 					?>
 						<td class="cart-header-cell"><?=$arResult["GRID"]["HEADERS"][$sumId]["name"]; ?></td>
 					<?
 					endif;
-					
+
 					if ($bDeleteColumn || $bDelayColumn):
 					?>
 						<td class="cart-header-cell"></td>
@@ -113,8 +113,8 @@ if ($normalCount > 0):
 
 							if ($arHeader["name"] == '')
 								$arHeader["name"] = GetMessage("SALE_".$arHeader["id"]);
-							
-							
+
+
 							if ($arHeader["id"] == "SUM")
 							{
 								$sumId = $arHeader["id"];
@@ -329,10 +329,10 @@ if ($normalCount > 0):
 										$ratio = isset($arItem["MEASURE_RATIO"]) ? $arItem["MEASURE_RATIO"] : 0;
 										$useFloatQuantity = ($arParams["QUANTITY_FLOAT"] == "Y") ? true : false;
 										$useFloatQuantityJS = ($useFloatQuantity ? "true" : "false");
-										
+
 										if (!isset($arItem["MEASURE_RATIO"]))
 											$arItem["MEASURE_RATIO"] = 1;
-											
+
 										if (floatval($arItem["MEASURE_RATIO"]) != 0)
 										{?>
 											<span href="javascript:void(0);" class="cart-row-count-btn minus" onclick="setQuantity(<?=$arItem["ID"]?>, <?=$arItem["MEASURE_RATIO"]?>, 'down', <?=$useFloatQuantityJS?>);"><i class="icon icon-angle-left"></i></span>
@@ -387,16 +387,16 @@ if ($normalCount > 0):
 							?>
 								<td class="custom">
 									<span><?=$arHeader["name"]; ?>:</span>
-									<?									
+									<?
 									echo $arItem[$arHeader["id"]];
 									?>
 								</td>
 							<?
 							endif;
 						endforeach;
-						
+
 						if ($bSumColumn && $sumId):
-						?>						
+						?>
 						<td class="cart-row-cell cart-row-price-wrap cart-row-price-wrap2">
 							<div id="sum_<?=$arItem["ID"]?>" class="cart-row-price">
 								<?//echo $arItem[$sumId];?>
@@ -404,7 +404,7 @@ if ($normalCount > 0):
 							</div>
 						</td>
 						<?endif;
-						
+
 						if ($bDelayColumn || $bDeleteColumn):
 						?>
 							<td class="cart-row-cell cart-row-remove-wrap">
@@ -493,7 +493,7 @@ if ($normalCount > 0):
 		</div>
 	</div>
 
-	
+
 		<div class="cart-summary">
 
 			<div class="container" style="margin-bottom: 0;">
@@ -532,7 +532,7 @@ if ($normalCount > 0):
 					var mail_val = $(this).find(".form-input-mail").val();
 					$.ajax({
 						type: 'POST',
-						url: '/personal/basket/ajax.php',
+						url: '/personal/request/ajax.php',
 						data: {name : name_val, phone : phone_val, mail : mail_val},
 						success: function(res) {
 							$('#form-order').html(res);
