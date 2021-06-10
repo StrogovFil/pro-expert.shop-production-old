@@ -24,7 +24,8 @@ else
 		<?endif?>
             <div class="container">
                 <ul class="breadcrumb">
-                    <li><a href="<?=$arParams["FOLDER"] . $arParams["URL_TEMPLATES_NEWS"]?>">Все статьи</a></li>
+                    <li class="breadcrumb-home"><a href="<?=$arParams["FOLDER"] . $arParams["URL_TEMPLATES_NEWS"]?>">Все статьи</a></li>
+                    <li class="breadcrumb-item active"><?=$arResult["NAME"]?></li>
                 </ul>
 				<?if($arParams["DISPLAY_NAME"]!="N" && $arResult["NAME"]):?>
 					<h1 class="h1 page-top-title"><?=$arResult["NAME"]?></h1>

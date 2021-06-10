@@ -16,7 +16,7 @@ $APPLICATION->SetTitle("Информационный раздел");
 		"CACHE_FILTER" => "Y",
 		"CACHE_GROUPS" => "Y",
 		"CACHE_TIME" => "36000000",
-		"CACHE_TYPE" => "A",
+		"CACHE_TYPE" => "N",
 		"CATEGORY_CODE" => "CATEGORY",
 		"CATEGORY_IBLOCK" => array(0=>"10",),
 		"CATEGORY_ITEMS_COUNT" => "5",

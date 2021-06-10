@@ -96,8 +96,8 @@ else
     $basketAction = isset($arParams['SECTION_ADD_TO_BASKET_ACTION']) ? $arParams['SECTION_ADD_TO_BASKET_ACTION'] : '';
 }
 ?>
-    <nav class="breadcrumb-wrap">
-        <div class="container">
+    <nav class="breadcrumb-wrap bread-sticky">
+        <div class="container box-sticky">
             <?$APPLICATION->IncludeComponent(
                 "bitrix:breadcrumb",
                 "catalog",
