@@ -210,7 +210,22 @@ section.bottomblock{
     width: 60px;
     height: 60px;
     top: -15px;
-    right: -18px;
+    right: -15px;
+}
+
+.header-top-icons-search:focus {
+    color: unset;
+}
+
+.icon-bag:before {
+    content: unset;
+}
+
+.icon-bag {
+    background: url(/local/templates/theexpert/images/icons/cart-wt.svg);
+    width: 20px;
+    height: 20px;
+    background-size: cover;
 }
 
 .form-header-input .search_ikon.header-top-icons-search:hover {
@@ -442,6 +457,31 @@ section.bottomblock{
     padding: 0;
 }
 
+.main-intro .container {
+    margin-bottom: 0;
+}
+
+.slides-scroll.js-scroll {
+    display: none;
+}
+
+.main-special .container {
+    margin-bottom: 0;
+}
+
+.clear-basket-button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.js-submenu .icon-dropdown.is-active::before{
+    content: "\e911";
+}
+
+.header-menu-list a .icon-dropdown {
+    padding: 7px;
+}
+
 @media (max-width: 1500px){
     .header-top-inner .form-header-input {
         width: 30%;
@@ -467,6 +507,26 @@ section.bottomblock{
 }
 
 @media (max-width: 767px){
+    .child-menu.is-active {
+        position: relative;
+        box-shadow: unset;
+        padding-top: 0;
+        margin-top: 0;
+    }
+
+    .icon.icon-dropdown {
+        top: calc(50% - 20px) !important;
+        margin-top: -0.6em !important;
+        padding: 20px !important;
+        margin-left: 0;
+    }
+
+    .icon-bag {
+        background: url(/local/templates/theexpert/images/icons/cart-bl.svg);
+        width: 20px;
+        height: 20px;
+        background-size: cover;
+    }
     .page-textblock.text-box {
         padding-bottom: 0;
     }
@@ -523,7 +583,8 @@ section.bottomblock{
     }
     .form-header-input.mobile-form .header_input {
         padding: 5px 70px 5px 30px;
-        width: 100%;
+        width: 90%;
+        margin-right: 35px;
     }
     .form-header-input.mobile-form .search--icon {
         position: absolute;

@@ -335,12 +335,15 @@ if ($normalCount > 0):
 
 										if (floatval($arItem["MEASURE_RATIO"]) != 0)
 										{?>
-											<span href="javascript:void(0);" class="cart-row-count-btn minus" onclick="setQuantity(<?=$arItem["ID"]?>, <?=$arItem["MEASURE_RATIO"]?>, 'down', <?=$useFloatQuantityJS?>);"><i class="icon icon-angle-left"></i></span>
+										    <span href="javascript:void(0);" class="cart-row-count-btn minus"><i class="icon icon-angle-left"></i></span>
+											<?/*<span href="javascript:void(0);" class="cart-row-count-btn minus" onclick="setQuantity(<?=$arItem["ID"]?>, <?=$arItem["MEASURE_RATIO"]?>, 'down', <?=$useFloatQuantityJS?>);"><i class="icon icon-angle-left"></i></span>*/?>
 										<? } ?>
-											<input class="cart-row-count-input" type="text" size="3" id="QUANTITY_INPUT_<?=$arItem["ID"]?>" name="QUANTITY_INPUT_<?=$arItem["ID"]?>" maxlength="18" value="<?=$arItem["QUANTITY"]?>" onchange="updateQuantity('QUANTITY_INPUT_<?=$arItem["ID"]?>', '<?=$arItem["ID"]?>', <?=$ratio?>, <?=$useFloatQuantityJS?>)" />
+										    <input class="cart-row-count-input" type="text" size="3" id="QUANTITY_INPUT_<?=$arItem["ID"]?>" name="QUANTITY_INPUT_<?=$arItem["ID"]?>" maxlength="18" value="1" readonly disabled/>
+											 <?/*<input class="cart-row-count-input" type="text" size="3" id="QUANTITY_INPUT_<?=$arItem["ID"]?>" name="QUANTITY_INPUT_<?=$arItem["ID"]?>" maxlength="18" value="<?=$arItem["QUANTITY"]?>" onchange="updateQuantity('QUANTITY_INPUT_<?=$arItem["ID"]?>', '<?=$arItem["ID"]?>', <?=$ratio?>, <?=$useFloatQuantityJS?>)" />*/?>
 										<? if (floatval($arItem["MEASURE_RATIO"]) != 0)
 										{?>
-											<span href="javascript:void(0);" class="cart-row-count-btn plus" onclick="setQuantity(<?=$arItem["ID"]?>, <?=$arItem["MEASURE_RATIO"]?>, 'up', <?=$useFloatQuantityJS?>);"><i class="icon icon-angle-right"></i></span>
+										    <span href="javascript:void(0);" class="cart-row-count-btn plus"><i class="icon icon-angle-right"></i></span>
+                                            <?/*<span href="javascript:void(0);" class="cart-row-count-btn plus" onclick="setQuantity(<?=$arItem["ID"]?>, <?=$arItem["MEASURE_RATIO"]?>, 'up', <?=$useFloatQuantityJS?>);"><i class="icon icon-angle-right"></i></span>*/?>
 										<? }
 										if (isset($arItem["MEASURE_TEXT"]))
 										{?>

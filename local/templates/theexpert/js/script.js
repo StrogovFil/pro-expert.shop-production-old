@@ -402,24 +402,24 @@
 		selector: '#addToCart',
 		templates: {
 			linked: '<div class="modal-buy-linked-item">\n' +
-			'    <a href="__url__" class="modal-buy-linked-item-pic">\n' +
-			'        <img src="__picture__" alt="">\n' +
-			'    </a>\n' +
-			'    <div class="modal-buy-linked-item-title"><a href="__url__">__title__</a></div>\n' +
-			'    <div class="modal-buy-linked-item-bottom">\n' +
-			'        <span class="modal-buy-linked-item-price">__price__ ₽</span>\n' +
-			'        <div class="modal-buy-linked-item-buy">\n' +
-			'            <a href=""><i class="icon icon-bag"></i></a>\n' +
-			'        </div>\n' +
-			'    </div>\n' +
-			'</div>',
+				'    <a href="__url__" class="modal-buy-linked-item-pic">\n' +
+				'        <img src="__picture__" alt="">\n' +
+				'    </a>\n' +
+				'    <div class="modal-buy-linked-item-title"><a href="__url__">__title__</a></div>\n' +
+				'    <div class="modal-buy-linked-item-bottom">\n' +
+				'        <span class="modal-buy-linked-item-price">__price__ ₽</span>\n' +
+				'        <div class="modal-buy-linked-item-buy">\n' +
+				'            <a href=""><i class="icon icon-bag"></i></a>\n' +
+				'        </div>\n' +
+				'    </div>\n' +
+				'</div>',
 			inform: '<div class="infographic">\n' +
-			'    <div class="infographic-col">\n' +
-			'        <div class="h1 infographic-title">__title__</div>\n' +
-			'        <div class="infographic-text">__text__</div>\n' +
-			'        <a href="__url__" class="infographic-link btn btn-transparent"><i class="icon icon-arrow-left"></i> подробнее</a>\n' +
-			'    </div>\n' +
-			'</div>'
+				'    <div class="infographic-col">\n' +
+				'        <div class="h1 infographic-title">__title__</div>\n' +
+				'        <div class="infographic-text">__text__</div>\n' +
+				'        <a href="__url__" class="infographic-link btn btn-transparent"><i class="icon icon-arrow-left"></i> подробнее</a>\n' +
+				'    </div>\n' +
+				'</div>'
 		},
 		/**
 		 * Здесь обрабатывается добавление товара в корзину.
@@ -530,7 +530,7 @@
 				var	arCatTab = document.querySelectorAll('.catalog-tabs'),
 					arCatTabs = document.querySelectorAll('.catalog-tab'),
 					curId = this.getAttribute('data-id');
-					$.cookie('catab', curId);
+				$.cookie('catab', curId);
 
 				for(var j = 0; j < arCatTabs.length; j++)
 				{
@@ -549,35 +549,35 @@
 				}
 			};
 
-$('#product_designer_more').on("click", function()
-{
-	var	childs = $('#product_designer').children(),
-		countProd = childs.length,
-		countShow = 100,
-		countCur = 0, countAll = 0;
-	for(var i = 0; i < countProd; i++)
+	$('#product_designer_more').on("click", function()
 	{
-		if (childs[i].style.display == 'none')
+		var	childs = $('#product_designer').children(),
+			countProd = childs.length,
+			countShow = 100,
+			countCur = 0, countAll = 0;
+		for(var i = 0; i < countProd; i++)
 		{
-			if (countAll <= countShow)
+			if (childs[i].style.display == 'none')
 			{
-				childs[i].style.display = '';
-				countCur++;
+				if (countAll <= countShow)
+				{
+					childs[i].style.display = '';
+					countCur++;
+				}
+
+				countAll++;
 			}
-
-			countAll++;
 		}
-	}
 
-	if (countAll <= countShow)
-		this.style.display = 'none';
+		if (countAll <= countShow)
+			this.style.display = 'none';
 
-	return false;
-});
+		return false;
+	});
 }) (window, document, jQuery);
 
 $('.owl-item-my').on('click', function() {
-  $("#myModal").css("visibility", "visible");
+	$("#myModal").css("visibility", "visible");
 	$(".close").css("display", "block");
 });
 
@@ -631,15 +631,23 @@ $(".header-top-icons-search").on("click",function(e){
 	});
 });
 
+$(".js-submenu .icon-dropdown").on("click",function(e){
+	if($('.js-submenu .icon-dropdown').hasClass('is-active')) {
+		$('.js-submenu').siblings('.child-menu').removeClass('is-active');
+	}
+	if(!$('.js-submenu .icon-dropdown').hasClass('is-active')) {
+		$('.js-submenu').siblings('.child-menu').addClass('is-active');
+	}
+});
+
 $(".js-submenu").on("click",function(e){
 	e.preventDefault();
-	$(this).siblings(".child-menu").addClass("is-active");
-	$($(this)).on("click",function(e){
-		e.preventDefault();
-		if($(this).siblings(".child-menu").hasClass("is-active")) {
-			location.href='/catalog/';
-		}
-	});
+	if(e.target.classList.contains('icon-dropdown')) {
+		$(this).find(".icon-dropdown").toggleClass('is-active');
+	}
+	if(e.target.classList.contains('js-submenu')) {
+		location.href='/catalog/';
+	}
 	$(document).mouseup(function (e) {
 		var container = $(".child-menu");
 		if (container.has(e.target).length === 0){
