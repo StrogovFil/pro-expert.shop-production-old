@@ -437,12 +437,6 @@ if ($USER->IsAdmin()){
                     <?=htmlspecialchars_decode($actualItem['DISPLAY_PROPERTIES'])?>
                 </table>
 
-
-
-
-
-
-
                 <div class="container22">
                     <?if ($actualItem['DISPLAY_PROPERTIES']['DESCRIPTION_2']['VALUE']['TEXT']):?>
                         <div class="product-text22 container-inner22">
@@ -584,7 +578,8 @@ if ($USER->IsAdmin()){
                                 ?>
                                 <a class="product-form-buy btn" id="<?=$itemIds['ADD_BASKET_LINK']?>"
                                    href="javascript:void(0);">
-                                    <span><?=$arParams['MESS_BTN_ADD_TO_BASKET']?></span>
+                                    <span>Заказать</span>
+<!--                                    <span>--><?//=$arParams['MESS_BTN_ADD_TO_BASKET']?><!--</span>-->
                                 </a>
                                 <?
                             }

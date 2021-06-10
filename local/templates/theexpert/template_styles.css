@@ -213,6 +213,18 @@ section.bottomblock{
     right: -15px;
 }
 
+.product-text22.container-inner22 br {
+    display: none;
+}
+
+.catalog-filters {
+    z-index: 2 !important;
+}
+
+.bx_pagination_page ul {
+    margin-bottom: 20px !important;
+}
+
 .header-top-icons-search:focus {
     color: unset;
 }

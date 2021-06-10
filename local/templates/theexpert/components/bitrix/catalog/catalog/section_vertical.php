@@ -595,17 +595,34 @@ elseif (!empty($arFields) && $iBlockId == 1)
 	)
 );*/?>
 
-<?$APPLICATION->IncludeComponent(
-    "bitrix:main.include",
-    "",
-    Array(
-        "AREA_FILE_RECURSIVE" => "Y",
-        "AREA_FILE_SHOW" => "file",
-        "AREA_FILE_SUFFIX" => "",
-        "EDIT_TEMPLATE" => "",
-        "PATH" => SITE_TEMPLATE_PATH . "/includes/catalog/insert.php"
-    )
-);?>
+<?if($arResult['VARIABLES']['SECTION_ID']):?>
+    <?$sectionAddBlockTitle = '';
+    $sectionAddBlockDesc = '';
+    $arSelect = Array('ID', 'NAME', 'UF_*' );
+    $arFilter = Array('IBLOCK_ID' => $arFields['IBLOCK_ID'], 'GLOBAL_ACTIVE' => 'Y', 'ID' => $arResult['VARIABLES']['SECTION_ID']);
+    $dbList = CIBlockSection::GetList(Array(), $arFilter, true, $arSelect);
+    while($ar_result = $dbList->GetNext()) {
+        $sectionAddBlockTitle = $ar_result['UF_TITLE_ADDBLOCK'];
+        $sectionAddBlockDesc = $ar_result['UF_DESC_ADDBLOCK'];
+    }?>
+<?endif?>
+
+<?if(!empty($sectionAddBlockDesc)):?>
+    <section class="insert">
+        <div class="insert-inner container">
+            <div class="container-inner">
+                <?if(!empty($sectionAddBlockTitle)):?>
+                    <div class="h1 insert-title color-orange"><?=$sectionAddBlockTitle?></div>
+                <?endif?>
+                <?if(!empty($sectionAddBlockDesc)):?>
+                    <div class="insert-text">
+                        <p><?=$sectionAddBlockDesc?></p>
+                    </div>
+                <?endif?>
+            </div>
+        </div>
+    </section>
+<?endif?>
 
 <?/*
 if (!count($arFields))

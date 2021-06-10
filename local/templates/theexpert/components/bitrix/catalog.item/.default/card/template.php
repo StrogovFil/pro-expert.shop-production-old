@@ -214,8 +214,9 @@ use \Bitrix\Main\Localization\Loc;
 					?>
 					<div class="product-item-button-container" id="<?=$itemIds['BASKET_ACTIONS']?>">
 						<button class="btn catalog-item-buy <?=$buttonSizeClass?> <?if($item['PROPERTIES']['NO_PRICE']['VALUE'] == 'Y'){?>hbtn<?}?>" id="<?=$itemIds['BUY_LINK']?>">
-							<?$arParams['MESS_BTN_ADD_TO_BASKET'] = "Купить";?>
-							<?=($arParams['ADD_TO_BASKET_ACTION'] === 'BUY' ? $arParams['MESS_BTN_BUY'] : $arParams['MESS_BTN_ADD_TO_BASKET'])?>
+                            Заказать
+							<?//$arParams['MESS_BTN_ADD_TO_BASKET'] = "Заказать";?>
+							<?//=($arParams['ADD_TO_BASKET_ACTION'] === 'BUY' ? $arParams['MESS_BTN_BUY'] : $arParams['MESS_BTN_ADD_TO_BASKET'])?>
 						</button>
 					</div>
 					<?
