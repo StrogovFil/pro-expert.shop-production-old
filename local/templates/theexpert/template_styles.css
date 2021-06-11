@@ -473,6 +473,40 @@ section.bottomblock{
     z-index: 1;
 }
 
+.pagen-size.is-active {
+    font-weight: 700;
+}
+
+.live-search {
+    background: #fff;
+    padding-left: 0;
+    max-width: 317px;
+    list-style: none;
+    box-shadow: 0 5px 10px 2px rgb(34 60 80 / 20%);
+    max-height: 300px;
+    overflow: auto;
+}
+
+.catalog-items-bordered.container {
+    margin-bottom: 30px;
+}
+
+.bx_pagination_bottom {
+    height: 200px;
+}
+
+.show-block-wrap {
+
+}
+
+.show-block-war {
+    margin: 0 0 16px;
+}
+
+.live-search li {
+    padding: 10px 30px 10px 30px;
+}
+
 #del_filter {
     text-transform: unset;
     font-weight: 400;

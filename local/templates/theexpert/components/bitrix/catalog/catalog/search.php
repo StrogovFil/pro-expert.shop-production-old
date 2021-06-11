@@ -104,7 +104,7 @@ $APPLICATION->IncludeComponent(
 		"SECTION_CODE" => "",
 		"SECTION_USER_FIELDS" => array(),
 		"INCLUDE_SUBSECTIONS" => "Y",
-	//	"SHOW_ALL_WO_SECTION" => "Y",
+		"SHOW_ALL_WO_SECTION" => "Y",
 		"META_KEYWORDS" => "",
 		"META_DESCRIPTION" => "",
 		"BROWSER_TITLE" => "",

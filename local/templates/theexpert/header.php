@@ -62,6 +62,7 @@
         Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery.fancybox.min.js');
         Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/btn-up.js');
         Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery.cookie.js');
+        Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/ajax_search.js');
         Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/script.js');
         $APPLICATION->ShowHead();
     ?>
@@ -92,15 +93,20 @@
                         );
                     ?>
                 </div>
+
                 <form class="form-header-input" action="/search/index.php">
                     <div class="header_input_search">
                         <div class="input-group-search">
-                            <input class="header_input" type="text" placeholder="" name="q">
+                            <input class="header_input" type="search" placeholder="Найти..." maxlength="50" value="" name="q" id="q" autocomplete="off">
                             <div class="search_input_close"><i class="icon icon-menu-close"></i></div>
                             <button type="submit" class="search_ikon header-top-icons-search"><i class="icon icon-search"></i></button>
                         </div>
+                        <div id="search_result">
+                            <div class="live-search"></div>
+                        </div>
                     </div>
                 </form>
+
 				<?$APPLICATION->IncludeComponent(
 					"bitrix:sale.basket.basket.line",
 					"header",

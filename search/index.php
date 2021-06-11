@@ -225,7 +225,7 @@ $APPLICATION->SetTitle("Результаты поиска");
             "PRODUCT_SUBSCRIPTION" => "Y",
             "SEARCH_CHECK_DATES" => "Y",
             "SEARCH_NO_WORD_LOGIC" => "Y",
-            "SEARCH_PAGE_RESULT_COUNT" => "12",
+            "SEARCH_PAGE_RESULT_COUNT" => '1000',
             "SEARCH_RESTART" => "N",
             "SEARCH_USE_LANGUAGE_GUESS" => "Y",
             "SECTIONS_SHOW_PARENT_NAME" => "N",
