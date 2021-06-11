@@ -622,7 +622,13 @@ $(".search_input_close").on("click",function(){
 });
 
 $(".header-top-icons-search").on("click",function(e){
-	$(".form-header-input").toggle('is-active');
+	if($('.form-header-input').hasClass('is-active')) {
+		$('.form-header-input').removeClass('is-active');
+		$('.form-header-input').css('display', 'none');
+	} else {
+		$('.form-header-input').addClass('is-active');
+		$('.form-header-input').css('display', 'block');
+	}
 	$(document).mouseup(function (e) {
 		var container = $(".form-header-input");
 		if (container.has(e.target).length === 0){

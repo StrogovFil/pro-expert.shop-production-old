@@ -7,6 +7,9 @@ function get_result (){
         dataType: 'json',
         success: function(json){
             $('#search_result').html('');
+            $(".search_input_close").click(function() {
+                $('#search_result').html('');
+            });
             $('#search_result').append('<ul class="live-search"></ul>');
             //добавляем каждый элемент массива json внутрь div-ника с class="live-search" (вёрстку можете использовать свою)
             $.each(json, function(index, element) {

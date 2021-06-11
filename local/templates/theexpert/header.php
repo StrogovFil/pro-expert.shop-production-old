@@ -79,8 +79,10 @@
 <div class="fon_input"></div>
 <div class="allwrap">
     <header id="header" class="header">
-        <div class="header-top">
-            <div class="header-top-inner clearfix">
+        <div class="header-base">
+            <div class="header-base-inner container">
+
+                <?/*
                 <div class="header-top-phone">
                     <?$APPLICATION->IncludeComponent(
                             "bitrix:main.include",
@@ -93,53 +95,9 @@
                         );
                     ?>
                 </div>
+                */?>
 
-                <form class="form-header-input" action="/search/index.php">
-                    <div class="header_input_search">
-                        <div class="input-group-search">
-                            <input class="header_input" type="search" placeholder="Найти..." maxlength="50" value="" name="q" id="q" autocomplete="off">
-                            <div class="search_input_close"><i class="icon icon-menu-close"></i></div>
-                            <button type="submit" class="search_ikon header-top-icons-search"><i class="icon icon-search"></i></button>
-                        </div>
-                        <div id="search_result">
-                            <div class="live-search"></div>
-                        </div>
-                    </div>
-                </form>
 
-				<?$APPLICATION->IncludeComponent(
-					"bitrix:sale.basket.basket.line",
-					"header",
-					Array(
-						"HIDE_ON_BASKET_PAGES" => "Y",
-						"PATH_TO_AUTHORIZE" => "",
-						"PATH_TO_BASKET" => SITE_DIR."personal/request/",
-						"PATH_TO_ORDER" => SITE_DIR."personal/order/",
-						"PATH_TO_PERSONAL" => SITE_DIR."personal/",
-						"PATH_TO_PROFILE" => SITE_DIR."personal/",
-						"PATH_TO_REGISTER" => SITE_DIR."login/",
-						"POSITION_FIXED" => "N",
-						"SHOW_AUTHOR" => "N",
-						"SHOW_EMPTY_VALUES" => "Y",
-						"SHOW_NUM_PRODUCTS" => "Y",
-						"SHOW_PERSONAL_LINK" => "N",
-						"SHOW_PRODUCTS" => "N",
-						"SHOW_REGISTRATION" => "N",
-						"SHOW_TOTAL_PRICE" => "Y"
-					)
-				);?>
-                <div class="header-top-icons">
-                    <a href="javascript:void(0)" class="header-top-icons-search">
-                        <i class="icon icon-search"></i>
-                    </a>
-                    <a href="" class="header-top-icons-user">
-                        <i class="icon icon-user"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="header-base">
-            <div class="header-base-inner container">
                 <div class="header-base-logo">
                     <a href="/">
                         <?$APPLICATION->IncludeComponent(
@@ -154,6 +112,7 @@
                         ?>
                     </a>
                 </div>
+
                 <div class="header-menu header-base-menu">
                     <a href="javascript:void(0); " class="header-menu-trigger">
                         <i class="icon icon-menu"></i>
@@ -208,6 +167,53 @@
                         </div>
                     </nav>
                 </div>
+
+                <form class="form-header-input" action="/search/index.php">
+                    <div class="header_input_search">
+                        <div class="input-group-search">
+                            <input class="header_input" type="search" placeholder="Найти..." maxlength="50" value="" name="q" id="q" autocomplete="off">
+                            <div class="search_input_close"><i class="icon icon-menu-close"></i></div>
+                            <button type="submit" class="search_ikon header-top-icons-search"><i class="icon icon-search"></i></button>
+                        </div>
+                        <div id="search_result">
+                            <div class="live-search"></div>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="header-top-icons">
+                    <a href="javascript:void(0)" class="header-top-icons-search">
+                        <i class="icon icon-search"></i>
+                    </a>
+                    <a href="" class="header-top-icons-user">
+                        <i class="icon icon-user"></i>
+                    </a>
+                </div>
+
+                <?$APPLICATION->IncludeComponent(
+                    "bitrix:sale.basket.basket.line",
+                    "header",
+                    Array(
+                        "HIDE_ON_BASKET_PAGES" => "Y",
+                        "PATH_TO_AUTHORIZE" => "",
+                        "PATH_TO_BASKET" => SITE_DIR."personal/request/",
+                        "PATH_TO_ORDER" => SITE_DIR."personal/order/",
+                        "PATH_TO_PERSONAL" => SITE_DIR."personal/",
+                        "PATH_TO_PROFILE" => SITE_DIR."personal/",
+                        "PATH_TO_REGISTER" => SITE_DIR."login/",
+                        "POSITION_FIXED" => "N",
+                        "SHOW_AUTHOR" => "N",
+                        "SHOW_EMPTY_VALUES" => "Y",
+                        "SHOW_NUM_PRODUCTS" => "Y",
+                        "SHOW_PERSONAL_LINK" => "N",
+                        "SHOW_PRODUCTS" => "N",
+                        "SHOW_REGISTRATION" => "N",
+                        "SHOW_TOTAL_PRICE" => "Y"
+                    )
+                );?>
+
+
+
             </div>
         </div>
     </header>

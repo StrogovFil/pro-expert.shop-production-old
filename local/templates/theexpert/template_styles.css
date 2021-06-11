@@ -193,24 +193,17 @@ section.bottomblock{
     border: none;
 }
 
-.header-top-inner .form-header-input {
-    float: left;
-    width: 25%;
-    right: 106px;
-    top: 15px;
-    position: absolute;
-}
-
 .form-header-input .search_ikon {
-    background: #07324a;
+    background: transparent;
     padding: unset;
-    color: #fff;
+    color: #07324a;
     margin-left: unset;
     position: absolute;
-    width: 60px;
-    height: 60px;
-    top: -15px;
-    right: -15px;
+    width: 36px;
+    height: 36px;
+    top: 0;
+    right: 0;
+    opacity: 0.5;
 }
 
 .product-text22.container-inner22 br {
@@ -234,21 +227,28 @@ section.bottomblock{
 }
 
 .icon-bag {
-    background: url(/local/templates/theexpert/images/icons/cart-wt.svg);
+    background: url(/local/templates/theexpert/images/icons/cart-bl.svg);
     width: 20px;
     height: 20px;
     background-size: cover;
 }
 
+.header-base-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+}
+
 .form-header-input .search_ikon.header-top-icons-search:hover {
     background: unset;
-    color: #fff;
+    color: #000;
     border-color: transparent;
 }
 
 .header-top-icons-search:hover, .header-top-icons-user:hover {
     background: unset;
-    color: #fff;
     border-color: transparent;
 }
 
@@ -295,8 +295,8 @@ section.bottomblock{
 
 .form-header-input .search_input_close {
     position: absolute;
-    right: 16%;
-    top: 6px;
+    right: 12%;
+    top: 7px;
     width: 20px;
     height: 20px;
     cursor: pointer;
@@ -307,6 +307,7 @@ section.bottomblock{
 
 .form-header-input .icon.icon-menu-close {
     color: #07324a;
+    font-size: 12px;
 }
 
 .header-top-icons-search, .header-top-icons-user {
@@ -320,13 +321,18 @@ section.bottomblock{
 
 .form-header-input.is-active {
     display: block;
+    width: 40%;
+    right: 40px;
+    top: 100px;
+    position: absolute !important;
 }
 
 .form-header-input .header_input {
-    width: 87%;
+    width: 100%;
     color: #000;
-    padding: 5px 30px 5px 10px;
-    outline:none
+    padding: 5px 90px 5px 10px;
+    outline: none;
+    border: 1px solid rgba(34, 60, 80, 0.5);
 }
 
 .header-top-inner {
@@ -480,7 +486,6 @@ section.bottomblock{
 .live-search {
     background: #fff;
     padding-left: 0;
-    max-width: 317px;
     list-style: none;
     box-shadow: 0 5px 10px 2px rgb(34 60 80 / 20%);
     max-height: 300px;
@@ -578,9 +583,25 @@ section.bottomblock{
     padding: 7px;
 }
 
+.bread-sticky ~ .page.catalog {
+    padding-top: 60px;
+}
+
 @media (max-width: 1500px){
     .header-top-inner .form-header-input {
         width: 30%;
+    }
+}
+
+@media (max-width: 1103px){
+    .bread-sticky {
+        top: 145px;
+    }
+}
+
+@media (max-width: 767px){
+    .bread-sticky {
+        top: 60px;
     }
 }
 
