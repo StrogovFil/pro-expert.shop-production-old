@@ -6,9 +6,8 @@
     Loc::loadMessages(__FILE__);
 ?>
 <!doctype html>
-<html lang="<?php echo LANGUAGE_ID; ?>">
+<html lang="<?echo LANGUAGE_ID; ?>">
 <head>
-    <!-- All-devices friendly block -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -16,7 +15,6 @@
     <meta name="MobileOptimized" content="320">
     <meta name="format-detection" content="telephone=no">
     <meta name="format-detection" content="address=no">
-    <!--suppress CssInvalidPropertyValue -->
 <!--    <style>-->
 <!--        @-webkit-viewport {-->
 <!--            width: device-width;-->
@@ -45,12 +43,8 @@
 <!--            document.querySelector('head').appendChild(msViewportStyle);-->
 <!--        }-->
 <!--    </script>-->
-    <!--/ All-devices friendly block -->
-    <title><?php $APPLICATION->ShowTitle(); ?></title>
-    <?php
-        // Подключение CSS
-        Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/style_2.css');
-        // Подключение JS
+    <title><?$APPLICATION->ShowTitle(); ?></title>
+    <?Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/style_2.css');
         Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery-2.2.4.min.js');
         Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery.superslides.min.js');
         Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery.touchwipe.js');
@@ -66,38 +60,19 @@
         Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/script.js');
         $APPLICATION->ShowHead();
     ?>
-    <?
-    $curPage = $APPLICATION->GetCurPage(true);
+    <?$curPage = $APPLICATION->GetCurPage(true);
     $link = str_replace("index.php", "", $curPage);
     if (preg_match('/^\/catalog/', $curPage)) {
         echo '<link rel="canonical" href="' . $link . '"/>';
-    }
-    ?>
+    }?>
 </head>
 <body>
-<?php $APPLICATION->ShowPanel(); ?>
+<?$APPLICATION->ShowPanel(); ?>
 <div class="fon_input"></div>
 <div class="allwrap">
     <header id="header" class="header">
         <div class="header-base">
             <div class="header-base-inner container">
-
-                <?/*
-                <div class="header-top-phone">
-                    <?$APPLICATION->IncludeComponent(
-                            "bitrix:main.include",
-                            "",
-                            [
-                                "AREA_FILE_SHOW"   => "file",
-                                "AREA_FILE_SUFFIX" => "inc",
-                                "PATH"             => SITE_TEMPLATE_PATH . "/includes/home/phone.php",
-                            ]
-                        );
-                    ?>
-                </div>
-                */?>
-
-
                 <div class="header-base-logo">
                     <a href="/">
                         <?$APPLICATION->IncludeComponent(
@@ -112,27 +87,15 @@
                         ?>
                     </a>
                 </div>
-
-                <div class="header-menu header-base-menu">
-                    <a href="javascript:void(0); " class="header-menu-trigger">
+                <div class="header-menu header-base-menu is-mobile-menu-trigger">
+                    <a class="header-menu-trigger">
                         <i class="icon icon-menu"></i>
                     </a>
                     <nav class="header-menu-container">
-                        <a href="javascript:void(0); " class="header-menu-close">
+                        <a class="header-menu-close">
                             <i class="icon icon-menu-close"></i>
                         </a>
-                        <form class="form-header-input mobile-form" action="/search/index.php">
-                            <div class="header_input_search">
-                                <div class="input-group-search">
-                                    <span class="search--icon"><i class="icon icon-search"></i></span>
-                                    <input class="header_input" type="text" placeholder="" name="q">
-                                    <div class="search_input_close"><i class="icon icon-menu-close"></i></div>
-                                    <button type="submit" class="search_ikon header-top-icons-search"><i class="icon icon-search"></i></button>
-                                </div>
-                            </div>
-                        </form>
-                        <?php
-                            $APPLICATION->IncludeComponent(
+                        <?$APPLICATION->IncludeComponent(
                             "bitrix:menu",
                             "menu.header",
                             array(
@@ -150,11 +113,9 @@
                                 )
                             ),
                             false
-                        );
-                        ?>
+                        );?>
                         <div class="header-menu-phone">
-                            <?php
-                                $APPLICATION->IncludeComponent(
+                            <?$APPLICATION->IncludeComponent(
                                     "bitrix:main.include",
                                     "",
                                     [
@@ -167,7 +128,6 @@
                         </div>
                     </nav>
                 </div>
-
                 <form class="form-header-input" action="/search/index.php">
                     <div class="header_input_search">
                         <div class="input-group-search">
@@ -180,16 +140,14 @@
                         </div>
                     </div>
                 </form>
-
                 <div class="header-top-icons">
-                    <a href="javascript:void(0)" class="header-top-icons-search">
+                    <a class="header-top-icons-search">
                         <i class="icon icon-search"></i>
                     </a>
-                    <a href="" class="header-top-icons-user">
+                    <a class="header-top-icons-user">
                         <i class="icon icon-user"></i>
                     </a>
                 </div>
-
                 <?$APPLICATION->IncludeComponent(
                     "bitrix:sale.basket.basket.line",
                     "header",
@@ -211,10 +169,6 @@
                         "SHOW_TOTAL_PRICE" => "Y"
                     )
                 );?>
-
-
-
             </div>
         </div>
     </header>
-

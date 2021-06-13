@@ -12,7 +12,7 @@
 
         <? if ($arItem["IS_PARENT"]): ?>
             <? if ($arItem["DEPTH_LEVEL"] == 1): ?>
-                <li><a href="<?= $arItem["LINK"] ?>" class="big-size-item<? if ($arItem["SELECTED"]): ?> root-item-selected js-submenu<? else: ?> root-item js-submenu<? endif ?>"><?= $arItem["TEXT"] ?><i class="icon icon-dropdown"></i></a>
+                <li><a href="<?= $arItem["LINK"] ?>" class="big-size-item<? if ($arItem["SELECTED"]): ?> root-item-selected js-submenu<? else: ?> root-item js-submenu<? endif ?>"><?= $arItem["TEXT"] ?><i class="icon icon-dropdown menu-dropdown"></i></a>
                 <ul class="child-menu">
             <? else: ?>
                 <li<? if ($arItem["SELECTED"]): ?> class="item-selected"<? endif; ?>>

@@ -55,7 +55,7 @@ else
             </div><?if (isset($arResult["PROPERTIES"]['MORE_PHOTO']) && !empty($arResult["PROPERTIES"]['MORE_PHOTO']['VALUE'])):?>
             <div class="carousel-auto-wrap about-carousel">
                 <div class="carousel-auto-wrap-inner">
-                    <div class="carousel-auto owl-carousel js-carousel-auto">
+                    <div id="galleryMain" class="carousel-auto owl-carousel js-carousel-auto">
 						<?foreach($arResult["PROPERTIES"]['MORE_PHOTO']['VALUE'] as $imageId):
 						$pathPicture = CFile::GetPath($imageId);
 						?>
