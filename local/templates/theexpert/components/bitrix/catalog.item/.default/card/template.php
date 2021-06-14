@@ -212,6 +212,7 @@ use \Bitrix\Main\Localization\Loc;
 				if ($actualItem['CAN_BUY'])
 				{
 					?>
+                    <?/*
 					<div class="product-item-button-container" id="<?=$itemIds['BASKET_ACTIONS']?>">
 						<button class="btn catalog-item-buy <?=$buttonSizeClass?> <?if($item['PROPERTIES']['NO_PRICE']['VALUE'] == 'Y'){?>hbtn<?}?>" id="<?=$itemIds['BUY_LINK']?>">
                             Заказать
@@ -219,6 +220,7 @@ use \Bitrix\Main\Localization\Loc;
 							<?//=($arParams['ADD_TO_BASKET_ACTION'] === 'BUY' ? $arParams['MESS_BTN_BUY'] : $arParams['MESS_BTN_ADD_TO_BASKET'])?>
 						</button>
 					</div>
+                    */?>
 					<?
 				}
 				else

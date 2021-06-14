@@ -137,7 +137,7 @@
 			//rewind: true, // Раскомментировать эту строку и закомментировать loop: true, если нужно, чтобы карусель не зацикливалась, а докручивалась до конца и возвращалась к началу
 			dots: false,
 			nav: true,
-			navText: ['', '<i class="icon icon-triangle-left"></i>']
+			navText: ['<i class="icon icon-triangle-left"></i>', '<i class="icon icon-triangle-right"></i>']
 		});
 
 		$("#myModal").owlCarousel({

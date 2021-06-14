@@ -322,8 +322,8 @@ section.bottomblock{
 .form-header-input.is-active {
     display: block;
     width: 30%;
-    right: 40px;
-    top: 100px;
+    right: 130px;
+    top: 27px;
     position: absolute !important;
 }
 
@@ -548,6 +548,32 @@ section.bottomblock{
     margin-top: -50px;
 }
 
+.main-rubricator-item-white:hover .inverse-box {
+    color: #fff
+}
+
+.main-rubricator-item:hover .inverse-box {
+    color: #fff
+}
+
+.filters-sort {
+    display: flex;
+    width: unset;
+    align-items: center;
+}
+
+.filters-options {
+    width: unset;
+}
+
+.filter-sort-item {
+    margin-right: 10px;
+}
+
+.filters.catalog-filters {
+    display: flex;
+}
+
 .allwrap .container.middle-box {
     margin-bottom: 20px;
 }
@@ -647,6 +673,54 @@ section.bottomblock{
     z-index: -1;
 }
 
+#col_QUANTITY {
+    display: none;
+}
+
+.cart-row-count-wrap.price {
+    display: none;
+}
+
+#galleryMain .owl-nav {
+    position: absolute;
+    left: calc(50% - 512px);
+    display: block;
+    width: 100%;
+    max-height: 300px;
+    min-height: 300px;
+}
+
+#galleryMain .owl-prev {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: -50px;
+    max-height: 300px;
+    min-height: 300px;
+}
+
+#galleryMain .owl-next {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: -50px;
+    left: unset;
+    max-height: 300px;
+    min-height: 300px;
+}
+
+#galleryMain .owl-prev .icon-triangle-left {
+    color: #F28E16;
+}
+
+#galleryMain .owl-prev .icon-triangle-left:hover {
+    color: #000;
+}
+
+.articles-items .articles-item br {
+    display: none;
+}
+
 @media (max-width: 1500px){
     .header-top-inner .form-header-input {
         width: 30%;
@@ -703,7 +777,8 @@ section.bottomblock{
         right: 145px;
     }
     .form-header-input.is-active {
-        top: 91px;
+        top: 25px;
+        right: 150px;
     }
     .header-menu-close {
         right: 30px;
@@ -773,6 +848,16 @@ section.bottomblock{
 }
 
 @media (max-width: 767px){
+    .filters-options-item {
+        margin: 0;
+    }
+    .filters-sort {
+        padding: 0;
+        font-size: 15px;
+    }
+    .filter-sort-item .icon.icon-dropdown {
+        padding: 10px !important;
+    }
     .header-top-cart {
         right: 4px;
         padding-left: 0;
@@ -781,7 +866,7 @@ section.bottomblock{
         height: 60px;
     }
     .form-header-input.is-active {
-        top: 65px;
+        top: 10px;
     }
     .form-header-input .search_ikon {
         top: 4px;
