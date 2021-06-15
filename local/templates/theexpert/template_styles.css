@@ -623,6 +623,23 @@ section.bottomblock{
 .clear-basket-button {
     display: flex;
     justify-content: flex-end;
+    color: #000;
+    font-size: 13px;
+    margin-top: -10px;
+}
+
+.clear-basket-button:hover {
+    color: #000;
+}
+
+#col_PRICE {
+    text-align: left;
+    padding-left: 5px;
+}
+
+#col_NAME {
+    padding-left: 220px;
+    text-align: left;
 }
 
 .js-submenu .icon-dropdown.is-active::before{
@@ -697,6 +714,66 @@ section.bottomblock{
     width: 100%;
     max-height: 300px;
     min-height: 300px;
+    z-index: -1;
+}
+
+.article .owl-carousel .owl-item img {
+    object-fit: cover;
+}
+
+.article img {
+    object-fit: cover;
+}
+
+.about .container {
+    margin-bottom: 0;
+}
+
+.catalog-items-bordered.container .catalog-item-description {
+    display: none;
+}
+
+.about-box-one {
+    margin-bottom: 0;
+    padding: 20px 0;
+}
+
+.about-box-two .page-textblock {
+    padding: 50px 0px 30px;
+}
+
+.about-icons {
+    padding-bottom: 30px;
+}
+
+.about-box-three .page-textblock {
+    padding: 60px 0 40px;
+}
+
+.about-box-four .page-textblock {
+    padding: 60px 0 30px;
+}
+
+.team {
+    padding-bottom: 60px;
+}
+
+.team .about-clients {
+    margin-top: 0;
+}
+
+.team .about-clients-title {
+    margin-top: 0;
+    margin-bottom: 50px;
+}
+
+.team .about-box-five {
+    margin-bottom: 0;
+}
+
+.about-box-one .page-textblock {
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 #galleryMain .owl-prev {
@@ -734,6 +811,10 @@ section.bottomblock{
     box-shadow: 0px 5px 5px -3px rgba(34, 60, 80, 0.05);
 }
 
+.box-detail .owl-nav {
+    display: none !important;
+}
+
 @media (max-width: 1500px){
     .header-top-inner .form-header-input {
         width: 30%;
@@ -753,6 +834,9 @@ section.bottomblock{
 }
 
 @media (max-width: 1103px){
+    #col_NAME {
+        padding-left: 138px;
+    }
     .header, .allwrap:before {
         height: 87px;
     }
@@ -861,6 +945,9 @@ section.bottomblock{
 }
 
 @media (max-width: 767px){
+    .clear-basket-button {
+        padding-right: 40px;
+    }
     .filters-options-item {
         margin: 0;
     }
@@ -966,6 +1053,12 @@ section.bottomblock{
 @media (max-width: 650px){
     .form-header-input.is-active {
         width: 50%;
+    }
+}
+
+@media (max-width: 580px){
+    .cart-row-cell.cart-row-count-wrap.price {
+        display: none;
     }
 }
 

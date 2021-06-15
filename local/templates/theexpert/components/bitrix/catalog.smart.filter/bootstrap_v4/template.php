@@ -28,14 +28,14 @@ $arParams["DISPLAY_ELEMENT_COUNT"] = 'N';
 ?>
 
 <div id="filters_options<?= $arParams['SECTION_ID'] ?>" class="filters-options" style="display:block ">
-    <? /*if (isset($arResult['FILTER_ITEMS']['APARTMENT']) && !empty($arResult['FILTER_ITEMS']['APARTMENT'])):?>
+<?if (isset($arResult['FILTER_ITEMS']['APARTMENT']) && !empty($arResult['FILTER_ITEMS']['APARTMENT'])):?>
 	<div class="filters-options-item">
 		<a class="filters-options-item-a" href="#" data-id="apartment">
 			Тип помещения
 			<i class="icon icon-dropdown"></i>
 		</a>
 	</div>
-<?endif*/ ?>
+<?endif?>
     <? /*if (isset($arResult['FILTER_ITEMS']['SIZE']) && !empty($arResult['FILTER_ITEMS']['SIZE'])):?>
 	<div class="filters-options-item">
 		<a class="filters-options-item-a" href="#" data-id="size">
@@ -96,7 +96,7 @@ $arParams["DISPLAY_ELEMENT_COUNT"] = 'N';
 		</a>
 	</div>
 <?endif*/ ?>
-    <button class="btn" onclick="window.location.href = '?set_filter=N&del_filter=Сбросить'" id="del_filter">Сбросить
+    <button class="btn" onclick="window.location.href = '?set_filter=N&del_filter=Сбросить'" id="del_filter">сбросить
     </button>
     <div id="filter_options_popup" class="filter-options-popup">
         <div id="filter_options_popup_close" class="filter-options-popup-close"></div>
@@ -107,7 +107,7 @@ $arParams["DISPLAY_ELEMENT_COUNT"] = 'N';
                 <input type="hidden" name="<? echo $arItem["CONTROL_NAME"] ?>" id="<? echo $arItem["CONTROL_ID"] ?>"
                        value="<? echo $arItem["HTML_VALUE"] ?>"/>
             <? endforeach; ?>
-            <? /*if (isset($arResult['FILTER_ITEMS']['APARTMENT']) && !empty($arResult['FILTER_ITEMS']['APARTMENT'])):?>
+            <?if (isset($arResult['FILTER_ITEMS']['APARTMENT']) && !empty($arResult['FILTER_ITEMS']['APARTMENT'])):?>
 			<div class="filter-options-popup-apartment">
 				<?printFilterItemByHTML($arParams['SECTION_ID'], $arResult['FILTER_ITEMS']['APARTMENT'])?>
 			</div>
@@ -117,7 +117,7 @@ $arParams["DISPLAY_ELEMENT_COUNT"] = 'N';
 				<?foreach($arResult['FILTER_ITEMS']['SIZE'] as $arFilterItemSize)
 					printFilterItemByHTML($arParams['SECTION_ID'], $arFilterItemSize);?>
 			</div>
-			<?endif*/ ?>
+			<?endif?>
             <? if (isset($arResult['FILTER_ITEMS']['BRAND']) && !empty($arResult['FILTER_ITEMS']['BRAND'])): ?>
                 <div class="filter-options-popup-brand">
                     <? printFilterItemByHTML($arParams['SECTION_ID'], $arResult['FILTER_ITEMS']['BRAND']) ?>

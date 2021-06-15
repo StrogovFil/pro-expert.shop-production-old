@@ -438,6 +438,7 @@ if ($normalCount > 0):
 				?>
 			</tbody>
 		</table>
+
 	</div>
 	<input type="hidden" id="column_headers" value="<?=htmlspecialcharsbx(implode($arHeaders, ","))?>" />
 	<input type="hidden" id="offers_props" value="<?=htmlspecialcharsbx(implode($arParams["OFFERS_PROPS"], ","))?>" />
@@ -449,7 +450,7 @@ if ($normalCount > 0):
 	<input type="hidden" id="auto_calculation" value="<?=($arParams["AUTO_CALCULATION"] == "N") ? "N" : "Y"?>" />
 
 	<div class="bx_ordercart_order_pay">
-
+        <a class="clear-basket-button" href="<?=$APPLICATION->GetCurPageParam('clear')?>">Очистить корзину</a>
 		<div class="bx_ordercart_order_pay_left" id="coupons_block">
 		<?
 		if ($arParams["HIDE_COUPON"] != "Y")

@@ -47,7 +47,7 @@ foreach($arResult["ITEMS"] as $arFilterItem)
 {
 	if (isset($arParams['NOT_INCLUDE']) && in_array($arFilterItem['CODE'], $arParams['NOT_INCLUDE']))
 		continue;
-	
+
 	switch($arFilterItem['CODE'])
 	{
 		// case 'SIZE_X':
@@ -70,9 +70,9 @@ foreach($arResult["ITEMS"] as $arFilterItem)
 		case 'RAZDEL_MEBEL':
 			$arResult['FILTER_ITEMS']['RAZDEL_MEBEL'] = $arFilterItem;
 			break;
-		// case 'APARTMENT':
-		// 	$arResult['FILTER_ITEMS']['APARTMENT'] = $arFilterItem;
-		// 	break;
+		 case 'APARTMENT':
+		 	$arResult['FILTER_ITEMS']['APARTMENT'] = $arFilterItem;
+		 	break;
 	}
 }
 

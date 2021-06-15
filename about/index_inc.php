@@ -6,7 +6,7 @@
         </div>
     </div>
     <div class="about">
-        <div class="container">
+        <div class="container about-box-one">
             <div class="page-textblock">
                 <div class="container-inner about-decorated-1">
                     <p>ProExpert Shop – онлайн-каталог с широкой ассортиментной матрицей товаров ведущих мировых производителей мебели, комплектующих и отделочных материалов.</p>
@@ -75,7 +75,7 @@
         ),
         false
     );?>
-        <div class="container">
+        <div class="container about-box-two">
             <div class="page-textblock">
                 <div class="container-inner">
                     <div class="h1">Партнерские отношения и&nbsp;опыт сотрудничества</div>
@@ -107,7 +107,7 @@
             </div>
         </div>
         <img src="<?=SITE_TEMPLATE_PATH?>/images/about-1.jpg" alt="" class="page-image">
-        <div class="container">
+        <div class="container about-box-three">
             <div class="page-textblock">
                 <div class="container-inner about-decorated-2">
                     <div class="h1">Комплектация объектов любых типов недвижимости</div>
@@ -116,7 +116,7 @@
             </div>
         </div>
         <img src="<?=SITE_TEMPLATE_PATH?>/images/about-2.jpg" alt="" class="page-image">
-        <div class="container" style="margin-bottom: 0">
+        <div class="container about-box-four" style="margin-bottom: 0">
             <div class="page-textblock">
                 <div class="container-inner">
                     <div class="h1">Экономия бюджета на комплектацию проекта</div>
@@ -150,7 +150,7 @@
     </div>
 </section>
 <section class="team" style="padding-top: 0">
-    <div class="container">
+    <div class="container about-box-five">
         <?/*
         <div class="team-header">
             <div class="h1 team-header-title">продукция</div>

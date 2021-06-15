@@ -130,7 +130,6 @@ if (!empty($arResult["WARNING_MESSAGE"]) && is_array($arResult["WARNING_MESSAGE"
 		<div class="h1 modal-cart-title">Запрос</div>
 		<form method="post" action="<?=POST_FORM_ACTION_URI?>" name="basket_form" id="basket_form" class="cart">
 			<div id="basket_form_container">
-                <a class="clear-basket-button" href="<?=$APPLICATION->GetCurPageParam('clear')?>">Очистить корзину</a>
 				<div class="bx_ordercart">
 					<!--<div class="bx_sort_container">
 						<a href="javascript:void(0)" id="basket_toolbar_button" class="current" onclick="showBasketItemsList()"><?=GetMessage("SALE_BASKET_ITEMS")?><div id="normal_count" class="flat" >&nbsp;(<?=$normalCount?>)</div></a>
