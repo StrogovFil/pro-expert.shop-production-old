@@ -152,7 +152,7 @@ $APPLICATION->IncludeComponent(
 		"SET_STATUS_404" => "Y",
 		"SET_TITLE" => "N",
 		"SHOW_404" => "N",
-	//	"SHOW_ALL_WO_SECTION" => "Y",
+		"SHOW_ALL_WO_SECTION" => "Y",
 		"SHOW_CLOSE_POPUP" => "N",
 		"SHOW_DISCOUNT_PERCENT" => "N",
 		"SHOW_FROM_SECTION" => "N",
