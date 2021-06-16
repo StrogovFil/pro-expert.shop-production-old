@@ -174,6 +174,10 @@ if ($arParams['HIDE_SECTION_DESCRIPTION'] !== 'Y')
 
 		foreach ($arResult['ITEMS'] as $k=>$item)
 		{
+            if(($k+1) == 30) {
+                $arResult['ITEMS'][$k]['LAST'] = 'Y';
+            }
+
 		    if(in_array($item['ID'], $arParams["EXCLUDE"])){
 		        unset($arResult['ITEMS'][$k]);
 		        continue;
@@ -280,7 +284,7 @@ if ($arParams['HIDE_SECTION_DESCRIPTION'] !== 'Y')
 								foreach ($rowItems as $item)
 								{
 									?>
-									<div class="catalog-items-col">
+									<div class="catalog-items-col<?if($item['LAST_ELEMENT'] == "Y"):?> last-element-box<?endif?>">
 												<?
 												$APPLICATION->IncludeComponent(
 													'bitrix:catalog.item',

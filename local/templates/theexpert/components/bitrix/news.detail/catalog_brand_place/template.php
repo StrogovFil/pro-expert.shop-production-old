@@ -172,9 +172,15 @@ else
 				?>
                 <div class="filters-sort">
                     Сортировать:&emsp;
-                    <a href="?sort=name&order=<?=$strOrder?>" class="filter-sort-<?=$strOrder?> filter-sort-item <?if($_REQUEST['sort'] == 'name' || $_REQUEST['sort'] == ''){?>filter-sort-active<?}?>">по алфавиту <i class="icon icon-dropdown"></i></a>
-                    <a href="?sort=id&order=<?=$strOrder?>" class="filter-sort-<?=$strOrder?> filter-sort-item <?if($_REQUEST['sort'] == 'id'){?>filter-sort-active<?}?>">по новизне <i class="icon icon-dropdown"></i></a>
-                    <a href="?sort=price&order=<?=$strOrder?>" class="filter-sort-<?=$strOrder?> filter-sort-item <?if($_REQUEST['sort'] == 'price'){?>filter-sort-active<?}?>">по цене <i class="icon icon-dropdown"></i></a>
+                    <?if($_REQUEST['order'] == ''):?>
+                        <a href="?sort=name&order=DESC" class="filter-sort-ASC filter-sort-item filter-sort-active">A - Z <i class="icon icon-dropdown"></i></a>
+                    <?elseif($strOrder == 'ASC'):?>
+                        <a href="?sort=name&order=ASC" class="filter-sort-DESC filter-sort-item filter-sort-active">Z - A <i class="icon icon-dropdown"></i></a>
+                    <?elseif($strOrder == 'DESC'):?>
+                        <a href="?sort=name&order=DESC" class="filter-sort-ASC filter-sort-item filter-sort-active">A - Z <i class="icon icon-dropdown"></i></a>
+                    <?endif?>
+                    <?/*<a href="?sort=id&order=<?=$strOrder?>" class="filter-sort-<?=$strOrder?> filter-sort-item <?if($_REQUEST['sort'] == 'id'){?>filter-sort-active<?}?>">по новизне <i class="icon icon-dropdown"></i></a>*/?>
+                    <?/*<a href="?sort=price&order=<?=$strOrder?>" class="filter-sort-<?=$strOrder?> filter-sort-item <?if($_REQUEST['sort'] == 'price'){?>filter-sort-active<?}?>">по цене <i class="icon icon-dropdown"></i></a>*/?>
                 </div>
 			</div>
 		<? endif ?>

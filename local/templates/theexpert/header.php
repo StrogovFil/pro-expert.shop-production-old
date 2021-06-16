@@ -169,6 +169,9 @@
                         "SHOW_TOTAL_PRICE" => "Y"
                     )
                 );?>
+                <div class="header-phone">
+                    <a href="tel:88002007065">8 (800) 200-70-65</a>
+                </div>
             </div>
         </div>
     </header>
