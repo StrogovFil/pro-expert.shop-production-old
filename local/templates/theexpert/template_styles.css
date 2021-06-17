@@ -1169,6 +1169,21 @@ section.bottomblock{
     .main-special .catalog-item {
         max-height: 400px !important;
     }
+    .page.contact .contact-places-col p br {
+        display: none;
+    }
+    .h1.page-top-title {
+        font-size: 1.9rem !important;
+    }
+    .page.catalog.catalog-bordered {
+        padding-bottom: 30px;
+    }
+    .page.catalog.catalog-bordered .container {
+        margin-bottom: 0;
+    }
+    .infographic .infographic-col:first-child {
+        padding-top: 0;
+    }
 }
 
 @media (max-width: 400px){

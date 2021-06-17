@@ -8,7 +8,7 @@ $APPLICATION->SetTitle("Контакты");
 	</div>
 	<div class="contact-contacts">
 		<div class="contact-contacts-row">
-			 <span class="big-phone">8 (800) 200-70-65</span><br>
+			 <a href="tel:88002007065" class="big-phone">8 (800) 200-70-65</a><br>
 			<div>
 				 Позвоните нам в рабочее время. Ответим на ваши вопросы, проконсультируем
 			</div>

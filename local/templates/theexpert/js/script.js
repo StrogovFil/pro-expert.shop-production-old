@@ -123,22 +123,22 @@
 			},
 			$productMain = this.$doc.find('#galleryMain'),
 			$productThumbs = this.$doc.find('#galleryThumbs');
-		$owlAuto.owlCarousel({
-			responsive: {
-				0: {
-					margin: 6
+			$owlAuto.owlCarousel({
+				responsive: {
+					0: {
+						margin: 6
+					},
+					768: {
+						margin: 10
+					}
 				},
-				768: {
-					margin: 10
-				}
-			},
-			autoWidth: false,
-			loop: false,
-			//rewind: true, // Раскомментировать эту строку и закомментировать loop: true, если нужно, чтобы карусель не зацикливалась, а докручивалась до конца и возвращалась к началу
-			dots: false,
-			nav: true,
-			navText: ['<i class="icon icon-triangle-left"></i>', '<i class="icon icon-triangle-right"></i>']
-		});
+				autoWidth: true,
+				loop: false,
+				//rewind: true, // Раскомментировать эту строку и закомментировать loop: true, если нужно, чтобы карусель не зацикливалась, а докручивалась до конца и возвращалась к началу
+				dots: false,
+				nav: true,
+				navText: ['<i class="icon icon-triangle-left"></i>', '<i class="icon icon-triangle-right"></i>']
+			});
 
 		$("#myModal").owlCarousel({
 			responsive: {
