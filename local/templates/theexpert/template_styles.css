@@ -211,7 +211,11 @@ section.bottomblock{
 }
 
 .catalog-filters {
-    z-index: 2 !important;
+    z-index: 14 !important;
+}
+
+.bread-sticky {
+    z-index: 15 !important;
 }
 
 .bx_pagination_page ul {
