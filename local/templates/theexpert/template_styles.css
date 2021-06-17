@@ -733,6 +733,10 @@ section.bottomblock{
     display: none;
 }
 
+.article .owl-carousel .owl-item img {
+    min-width: 334px;
+}
+
 #galleryMain .owl-nav {
     position: absolute;
     left: calc(50% - 512px);
