@@ -56,6 +56,12 @@ else
             <div class="carousel-auto-wrap about-carousel">
                 <div class="carousel-auto-wrap-inner">
                     <div id="galleryMain" class="carousel-auto owl-carousel js-carousel-auto">
+                        <?if(count($arResult["PROPERTIES"]['MORE_PHOTO']['VALUE']) <= 3):?>
+                            <script>
+                                $('.owl-prev').css('display', 'none');
+                                $('.owl-next').css('display', 'none');
+                            </script>
+                        <?endif?>
 						<?foreach($arResult["PROPERTIES"]['MORE_PHOTO']['VALUE'] as $imageId):
 						$pathPicture = CFile::GetPath($imageId);
 						?>
@@ -76,3 +82,9 @@ else
                 </div>
             </div>
         </div>
+
+
+        <script>
+            let elements = document.querySelectorAll('.owl-item');
+            console.log(elements)
+        </script>
