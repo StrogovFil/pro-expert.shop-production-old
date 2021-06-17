@@ -149,7 +149,7 @@ $containerName = 'container-'.$navParams['NavNum'];
 
 if ($showTopPager)
 {
-	?><div data-pagination-num="<?=$navParams['NavNum']?>">
+	?><div data-pagination-num="<?=$navParams['NavNum']?>" id="pagination">
 		<!-- pagination-container -->
 		<?=$arResult['NAV_STRING']?>
 		<!-- pagination-container -->
@@ -745,7 +745,7 @@ if ($arParams['HIDE_SECTION_DESCRIPTION'] !== 'Y')
 if ($showBottomPager)
 {
 	?>
-	<div data-pagination-num="<?=$navParams['NavNum']?>">
+	<div data-pagination-num="<?=$navParams['NavNum']?>" id="pagination">
 		<!-- pagination-container -->
 		<?=$arResult['NAV_STRING']?>
 		<!-- pagination-container -->

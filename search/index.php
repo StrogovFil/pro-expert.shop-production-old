@@ -5,7 +5,7 @@ $APPLICATION->SetTitle("Результаты поиска");
 <br>
 <br>
 <br>
-<div class="container">
+<div class="container catalog-container-page">
     <h1>ПОИСК</h1>
     <?$APPLICATION->IncludeComponent(
 	"bitrix:catalog",
@@ -94,9 +94,9 @@ $APPLICATION->SetTitle("Результаты поиска");
 		"DISCOUNT_PERCENT_POSITION" => "bottom-right",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"DISPLAY_TOP_PAGER" => "N",
-		"ELEMENT_SORT_FIELD" => "CATALOG_PRICE_1",
+		"ELEMENT_SORT_FIELD" => "NAME",
 		"ELEMENT_SORT_FIELD2" => "id",
-		"ELEMENT_SORT_ORDER" => "desc",
+		"ELEMENT_SORT_ORDER" => "ASC",
 		"ELEMENT_SORT_ORDER2" => "desc",
 		"FILE_404" => "",
 		"FILTER_FIELD_CODE" => array(
@@ -255,7 +255,7 @@ $APPLICATION->SetTitle("Результаты поиска");
 		"TEMPLATE_THEME" => "",
 		"TOP_ADD_TO_BASKET_ACTION" => "ADD",
 		"TOP_ELEMENT_COUNT" => "9",
-		"TOP_ELEMENT_SORT_FIELD" => "sort",
+		"TOP_ELEMENT_SORT_FIELD" => "NAME",
 		"TOP_ELEMENT_SORT_FIELD2" => "id",
 		"TOP_ELEMENT_SORT_ORDER" => "asc",
 		"TOP_ELEMENT_SORT_ORDER2" => "desc",

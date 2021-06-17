@@ -41,7 +41,7 @@ $this->setFrameMode(true);
 </div>
 
 <div class="catalog-pagin">
-	<div data-pagination-num="<?=$navParams['NavNum']?>">
+	<div data-pagination-num="<?=$navParams['NavNum']?>" id="pagination">
 		<!-- pagination-container -->
 		<?=$arResult['NAV_STRING']?>
 		<!-- pagination-container -->

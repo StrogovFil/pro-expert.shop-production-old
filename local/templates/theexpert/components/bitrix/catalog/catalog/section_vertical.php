@@ -324,7 +324,7 @@ elseif (!empty($arFields) && $iBlockId == 1)
                 </div>
             </div>
         </div>
-        <div class="catalog-items-bordered container">
+        <div class="catalog-items-bordered container catalog-container-page">
             <? if ($isFilter && !$arFields["UF_COLLECTION"]): ?>
             <div class="filters catalog-filters">
                 <?
