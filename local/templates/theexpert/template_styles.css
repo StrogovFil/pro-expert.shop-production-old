@@ -1109,6 +1109,11 @@ section.bottomblock{
     .header-top-icons-search:hover, .header-top-icons-user:hover {
         color: #07324a;
     }
+
+    .form-note{
+        margin-top: -80px;
+        padding-top: 80px;
+    }
 }
 
 @media (max-width: 680px){

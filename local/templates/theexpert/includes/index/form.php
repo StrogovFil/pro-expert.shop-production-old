@@ -80,6 +80,7 @@
                 "form_1",
                 Array(
                     'AJAX_MODE' => "Y",
+                    "AJAX_OPTION_JUMP" => "Y",
                     "CACHE_TIME" => "3600",
                     "CACHE_TYPE" => "A",
                     "CHAIN_ITEM_LINK" => "",
