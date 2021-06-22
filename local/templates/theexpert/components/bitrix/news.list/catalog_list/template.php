@@ -22,7 +22,8 @@ $this->setFrameMode(true);
 		<div class="catalog-category-default">
 			<div class="catalog-category-icon catalog-type">
 			<?if($arParams["DISPLAY_PICTURE"]!="N" && is_array($arItem["PREVIEW_PICTURE"])):?>
-				<img border="0" onerror="this.onerror = null; this.src = '<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>'" src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" width="<?=$arItem["PREVIEW_PICTURE"]["WIDTH"]?>" height="<?=$arItem["PREVIEW_PICTURE"]["HEIGHT"]?>" alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>" title="<?=$arItem["PREVIEW_PICTURE"]["TITLE"]?>" />
+				<?/*<img border="0" onerror="this.onerror = null; this.src = '<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>'" src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" width="<?=$arItem["PREVIEW_PICTURE"]["WIDTH"]?>" height="<?=$arItem["PREVIEW_PICTURE"]["HEIGHT"]?>" alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>" title="<?=$arItem["PREVIEW_PICTURE"]["TITLE"]?>" />*/?>
+				<img border="0" onerror="this.onerror = null; this.src = '<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>'" src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>" title="<?=$arItem["PREVIEW_PICTURE"]["TITLE"]?>" />
 			<?endif;?>
 			</div>
 			<div class="catalog-category-title"><?=$arItem["NAME"]?></div>
@@ -30,7 +31,8 @@ $this->setFrameMode(true);
 		<div class="catalog-category-hover">
 			<a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="catalog-category-icon catalog-type">
 			<?if($arParams["DISPLAY_PICTURE"]!="N" && is_array($arItem["PREVIEW_PICTURE"])):?>
-				<img border="0" onerror="this.onerror = null; this.src = '<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>'" src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" width="<?=$arItem["PREVIEW_PICTURE"]["WIDTH"]?>" height="<?=$arItem["PREVIEW_PICTURE"]["HEIGHT"]?>" alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>" title="<?=$arItem["PREVIEW_PICTURE"]["TITLE"]?>" />
+				<?/*<img border="0" onerror="this.onerror = null; this.src = '<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>'" src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" width="<?=$arItem["PREVIEW_PICTURE"]["WIDTH"]?>" height="<?=$arItem["PREVIEW_PICTURE"]["HEIGHT"]?>" alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>" title="<?=$arItem["PREVIEW_PICTURE"]["TITLE"]?>" />*/?>
+				<img border="0" onerror="this.onerror = null; this.src = '<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>'" src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>"  alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>" title="<?=$arItem["PREVIEW_PICTURE"]["TITLE"]?>" />
 			<?endif;?>
 			</a>
 			<div class="catalog-category-title"><a href="<?=$arItem["DETAIL_PAGE_URL"]?>"><?=$arItem["NAME"]?></a></div>
@@ -40,10 +42,12 @@ $this->setFrameMode(true);
 	endif;?>
 </div>
 
-<div class="catalog-pagin">
-	<div data-pagination-num="<?=$navParams['NavNum']?>" id="pagination">
-		<!-- pagination-container -->
-		<?=$arResult['NAV_STRING']?>
-		<!-- pagination-container -->
+<?if($arResult['NAV_STRING']){?>
+	<div class="catalog-pagin">
+		<div data-pagination-num="<?=$navParams['NavNum']?>" id="pagination">
+			<!-- pagination-container -->
+			<?=$arResult['NAV_STRING']?>
+			<!-- pagination-container -->
+		</div>
 	</div>
-</div>
+<?}?>

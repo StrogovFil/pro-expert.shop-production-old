@@ -96,7 +96,9 @@ $arParams["DISPLAY_ELEMENT_COUNT"] = 'N';
 		</a>
 	</div>
 <?endif*/ ?>
-    <button class="btn" onclick="window.location.href = '?set_filter=N&del_filter=Сбросить'" id="del_filter">сбросить
+     <button class="btn" onclick="window.location.href = '?set_filter=N&del_filter=Сбросить'" id="del_filter">
+        <i class="icon icon-menu-close"></i>
+        сбросить
     </button>
     <div id="filter_options_popup" class="filter-options-popup">
         <div id="filter_options_popup_close" class="filter-options-popup-close"></div>

@@ -7,20 +7,22 @@
 
 @media (max-width: 767px){
     #galleryMain div{
-            background-size: 100%;
-        }
+        display: block;
+        background-position: center;
+        min-height: auto;
     }
 
-    @media (max-width: 480px){
-        #galleryMain div{
-            min-height: 300px;
-            }
-        }
-        #myImg {
-            border-radius: 5px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+    #galleryMain .carousel-auto-item div{
+        padding-bottom: 100%;
+        background-size: cover;
+    }
+}
+
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
 #myImg:hover {opacity: 0.7;}
 
@@ -548,6 +550,8 @@ section.bottomblock{
     color: #07324a;
 }
 
+#del_filter i{display: none;}
+
 #del_filter:hover {
     background: #F28E16 !important;
     color: #fff;
@@ -788,6 +792,11 @@ section.bottomblock{
     padding: 60px 0 30px;
 }
 
+.about-compare-slider .container{
+    padding-left: 0;
+    padding-right: 0;
+}
+
 .team {
     padding-bottom: 60px;
 }
@@ -990,6 +999,13 @@ section.bottomblock{
         position: relative;
         box-shadow: unset;
     }
+
+    .container.about-box-one{max-width: none;}
+
+    .about-box-one .page-textblock {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
 }
 
 @media (max-width: 960px){
@@ -1020,6 +1036,7 @@ section.bottomblock{
     }
     .filters-options-item {
         margin: 0;
+        font-size: 1.4rem;
     }
     .filters-sort {
         padding: 0;
@@ -1027,6 +1044,22 @@ section.bottomblock{
     }
     .filter-sort-item .icon.icon-dropdown {
         padding: 10px !important;
+    }
+    .filters-options .icon.icon-dropdown {
+        padding: 10px !important;
+    }
+    #del_filter{
+        vertical-align: middle;
+        font-size: 0;
+        width: 30px;
+        height: 30px;
+        padding: 0;
+    }
+    #del_filter i{
+        display: block;
+        font-size: 1.6rem;
+        line-height: 30px;
+        text-align: center;
     }
     .header-top-cart {
         right: 4px;
@@ -1113,6 +1146,11 @@ section.bottomblock{
     .form-note{
         margin-top: -80px;
         padding-top: 80px;
+    }
+    
+    .container-inner.about-decorated-1,
+    .container.about-box-two{
+        font-size: 1.8rem;
     }
 }
 
@@ -1210,9 +1248,6 @@ section.bottomblock{
     }
     .filter-sort-item .icon.icon-dropdown {
         padding: 5px !important;
-    }
-    .filters-options .icon.icon-dropdown {
-        padding: 10px !important;
     }
 }
 

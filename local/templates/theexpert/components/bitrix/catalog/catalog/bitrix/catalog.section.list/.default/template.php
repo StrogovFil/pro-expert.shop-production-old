@@ -188,8 +188,8 @@ if (0 < $arResult["SECTIONS_COUNT"])
 				$this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], $strSectionEdit);
 				$this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete, $arSectionDeleteParams);
 ?>
-				<div class="catalog-category">
-                    <div class="catalog-category-default">
+				<div class="catalog-category js-catalog-category">
+				<div class="catalog-category-default js-catalog-category-default">
                         <div class="catalog-category-icon">
 						<?if (!empty($arSection['PICTURE'])):?>
                             <img src="<?=$arSection['PICTURE']['SRC']?>" alt="<?=$arSection['PICTURE']['ALT']?>"
@@ -205,7 +205,7 @@ if (0 < $arResult["SECTIONS_COUNT"])
                         </ul>
 						<?endif*/?>
                     </div>
-                    <div class="catalog-category-hover">
+                    <div class="catalog-category-hover js-catalog-category-hover">
                         <a href="<?=$arSection['SECTION_PAGE_URL']?>" class="catalog-category-icon">
 						<?if (!empty($arSection['PICTURE'])):?>
                             <img src="<?=$arSection['PICTURE']['SRC']?>" alt="<?=$arSection['PICTURE']['ALT']?>"

@@ -693,3 +693,28 @@ $(".header-menu-close").on("click",function(){
 	$(".header-base-logo").css({zIndex:'30'});
 	$(".header-top-cart,.header-top-icons").css({zIndex:'28'});
 });
+
+$(function() {
+	// Открыть/закрыть категории на мобильных устройствах
+	var widthWindow = $(window).width();
+
+	$(window).on('resize', function(){
+		widthWindow = $(window).width();
+	});
+
+	if($('.js-catalog-category-default').length){
+		$('.js-catalog-category-default').on('click', function(e) {
+			if(widthWindow < 768){
+				e.preventDefault();
+				$('.js-catalog-category').removeClass('active');
+				$(this).closest('.js-catalog-category').addClass('active');
+			}
+		});
+	}
+
+	$(document).on('click', function(event) {
+		if ($(event.target).closest(".js-catalog-category").length) return;
+		$('.js-catalog-category').removeClass('active');
+		event.stopPropagation();
+	});
+});
