@@ -32,7 +32,7 @@ $cnt = CIBlock::GetElementCount($arParams["IBLOCK_ID"]);
 	<a href="<?=$arResult["FOLDER"].$arResult["URL_TEMPLATES"]["rss"]?>" title="rss" target="_self"><img alt="RSS" src="<?=$templateFolder?>/images/gif-light/feed-icon-16x16.gif" border="0" align="right" /></a>
 <?endif?>
 
-<?if($arParams["USE_SEARCH"]=="Y"):?>
+<?/*if($arParams["USE_SEARCH"]=="Y"):?>
 <?=GetMessage("SEARCH_LABEL")?><?$APPLICATION->IncludeComponent(
 	"bitrix:search.form",
 	"flat",
@@ -41,7 +41,8 @@ $cnt = CIBlock::GetElementCount($arParams["IBLOCK_ID"]);
 	),
 	$component
 );?>
-<?endif?>
+<?endif*/?>
+
 <section class="page catalog">
         <div class="topblock articles-top">
 			<?if ($arIBlock["PICTURE"]):?>
@@ -91,6 +92,30 @@ $cnt = CIBlock::GetElementCount($arParams["IBLOCK_ID"]);
 );*/
 ?>
 <?endif?>
+<div class="designers-search">
+	<?if($arParams["USE_SEARCH"]=="Y"):?>
+		<?$APPLICATION->IncludeComponent(
+			"bitrix:search.title",
+			"",
+			Array(
+				"CATEGORY_0" => array("iblock_content"),
+				"CATEGORY_0_TITLE" => "",
+				"CATEGORY_0_iblock_content" => array($arParams['IBLOCK_ID']),
+				"CHECK_DATES" => "N",
+				"CONTAINER_ID" => "title-search",
+				"INPUT_ID" => "title-search-input",
+				"NUM_CATEGORIES" => "1",
+				"ORDER" => "date",
+				// "PAGE" => "#SITE_DIR#search/index.php",
+				"PAGE" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["search"],
+				"SHOW_INPUT" => "Y",
+				"SHOW_OTHERS" => "N",
+				"TOP_COUNT" => "5",
+				"USE_LANGUAGE_GUESS" => "Y"
+			)
+		);?>
+	<?endif?>
+</div>
 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"",

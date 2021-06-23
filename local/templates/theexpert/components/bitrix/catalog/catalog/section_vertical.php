@@ -361,7 +361,8 @@ elseif (!empty($arFields) && $iBlockId == 1)
                     array('HIDE_ICONS' => 'Y')
                 );
                 ?>
-                <div class="filters-sort">
+                <?$sort = $_GET['sort'];?>
+                <div class="filters-sort js-filters-sort" data-sort="<?if($sort){?>true<?}else{?>false<?}?>">
                     Сортировать:&emsp;
                     <?if($_REQUEST['order'] == ''):?>
                         <a href="?sort=name&order=DESC" class="filter-sort-ASC filter-sort-item filter-sort-active">A - Z <i class="icon icon-dropdown"></i></a>

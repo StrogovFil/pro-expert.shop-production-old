@@ -717,4 +717,17 @@ $(function() {
 		$('.js-catalog-category').removeClass('active');
 		event.stopPropagation();
 	});
+	
+	// Прокрутка страницы после сортировки
+	if($('.js-filters-sort').length){
+		if($('.js-filters-sort').data('sort') == true){
+			var posSort = $('.js-filters-sort').offset().top - $('.header').outerHeight() - 40;
+
+			$(window).on('resize', function(){
+				posSort = $('.js-filters-sort').offset().top;
+			});
+		
+			$(document).scrollTop(posSort);
+		}
+	}
 });

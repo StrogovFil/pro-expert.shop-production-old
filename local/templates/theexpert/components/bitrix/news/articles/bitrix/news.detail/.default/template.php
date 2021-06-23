@@ -23,16 +23,19 @@ else
 		<div class="page-top">
 		<?endif?>
             <div class="container">
-                <ul class="breadcrumb">
-                    <li class="breadcrumb-home"><a href="<?=$arParams["FOLDER"] . $arParams["URL_TEMPLATES_NEWS"]?>">Все статьи</a></li>
-                    <li class="breadcrumb-item active"><?=$arResult["NAME"]?></li>
-                </ul>
 				<?if($arParams["DISPLAY_NAME"]!="N" && $arResult["NAME"]):?>
 					<h1 class="h1 page-top-title"><?=$arResult["NAME"]?></h1>
 				<?endif;?>
             </div>
         </div>
+
         <div class="article">
+          <div class="container article-breadcrumb">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-home"><a href="<?=$arParams["FOLDER"] . $arParams["URL_TEMPLATES_NEWS"]?>">Все статьи</a></li>
+                    <li class="breadcrumb-item active"><?=$arResult["NAME"]?></li>
+                </ul>
+            </div>
 			<div class="container article-box">
                 <div class="page-textblock text-box">
                     <div class="container-inner article-decorated-1 article-avatar-wrap">

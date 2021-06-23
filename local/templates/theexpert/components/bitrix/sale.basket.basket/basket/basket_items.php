@@ -323,6 +323,7 @@ if ($normalCount > 0):
 							elseif ($arHeader["id"] == "QUANTITY"):
 							?>
 								<td class="cart-row-cell cart-row-count-wrap price">
+									<div class="cart-row-label">Количество:</div>
 									<div class="centered">
 										<div class="cart-row-count">
 										<?
@@ -357,9 +358,17 @@ if ($normalCount > 0):
 							elseif ($arHeader["id"] == "PRICE"):
 							?>
 								<td class="cart-row-cell cart-row-price-wrap">
+										<div class="cart-row-label">Цена:</div>
 										<div class="cart-row-price" id="current_price_<?=$arItem["ID"]?>">
 											<?//=$arItem["PRICE_FORMATED"]?>
-											<?echo "По запросу";?>
+											
+											<div class="cart-row-price__text cart-row-price__text_desktop">
+												<?echo "По запросу";?>
+											</div>
+
+											<div class="cart-row-price__text cart-row-price__text_mobile">
+												<?echo "Стоимость по запросу";?>
+											</div>
 										</div>
 										<div class="old_price" id="old_price_<?=$arItem["ID"]?>">
 											<?if (floatval($arItem["DISCOUNT_PRICE_PERCENT"]) > 0):?>
