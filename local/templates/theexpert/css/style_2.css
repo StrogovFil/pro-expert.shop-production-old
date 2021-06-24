@@ -9324,6 +9324,45 @@ body{
   margin: 2rem 0 4rem;
 }
 
+.designers-search input[type="text"]{
+  height: 4.8rem;
+  padding: 1.1rem 1.6rem;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 2;
+  color: #000;
+  background: #e6e5e5;
+  border: 1px solid transparent;
+  border-radius: 0;
+  outline: 0;
+}
+
+.designers-search input[type="text"]:focus{outline: 2px solid #0060df;}
+
+.designers-search input[type="submit"]{
+  height: 4.8rem;
+  display: inline-block;
+  vertical-align: top;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  letter-spacing: .05em;
+  white-space: nowrap;
+  padding: 1.3rem 1.8rem;
+  border: 0.2rem solid #F28E16;
+  color: white;
+  background: #F28E16;
+  cursor: pointer;
+}
+
+.designers-search input[type="submit"]:hover{
+  color: white;
+  background: #E47D00;
+  border-color: #E47D00;
+}
+
 .designers-search-page{
   padding-left: 4rem;
   padding-right: 4rem;
