@@ -225,7 +225,7 @@ if ($USER->IsAdmin()){
                                     ?>
                                     <a href="<?=CFile::GetPath($v)?>" class="carousel-auto-item" data-fancybox="carousel" data-options='{"loop" : true}'>
                                         <?/*<img src="<?=CFile::GetPath($v)?>">*/?>
-                                        <div style="background-image: url(<?=CFile::GetPath($v)?>);"></div>
+                                        <div class="carousel-auto-item__img-bg" style="background-image: url(<?=CFile::GetPath($v)?>);"></div>
                                     </a>
                                     <?
                                 }
@@ -237,7 +237,7 @@ if ($USER->IsAdmin()){
                                     ?>
                                     <a href="<?=$photo['SRC']?>" class="carousel-auto-item" data-fancybox="carousel" data-options='{"loop" : true}'>
                                         <?/*<img src="<?=$photo['SRC']?>" alt="<?=$alt?>" title="<?=$title?>">*/?>
-                                        <div style="background-image: url(<?=$photo['SRC']?>);"></div>
+                                        <div class="carousel-auto-item__img-bg" style="background-image: url(<?=$photo['SRC']?>);"></div>
                                     </a>
                                     <?
                                 }
