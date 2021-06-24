@@ -9323,3 +9323,18 @@ body{
   padding-right: 4rem;
   margin: 2rem 0 4rem;
 }
+
+.designers-search-page{
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+@media (max-width: 767px){
+  .designers-search{
+    text-align: right;
+  }
+  .designers-search input[type="text"] {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

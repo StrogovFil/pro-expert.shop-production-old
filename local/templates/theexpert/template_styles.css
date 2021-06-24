@@ -1294,7 +1294,7 @@ section.bottomblock{
 
 @media (max-width: 400px){
     .main-special .carousel .owl-prev, .carousel .owl-next {
-        top: 40%;
+        top: 35%;
     }
 }
 
