@@ -9376,4 +9376,9 @@ body{
     width: 100%;
     margin-bottom: 10px;
   }
+
+  .designers-search{
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
