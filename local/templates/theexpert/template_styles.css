@@ -19,7 +19,8 @@
 
     #galleryMain .carousel-auto-item .carousel-auto-item{position: relative;}
 
-    #galleryMain .carousel-auto-item div.carousel-auto-item__img-bg{
+    #galleryMain .carousel-auto-item div.carousel-auto-item__img-bg,
+    .carousel-auto-item .owl-carousel-def__img{
         width: 100%;
         height: 100%;
         padding: 0;
@@ -27,6 +28,8 @@
         top: 0;
         left: 0;
     }
+
+    .carousel-auto-item .owl-carousel-def__img{background-size: cover;}
 }
 
 #myImg {
