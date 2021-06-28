@@ -4917,6 +4917,10 @@ p.page-textblock-lead:last-child {
     padding-top: 4rem;
     padding-bottom: 4rem;
   }
+
+  p.page-textblock-lead:first-child{
+    font-size: 1.8rem;
+  }
 }
 .carousel {
   position: relative;
@@ -9380,5 +9384,22 @@ body{
   .designers-search-page .designers-search{
     padding-left: 0;
     padding-right: 0;
+  }
+
+  .parallax-mirror::after{display: none;}
+
+  .page-top{
+    position: relative;
+  }
+  
+  .page-top::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 }

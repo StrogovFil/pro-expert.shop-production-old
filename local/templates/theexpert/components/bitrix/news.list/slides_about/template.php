@@ -29,7 +29,8 @@ if (count($arResult["ITEMS"])):
 					if ($arPictureParams = $dbPictureParams->Fetch()):
 		?>
 					<a id="<?=$this->GetEditAreaId($arItem['ID']);?>" href="<?=$picturePath?>" class="carousel-auto-item" data-fancybox="carousel">
-						<img border="0" src="<?=$picturePath?>" alt="" title=""/>
+						<?/*<img border="0" src="<?=$picturePath?>" alt="" title=""/>*/?>
+						<div class="about-item-img" style="background-image: url(<?=$picturePath?>)"></div>
 						<span class="carousel-auto-item-mask"></span>
 					</a>
 		<?			endif;

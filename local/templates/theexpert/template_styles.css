@@ -812,6 +812,14 @@ section.bottomblock{
     padding-right: 0;
 }
 
+.about-item-img{
+    position: relative;
+    padding-bottom: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
 .team {
     padding-bottom: 60px;
 }
@@ -1225,6 +1233,19 @@ section.bottomblock{
         left: 50%;
         transform: translate(-50%, -50%);
     }
+
+    .about-item-img{
+        width: 100%;
+        height: 100%;
+        padding-bottom: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .article-avatar-wrap h5{
+        font-size: 1.8rem;
+    }
 }
 
 @media (max-width: 680px){
@@ -1328,6 +1349,16 @@ section.bottomblock{
     .main-special .carousel .owl-prev, .carousel .owl-next {
         top: 36%;
     }
+
+    #del_filter{
+        vertical-align: middle;
+        font-size: 1.4rem;
+        width: auto;
+        height: 5rem;
+        padding: 1.3rem 1.8rem;
+    }
+    
+    #del_filter i{display: none;}
 }
 
 @media (max-width: 340px){
