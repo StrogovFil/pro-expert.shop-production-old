@@ -14,6 +14,8 @@ $(document).ready(function(){
                     $('#pagination').remove();
                     targetContainer.remove();
                     fullContainer.append(elements);
+
+                    $('html, body').animate({scrollTop: $('.js-temp-last-element-box').offset().top}, 300);
                 }
             })
         }

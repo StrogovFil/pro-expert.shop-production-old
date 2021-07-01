@@ -30,7 +30,7 @@ $arParams["DISPLAY_ELEMENT_COUNT"] = 'N';
 <div id="filters_options<?= $arParams['SECTION_ID'] ?>" class="filters-options" style="display:block ">
 <?if (isset($arResult['FILTER_ITEMS']['APARTMENT']) && !empty($arResult['FILTER_ITEMS']['APARTMENT'])):?>
 	<div class="filters-options-item">
-		<a class="filters-options-item-a" href="#" data-id="apartment">
+        <a class="filters-options-item-a js-btn-sect-filter" href="#" data-id="apartment">
 			Тип помещения
 			<i class="icon icon-dropdown"></i>
 		</a>
@@ -46,7 +46,7 @@ $arParams["DISPLAY_ELEMENT_COUNT"] = 'N';
 <?endif*/ ?>
     <? if (isset($arResult['FILTER_ITEMS']['BRAND']) && !empty($arResult['FILTER_ITEMS']['BRAND'])): ?>
         <div class="filters-options-item">
-            <a class="filters-options-item-a" href="#" data-id="brand">
+            <a class="filters-options-item-a js-btn-sect-filter" href="#" data-id="brand">
                 Бренд
                 <i class="icon icon-dropdown"></i>
             </a>
@@ -57,7 +57,7 @@ $arParams["DISPLAY_ELEMENT_COUNT"] = 'N';
     <?}else{?>
         <? if (isset($arResult['FILTER_ITEMS']['COUNTRIES']) && !empty($arResult['FILTER_ITEMS']['COUNTRIES'])): ?>
             <div class="filters-options-item">
-                <a class="filters-options-item-a" href="#" data-id="countries">
+                <a class="filters-options-item-a js-btn-sect-filter" href="#" data-id="countries">
                     Страна
                     <i class="icon icon-dropdown"></i>
                 </a>
@@ -110,38 +110,38 @@ $arParams["DISPLAY_ELEMENT_COUNT"] = 'N';
                        value="<? echo $arItem["HTML_VALUE"] ?>"/>
             <? endforeach; ?>
             <?if (isset($arResult['FILTER_ITEMS']['APARTMENT']) && !empty($arResult['FILTER_ITEMS']['APARTMENT'])):?>
-			<div class="filter-options-popup-apartment">
+			<div class="filter-options-popup-apartment js-filter-options-popup" data-option="apartment">
 				<?printFilterItemByHTML($arParams['SECTION_ID'], $arResult['FILTER_ITEMS']['APARTMENT'])?>
 			</div>
 			<?endif?>
 			<?if (isset($arResult['FILTER_ITEMS']['SIZE']) && !empty($arResult['FILTER_ITEMS']['SIZE'])):?>
-			<div class="filter-options-popup-size">
+			<div class="filter-options-popup-size js-filter-options-popup"  data-option="size">
 				<?foreach($arResult['FILTER_ITEMS']['SIZE'] as $arFilterItemSize)
 					printFilterItemByHTML($arParams['SECTION_ID'], $arFilterItemSize);?>
 			</div>
 			<?endif?>
             <? if (isset($arResult['FILTER_ITEMS']['BRAND']) && !empty($arResult['FILTER_ITEMS']['BRAND'])): ?>
-                <div class="filter-options-popup-brand">
+                <div class="filter-options-popup-brand js-filter-options-popup" data-option="brand">
                     <? printFilterItemByHTML($arParams['SECTION_ID'], $arResult['FILTER_ITEMS']['BRAND']) ?>
                 </div>
             <? endif ?>
             <? if (isset($arResult['FILTER_ITEMS']['COUNTRIES']) && !empty($arResult['FILTER_ITEMS']['COUNTRIES'])): ?>
-                <div class="filter-options-popup-countries">
+                <div class="filter-options-popup-countries js-filter-options-popup" data-option="countries">
                     <? printFilterItemByHTML($arParams['SECTION_ID'], $arResult['FILTER_ITEMS']['COUNTRIES']) ?>
                 </div>
             <? endif ?>
             <? if (isset($arResult['FILTER_ITEMS']['STYLE']) && !empty($arResult['FILTER_ITEMS']['STYLE'])): ?>
-                <div class="filter-options-popup-style">
+                <div class="filter-options-popup-style js-filter-options-popup"  data-option="style">
                     <? printFilterItemByHTML($arParams['SECTION_ID'], $arResult['FILTER_ITEMS']['STYLE']) ?>
                 </div>
             <? endif ?>
             <? if (isset($arResult['FILTER_ITEMS']['RAZDEL_MEBEL']) && !empty($arResult['FILTER_ITEMS']['RAZDEL_MEBEL'])): ?>
-                <div class="filter-options-popup-razdel">
+                <div class="filter-options-popup-razdel js-filter-options-popup"  data-option="razdel">
                     <? printFilterItemByHTML($arParams['SECTION_ID'], $arResult['FILTER_ITEMS']['RAZDEL_MEBEL']) ?>
                 </div>
             <? endif ?>
             <? if ($arParams['FILTER_SECTION']): ?>
-                <div class="filter-options-popup-sections">
+                <div class="filter-options-popup-sections js-filter-options-popup"  data-option="sections">
                     <?= showSection($arResult['FILTER_SECTIONS']) ?>
                 </div>
             <? endif ?>
@@ -160,12 +160,19 @@ $arParams["DISPLAY_ELEMENT_COUNT"] = 'N';
                         value="<?= GetMessage("CT_BCSF_SET_FILTER") ?>"
                 />
                 <input
+                        class="btn btn-link js-filter-clear-sect"
+                        type="submit"
+                        id="set_filter"
+                        name="set_filter"
+                        value="<?= GetMessage("CT_BCSF_DEL_FILTER") ?>"
+                />
+               <?/* <input
                         class="btn btn-link"
                         type="submit"
                         id="del_filter"
                         name="del_filter"
                         value="<?= GetMessage("CT_BCSF_DEL_FILTER") ?>"
-                />
+                />*/?>
                 <div class="filter-popup-result" id="modef" style="display: none!important;">
                     <? echo GetMessage("CT_BCSF_FILTER_COUNT", array("#ELEMENT_COUNT#" => '<span id="modef_num">' . intval($arResult["ELEMENT_COUNT"]) . '</span>')); ?>
                     <span class="arrow"></span>

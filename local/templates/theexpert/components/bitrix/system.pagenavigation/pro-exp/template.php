@@ -197,7 +197,7 @@ $strSelectPath = $arResult['sUrlPathParams'].($arResult["bSavePage"] ? '&PAGEN_'
                 <?endif?>
                 <?if ($arResult["bShowAll"]) {?>
                     <div class="show-all">
-                        <a id="paginationShowAll" data-url="<?=$arResult['sUrlPathParams']; ?>SHOWALL_<?=$arResult["NavNum"]?>=1" class="btn">Показать все</a> <?/* href="<?=$arResult['sUrlPathParams']; ?>SHOWALL_<?=$arResult["NavNum"]?>=1" */?>
+                        <a id="paginationShowAll" data-url="<?=$arResult['sUrlPathParams']; ?>SHOWALL_<?=$arResult["NavNum"]?>=1&last_elem=<?=$lastPageElem?>" class="btn">Показать все</a> <?/* href="<?=$arResult['sUrlPathParams']; ?>SHOWALL_<?=$arResult["NavNum"]?>=1" */?>
                     </div>
                 <?}?>
 			</div>

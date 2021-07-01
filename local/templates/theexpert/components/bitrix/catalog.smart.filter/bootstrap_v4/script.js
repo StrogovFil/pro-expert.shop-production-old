@@ -263,6 +263,14 @@ JCSmartFilter.prototype.updateItem = function (PID, arItem)
 						if (label)
 							label.innerHTML = value.ELEMENT_COUNT;
 					}
+
+					if(control.checked == true && control.disabled == true){
+						BX.adjust(control, {props: {disabled: false}});
+						if (label)
+							BX.removeClass(label, 'disabled');
+						else
+							BX.removeClass(control.parentNode, 'disabled');
+					}
 				}
 			}
 		}
@@ -1003,5 +1011,13 @@ $(document).ready(function() {
 			$this.find('input').prop('checked', $(this).prop('checked'));
 			$this = $this.next();
 		}
-	})
+	});
+
+	$(document).on('click', '.js-btn-sect-filter', function() {
+		$('.js-filter-clear-sect').data('sect', $(this).data('id'));
+	});
+
+	$(document).on('click', '.js-filter-clear-sect', function(e) {
+		$('.js-filter-options-popup[data-option='+$(this).data('sect')+']').find("input:checkbox").removeAttr("checked");
+	});
 })

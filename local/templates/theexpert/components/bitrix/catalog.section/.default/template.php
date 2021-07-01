@@ -190,6 +190,8 @@ if ($arParams['HIDE_SECTION_DESCRIPTION'] !== 'Y')
 		?>
 		<!-- items-container -->
 		<?
+		$numElem = 0;
+		$tempLastElem = $_GET['last_elem'];
 		foreach ($arResult['ITEM_ROWS'] as $rowData)
 		{
 			$rowItems = array_splice($arResult['ITEMS'], 0, $rowData['COUNT']);
@@ -284,7 +286,8 @@ if ($arParams['HIDE_SECTION_DESCRIPTION'] !== 'Y')
 								foreach ($rowItems as $item)
 								{
 									?>
-									<div class="catalog-items-col<?if($item['LAST_ELEMENT'] == "Y"):?> last-element-box<?endif?>">
+									<?$numElem++;?>
+									<div class="catalog-items-col<?if($item['LAST_ELEMENT'] == "Y"):?> last-element-box<?endif?><?if($numElem == $tempLastElem){?> js-temp-last-element-box<?}?>" data-id="<?=$numElem?>">
 												<?
 												$APPLICATION->IncludeComponent(
 													'bitrix:catalog.item',
