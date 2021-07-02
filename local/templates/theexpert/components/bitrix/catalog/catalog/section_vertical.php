@@ -361,18 +361,31 @@ elseif (!empty($arFields) && $iBlockId == 1)
                     array('HIDE_ICONS' => 'Y')
                 );
                 ?>
-                <?$sort = $_GET['sort'];?>
-                <div class="filters-sort js-filters-sort" data-sort="<?if($sort){?>true<?}else{?>false<?}?>">
-                    Сортировать:&emsp;
-                    <?if($_REQUEST['order'] == ''):?>
-                        <a href="?sort=name&order=DESC" class="filter-sort-ASC filter-sort-item filter-sort-active">A - Z <i class="icon icon-dropdown"></i></a>
-                    <?elseif($strOrder == 'ASC'):?>
-                        <a href="?sort=name&order=ASC" class="filter-sort-DESC filter-sort-item filter-sort-active">Z - A <i class="icon icon-dropdown"></i></a>
-                    <?elseif($strOrder == 'DESC'):?>
-                        <a href="?sort=name&order=DESC" class="filter-sort-ASC filter-sort-item filter-sort-active">A - Z <i class="icon icon-dropdown"></i></a>
-                    <?endif?>
-                    <?/*<a href="?sort=id&order=<?=$strOrder?>" class="filter-sort-<?=$strOrder?> filter-sort-item <?if($_REQUEST['sort'] == 'id'){?>filter-sort-active<?}?>">по новизне <i class="icon icon-dropdown"></i></a>*/?>
-                    <?/*<a href="?sort=price&order=<?=$strOrder?>" class="filter-sort-<?=$strOrder?> filter-sort-item <?if($_REQUEST['sort'] == 'price'){?>filter-sort-active<?}?>">по цене <i class="icon icon-dropdown"></i></a>*/?>
+
+                <div class="filters-sort-wrap">
+                <?$page = $APPLICATION->GetCurUri();?>
+                    <div class="show-block-wrap">
+                        <div class="show-block-title">Показать по:</div>
+                        <div class="show-block-war">
+                            <a class="pagen-size<?if(strstr($page, 'SIZEN_1=30') !== false || strstr($page, 'SIZEN_1') === false):?> is-active<?endif?>" href="<?=$APPLICATION->GetCurPageParam("SIZEN_1=30", array("SIZEN_1"));?>">30</a>  /
+                            <a class="pagen-size<?if(strstr($page, 'SIZEN_1=50') !== false):?> is-active<?endif?> js-cat-page-count" href="<?=$APPLICATION->GetCurPageParam("SIZEN_1=50", array("SIZEN_1"));?>">50</a> /
+                            <a class="pagen-size<?if(strstr($page, 'SIZEN_1=100') !== false):?> is-active<?endif?> js-cat-page-count" href="<?=$APPLICATION->GetCurPageParam("SIZEN_1=100", array("SIZEN_1"));?>">100</a>
+                        </div>
+                    </div>
+
+                    <?$sort = $_GET['sort'];?>
+                    <div class="filters-sort js-filters-sort" data-sort="<?if($sort){?>true<?}else{?>false<?}?>">
+                        Сортировать:&emsp;
+                        <?if($_REQUEST['order'] == ''):?>
+                            <a href="?sort=name&order=DESC" class="filter-sort-ASC filter-sort-item filter-sort-active">A - Z <i class="icon icon-dropdown"></i></a>
+                        <?elseif($strOrder == 'ASC'):?>
+                            <a href="?sort=name&order=ASC" class="filter-sort-DESC filter-sort-item filter-sort-active">Z - A <i class="icon icon-dropdown"></i></a>
+                        <?elseif($strOrder == 'DESC'):?>
+                            <a href="?sort=name&order=DESC" class="filter-sort-ASC filter-sort-item filter-sort-active">A - Z <i class="icon icon-dropdown"></i></a>
+                        <?endif?>
+                        <?/*<a href="?sort=id&order=<?=$strOrder?>" class="filter-sort-<?=$strOrder?> filter-sort-item <?if($_REQUEST['sort'] == 'id'){?>filter-sort-active<?}?>">по новизне <i class="icon icon-dropdown"></i></a>*/?>
+                        <?/*<a href="?sort=price&order=<?=$strOrder?>" class="filter-sort-<?=$strOrder?> filter-sort-item <?if($_REQUEST['sort'] == 'price'){?>filter-sort-active<?}?>">по цене <i class="icon icon-dropdown"></i></a>*/?>
+                    </div>
                 </div>
             </div>
         <? endif ?>

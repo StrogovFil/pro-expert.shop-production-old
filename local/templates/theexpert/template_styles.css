@@ -145,6 +145,10 @@ body .topblock .topblock-title{
     margin-top:1em;
 }
 
+.topblock-text{
+    font-size: 2rem;
+}
+
 body .footer{
     height:auto;
 }
@@ -159,6 +163,40 @@ body .footer{
 
 .catalog-item .catalog-item-pic img {
     object-fit: cover;
+}
+
+.catalog-container-page .bx_pagination_bottom .show-block-wrap{display: none;}
+
+.filters-sort-wrap{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-left: 30px;
+}
+
+.filters-sort-wrap .show-block-wrap{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.filters-sort-wrap .show-block-war{
+    margin: 0;
+}
+
+.filters-sort-wrap .show-block-title{
+    margin-right: 10px;
 }
 
 .product {
@@ -478,11 +516,24 @@ section.bottomblock{
 }
 
 .article .carousel-auto-wrap.about-carousel {
-    max-height: 300px;
+    max-height: 30rem;
+}
+
+.article .carousel-auto-wrap.about-carousel .carousel-auto{
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+.article .carousel-auto-wrap.about-carousel .carousel-auto-item{
+    padding-bottom: 30rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 0 5px;
 }
 
 .article .carousel-auto-wrap .owl-nav {
-    max-height: 300px;
+    max-height: 30rem;
 }
 
 .article-avatar-wrap h5 {
@@ -1063,6 +1114,20 @@ section.bottomblock{
     .form-header-input .search_input_close {
         right: 18%;
     }
+    .filters.catalog-filters{
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    .filters-sort-wrap{
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    .filters-options{
+        width: 100%;
+        float: none;
+    }
 }
 
 @media (max-width: 850px){
@@ -1219,6 +1284,10 @@ section.bottomblock{
         max-height: none;
     }
 
+    .article .carousel-auto-wrap.about-carousel .carousel-auto-item{
+        padding-bottom: 100%;
+    }
+
     .carousel-auto-item{
         position: relative;
         padding-bottom: 100%;
@@ -1244,6 +1313,9 @@ section.bottomblock{
     }
 
     .article-avatar-wrap h5{
+        font-size: 1.8rem;
+    }
+    .topblock-text{
         font-size: 1.8rem;
     }
 }

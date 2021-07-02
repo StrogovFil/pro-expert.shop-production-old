@@ -126,10 +126,10 @@
 			$owlAuto.owlCarousel({
 				responsive: {
 					0: {
-						margin: 6
+						margin: 3
 					},
 					768: {
-						margin: 10
+						margin: 5
 					}
 				},
 				autoWidth: false,
@@ -728,6 +728,19 @@ $(function() {
 			});
 		
 			$(document).scrollTop(posSort);
+		}
+	}
+
+	// Прокрутка страницы после показать по
+	if($('.js-cat-page-count').length){
+		if($('.js-cat-page-count').hasClass('is-active')){
+			var posPageCount = $('.js-cat-page-count').offset().top - $('.header').outerHeight() - 80;
+
+			$(window).on('resize', function(){
+				posPageCount = $('.js-cat-page-count').offset().top - $('.header').outerHeight() - 80;
+			});
+		
+			$(document).scrollTop(posPageCount);
 		}
 	}
 });

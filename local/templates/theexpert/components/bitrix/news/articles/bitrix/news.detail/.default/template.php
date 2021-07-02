@@ -68,8 +68,8 @@ else
 						<?foreach($arResult["PROPERTIES"]['MORE_PHOTO']['VALUE'] as $imageId):
 						$pathPicture = CFile::GetPath($imageId);
 						?>
-                        <a href="<?=$pathPicture?>" class="carousel-auto-item" data-fancybox="carousel">
-                            <img src="<?=$pathPicture?>" alt="">
+                        <a href="<?=$pathPicture?>" class="carousel-auto-item" data-fancybox="carousel" style="background-image: url(<?=$pathPicture?>)">
+                            <?/*<img src="<?=$pathPicture?>" alt="">*/?>
                             <span class="carousel-auto-item-mask"></span>
                         </a>
 						<?endforeach?>
