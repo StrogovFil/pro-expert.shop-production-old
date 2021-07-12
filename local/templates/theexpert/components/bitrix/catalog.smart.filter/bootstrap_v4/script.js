@@ -56,7 +56,7 @@ var JCFilterOptions = function(id)
 	var filterItems = container.querySelectorAll('.filters-options-item-a');
 	var popup = container.querySelector('#filter_options_popup');
 	var popupClose = container.querySelector('#filter_options_popup_close');
-	var filterClassList = ['apartment', 'brand', 'color', 'size', 'style','countries','razdel', 'sections'];
+	var filterClassList = ['apartment', 'functional', 'brand', 'color', 'size', 'style','countries','razdel', 'sections'];
 	
 	if (filterItems.length)
 	{

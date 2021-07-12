@@ -1,32 +1,32 @@
 <?php
 // Перезапись свойств из PROPERTY_FUNCTIONAL в PROPERTY_APARTMENT
-AddEventHandler("iblock", "OnAfterIBlockElementUpdate", "OnAfterIBlockEl");
-AddEventHandler("iblock", "OnAfterIBlockElementAdd", "OnAfterIBlockEl");
-function OnAfterIBlockEl(&$arFields) {
-    if (CModule::IncludeModule("iblock")):
-        $getProperty = CIBlockElement::GetList (Array("ID" => "ASC"), Array("IBLOCK_ID" => $arFields['IBLOCK_ID'], "ID" => $arFields['ID']), false, false, Array('PROPERTY_FUNCTIONAL'));
-        while($ar_fields = $getProperty->GetNext()) {
-            if (\Bitrix\Main\Loader::includeModule("highloadblock")) { //Проверяем подключение модуля
+// AddEventHandler("iblock", "OnAfterIBlockElementUpdate", "OnAfterIBlockEl");
+// AddEventHandler("iblock", "OnAfterIBlockElementAdd", "OnAfterIBlockEl");
+// function OnAfterIBlockEl(&$arFields) {
+//     if (CModule::IncludeModule("iblock")):
+//         $getProperty = CIBlockElement::GetList (Array("ID" => "ASC"), Array("IBLOCK_ID" => $arFields['IBLOCK_ID'], "ID" => $arFields['ID']), false, false, Array('PROPERTY_FUNCTIONAL'));
+//         while($ar_fields = $getProperty->GetNext()) {
+//             if (\Bitrix\Main\Loader::includeModule("highloadblock")) { //Проверяем подключение модуля
 
-                $hblockId = 13;
+//                 $hblockId = 13;
 
-                $arHLBlock = Bitrix\Highloadblock\HighloadBlockTable::getById($hblockId)->fetch();
-                $obEntity = Bitrix\Highloadblock\HighloadBlockTable::compileEntity($arHLBlock);
-                $strEntityDataClass = $obEntity->getDataClass();
+//                 $arHLBlock = Bitrix\Highloadblock\HighloadBlockTable::getById($hblockId)->fetch();
+//                 $obEntity = Bitrix\Highloadblock\HighloadBlockTable::compileEntity($arHLBlock);
+//                 $strEntityDataClass = $obEntity->getDataClass();
 
-                $rsData = $strEntityDataClass::getList(array('select' => array('ID','UF_NAME','UF_XML_ID'), 'filter' => array("UF_XML_ID" => $ar_fields['PROPERTY_FUNCTIONAL_VALUE']), 'order' => array()));
-                while ($arItem = $rsData->Fetch()) {
-                    $setProperty[] = $arItem['UF_NAME'];
-                }
-            }
-        }
-    endif;
-    CIBlockElement::SetPropertyValuesEx (
-        $arFields['ID'],$arFields['IBLOCK_ID'],array (
-            'APARTMENT' => $setProperty
-        )
-    );
-}
+//                 $rsData = $strEntityDataClass::getList(array('select' => array('ID','UF_NAME','UF_XML_ID'), 'filter' => array("UF_XML_ID" => $ar_fields['PROPERTY_FUNCTIONAL_VALUE']), 'order' => array()));
+//                 while ($arItem = $rsData->Fetch()) {
+//                     $setProperty[] = $arItem['UF_NAME'];
+//                 }
+//             }
+//         }
+//     endif;
+//     CIBlockElement::SetPropertyValuesEx (
+//         $arFields['ID'],$arFields['IBLOCK_ID'],array (
+//             'APARTMENT' => $setProperty
+//         )
+//     );
+// }
 
 function printFilterItemByHTML($filterId = '', $arItem = array())
 {

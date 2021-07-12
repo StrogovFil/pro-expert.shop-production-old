@@ -28,10 +28,18 @@ $arParams["DISPLAY_ELEMENT_COUNT"] = 'N';
 ?>
 
 <div id="filters_options<?= $arParams['SECTION_ID'] ?>" class="filters-options" style="display:block ">
-<?if (isset($arResult['FILTER_ITEMS']['APARTMENT']) && !empty($arResult['FILTER_ITEMS']['APARTMENT'])):?>
+<?/*if (isset($arResult['FILTER_ITEMS']['APARTMENT']) && !empty($arResult['FILTER_ITEMS']['APARTMENT'])):?>
 	<div class="filters-options-item">
         <a class="filters-options-item-a js-btn-sect-filter" href="#" data-id="apartment">
 			Тип помещения
+			<i class="icon icon-dropdown"></i>
+		</a>
+	</div>
+<?endif*/?>
+<?if (isset($arResult['FILTER_ITEMS']['FUNCTIONAL']) && !empty($arResult['FILTER_ITEMS']['FUNCTIONAL'])):?>
+	<div class="filters-options-item">
+		<a class="filters-options-item-a js-btn-sect-filter" href="#" data-id="functional">
+            Тип помещения
 			<i class="icon icon-dropdown"></i>
 		</a>
 	</div>
@@ -109,9 +117,14 @@ $arParams["DISPLAY_ELEMENT_COUNT"] = 'N';
                 <input type="hidden" name="<? echo $arItem["CONTROL_NAME"] ?>" id="<? echo $arItem["CONTROL_ID"] ?>"
                        value="<? echo $arItem["HTML_VALUE"] ?>"/>
             <? endforeach; ?>
-            <?if (isset($arResult['FILTER_ITEMS']['APARTMENT']) && !empty($arResult['FILTER_ITEMS']['APARTMENT'])):?>
+            <?/*if (isset($arResult['FILTER_ITEMS']['APARTMENT']) && !empty($arResult['FILTER_ITEMS']['APARTMENT'])):?>
 			<div class="filter-options-popup-apartment js-filter-options-popup" data-option="apartment">
 				<?printFilterItemByHTML($arParams['SECTION_ID'], $arResult['FILTER_ITEMS']['APARTMENT'])?>
+			</div>
+			<?endif*/?>
+             <?if (isset($arResult['FILTER_ITEMS']['FUNCTIONAL']) && !empty($arResult['FILTER_ITEMS']['FUNCTIONAL'])):?>
+			<div class="filter-options-popup-functional js-filter-options-popup" data-option="functional">
+				<?printFilterItemByHTML($arParams['SECTION_ID'], $arResult['FILTER_ITEMS']['FUNCTIONAL'])?>
 			</div>
 			<?endif?>
 			<?if (isset($arResult['FILTER_ITEMS']['SIZE']) && !empty($arResult['FILTER_ITEMS']['SIZE'])):?>

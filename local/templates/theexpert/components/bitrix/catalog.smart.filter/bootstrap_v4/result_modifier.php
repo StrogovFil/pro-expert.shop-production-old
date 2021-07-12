@@ -73,6 +73,9 @@ foreach($arResult["ITEMS"] as $arFilterItem)
 		 case 'APARTMENT':
 		 	$arResult['FILTER_ITEMS']['APARTMENT'] = $arFilterItem;
 		 	break;
+		case 'FUNCTIONAL':
+				$arResult['FILTER_ITEMS']['FUNCTIONAL'] = $arFilterItem;
+				break;
 	}
 }
 
