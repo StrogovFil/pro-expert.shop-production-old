@@ -88,14 +88,14 @@ $arParams["DISPLAY_ELEMENT_COUNT"] = 'N';
             </a>
         </div>
     <? endif ?>
-    <? if ($arParams['FILTER_SECTION']): ?>
+    <?/* if ($arParams['FILTER_SECTION']): ?>
         <div class="filters-options-item">
             <a class="filters-options-item-a" href="#" data-id="sections">
                 Категория
                 <i class="icon icon-dropdown"></i>
             </a>
         </div>
-    <? endif ?>
+    <? endif */?>
     <? /*if (isset($arResult['FILTER_ITEMS']['COLOR']) && !empty($arResult['FILTER_ITEMS']['COLOR'])):?>
 	<div class="filters-options-item">
 		<a class="filters-options-item-a" href="#" data-id="color">
