@@ -198,9 +198,10 @@
 					items: 2
 				}
 			},
-			rewind: true,
+			// rewind: true,
 			dots: false,
 			nav: true,
+			loop:false,
 			navText: ['<i class="icon icon-triangle-left"></i>', '<i class="icon icon-triangle-right"></i>'],
 			onInitialized: function(e) {
 				var items_length = this.items().length;

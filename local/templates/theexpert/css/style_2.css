@@ -3315,6 +3315,7 @@ textarea.form-input
   height: auto;
   resize: none;
 }
+textarea.form-input{height: 10rem;}
 .form-label {
   display: block;
   width: 100%;
@@ -5822,10 +5823,10 @@ a.interesting-row-pic:hover img {
   }
 }
 @media (max-width: 479px) {
-  .topblock-header-graphic {
+  /* .topblock-header-graphic {
     padding-left: 8rem;
     margin-left: -4rem;
-  }
+  } */
   .topblock-header-icon {
     width: 6rem;
     height: 6rem;
@@ -7471,12 +7472,15 @@ a.interesting-row-pic:hover img {
 
   .catalog-category.active .catalog-category-default {
     opacity: 0;
+    display: none;
   }
 
   .catalog-category.active .catalog-category-hover {
     opacity: 1;
     visibility: visible;
     z-index: 2;
+    position: static;
+    margin-bottom: 20px;
   }
 
   .catalog .container{margin-bottom: 40px;}

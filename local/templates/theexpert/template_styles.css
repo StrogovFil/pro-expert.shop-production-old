@@ -795,13 +795,13 @@ section.bottomblock{
     z-index: -1;
 }
 
-#col_QUANTITY {
+/* #col_QUANTITY {
     display: none;
-}
+} */
 
-.cart-row-count-wrap.price {
+/* .cart-row-count-wrap.price {
     display: none;
-}
+} */
 
 .article .owl-carousel .owl-item img {
     min-width: 334px;
@@ -1318,6 +1318,7 @@ section.bottomblock{
     .topblock-text{
         font-size: 1.8rem;
     }
+    .filters-sort-wrap .show-block-wrap{margin-right: 15px;}
 }
 
 @media (max-width: 680px){

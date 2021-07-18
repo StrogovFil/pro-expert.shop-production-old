@@ -1,5 +1,6 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();?>
 <?if(count($arResult["ITEMS"])>0):?>
+<?shuffle($arResult["ITEMS"]);?>
 <div class="container">
     <div class="interesting-carousel carousel carousel-dark owl-carousel js-carousel-two">
         <?foreach($arResult["ITEMS"] as $arItem):?>

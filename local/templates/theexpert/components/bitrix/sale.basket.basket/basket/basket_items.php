@@ -530,6 +530,12 @@ if ($normalCount > 0):
 							<span class="form-label-title">E-mail <span class="form-label-note">Введите e-mail</span></span>
 						</label>
 					</div>
+					<div class="form-order-row">
+						<label class="form-label form-label-shorttitle">
+							<textarea class="form-input form-input-comment"></textarea>
+							<span class="form-label-title">Комментарий <span class="form-label-note">Введите комментарий</span></span>
+						</label>
+					</div>
 					<div class="form-order-row form-order-row-btn" style="text-align: center;">
 						<button type="submit" form="form-order" class="btn" id="btn-order">Отправить запрос</button>
 					</div>
