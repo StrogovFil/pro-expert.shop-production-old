@@ -41,6 +41,11 @@ switch($arResult['IBLOCK_CODE'])
 {
 	case 'place':
 		$arrFilter['PROPERTY_APARTMENT'] = $arResult['ID'];
+		if($_GET['sectionId'])
+        {
+            $arrFilter['SECTION_ID'] = $_GET['sectionId'];
+            $arrFilter['INCLUDE_SUBSECTIONS'] = 'Y';
+        }
 		$propName = 'PROPERTY_APARTMENT';
 		$arNotInclude[] = 'APARTMENT';
 		break;

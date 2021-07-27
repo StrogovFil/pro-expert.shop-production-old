@@ -82,7 +82,7 @@ foreach($arResult["ITEMS"] as $arFilterItem)
 if($arParams['FILTER_SECTION']) {
     global $arrFilter;
     $arSections = [];
-    $res = CIBlockElement::GetList([], ['IBLOCK_ID' => $arParams['ID'], 'PROPERTY_27' => $arrFilter['PROPERTY_27']], false, false, ['IBLOCK_SECTION_ID']);
+    $res = CIBlockElement::GetList([], ['IBLOCK_ID' => $arParams['IBLOCK_ID'], 'PROPERTY_27' => $arrFilter['PROPERTY_27']], false, false, ['IBLOCK_SECTION_ID']);
     while ($data = $res->Fetch()) {
         $arSections[] = $data['IBLOCK_SECTION_ID'];
     }

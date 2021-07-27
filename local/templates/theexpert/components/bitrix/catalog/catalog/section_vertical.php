@@ -31,6 +31,7 @@ if ($strSectionCodePath)
         $strSectionCode = str_replace('place-', '', $strSectionCodePath);
         $iBlockId = 2;
         $filterType = false;
+        $filterSection = true;
     }
     elseif (strpos($strSectionCodePath, 'brand-') !== FALSE)
     {
