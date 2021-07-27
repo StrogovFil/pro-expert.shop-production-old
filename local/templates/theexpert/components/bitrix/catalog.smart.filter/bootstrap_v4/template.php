@@ -36,7 +36,7 @@ $arParams["DISPLAY_ELEMENT_COUNT"] = 'N';
 		</a>
 	</div>
 <?endif*/?>
-<?if (isset($arResult['FILTER_ITEMS']['FUNCTIONAL']) && !empty($arResult['FILTER_ITEMS']['FUNCTIONAL'])):?>
+<?if (isset($arResult['FILTER_ITEMS']['FUNCTIONAL']) && !empty($arResult['FILTER_ITEMS']['FUNCTIONAL']) && $arParams['FILTER_TYPE']==true):?>
 	<div class="filters-options-item">
 		<a class="filters-options-item-a js-btn-sect-filter" href="#" data-id="functional">
             Тип помещения

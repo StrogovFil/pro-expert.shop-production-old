@@ -165,6 +165,7 @@ else
 						"INSTANT_RELOAD" => $arParams['CATALOG_PARAMS']["INSTANT_RELOAD"],
 						'NOT_INCLUDE' => $arNotInclude,
                         'FILTER_SECTION' => true,
+						'FILTER_TYPE' => $arParams['FILTER_TYPE'],
 					),
 					$component,
 					array('HIDE_ICONS' => 'Y')

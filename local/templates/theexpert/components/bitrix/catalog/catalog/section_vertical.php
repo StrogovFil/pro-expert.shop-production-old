@@ -23,12 +23,14 @@ else
     $strSectionCodePath = '';
 
 $filterSection = false;
+$filterType = true;
 if ($strSectionCodePath)
 {
     if (strpos($strSectionCodePath, 'place-') !== FALSE)
     {
         $strSectionCode = str_replace('place-', '', $strSectionCodePath);
         $iBlockId = 2;
+        $filterType = false;
     }
     elseif (strpos($strSectionCodePath, 'brand-') !== FALSE)
     {
@@ -163,6 +165,7 @@ else
             "USE_SHARE" => "N", // Отображать панель соц. закладок
             "CATALOG_PARAMS" => $arParams,
             "MESSAGE_404" => $arParams["~MESSAGE_404"],
+            'FILTER_TYPE' => $filterType,
         //"SET_STATUS_404" => $arParams["SET_STATUS_404"],
         //"SHOW_404" => $arParams["SHOW_404"],
         //"FILE_404" => $arParams["FILE_404"]
@@ -356,6 +359,7 @@ elseif (!empty($arFields) && $iBlockId == 1)
                         "INSTANT_RELOAD" => $arParams["INSTANT_RELOAD"],
                         'DISPLAY_ELEMENT_COUNT' => 'N',
                         'FILTER_SECTION' => $filterSection,
+                        'FILTER_TYPE' => $filterType,
                     ),
                     $component,
                     array('HIDE_ICONS' => 'Y')
