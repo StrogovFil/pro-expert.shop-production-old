@@ -139,7 +139,7 @@ else
 				</div>
 			</div>
 		</div>
-		<div class="catalog-items-bordered container">
+		<div class="catalog-items-bordered container catalog-container-page">
 			<? if ($arParams['CATALOG_PARAMS']['USE_FILTER'] == 'Y'): ?>
 			<div class="filters catalog-filters">
 				<?$APPLICATION->IncludeComponent(
