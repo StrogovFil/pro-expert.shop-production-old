@@ -98,7 +98,9 @@ if (0 < $arResult["SECTIONS_COUNT"])
 				<h2 class="bx_catalog_line_title"><a href="<? echo $arSection['SECTION_PAGE_URL']; ?>"><? echo $arSection['NAME']; ?></a><?
 				if ($arParams["COUNT_ELEMENTS"])
 				{
-					?> <span>(<? echo $arSection['ELEMENT_CNT']; ?>)</span><?
+					?>
+                    <?/*<span>(<? echo $arSection['ELEMENT_CNT']; ?>)</span>*/?>
+				<?
 				}
 				?></h2><?
 				if ('' != $arSection['DESCRIPTION'])
@@ -157,12 +159,14 @@ if (0 < $arResult["SECTIONS_COUNT"])
 					> </a><?
 				if ('Y' != $arParams['HIDE_SECTION_NAME'])
 				{
-					?><h2 class="bx_catalog_tile_title"><a style="color:#F28E16;" href="<? echo $arSection['SECTION_PAGE_URL']; ?>"><? echo $arSection['NAME']; ?></a><?
+					?><div class="bx_catalog_tile_title"><a style="color:#F28E16;" href="<? echo $arSection['SECTION_PAGE_URL']; ?>"><? echo $arSection['NAME']; ?></a><?
 					if ($arParams["COUNT_ELEMENTS"])
 					{
-						?> <span>(<? echo $arSection['ELEMENT_CNT']; ?>)</span><?
+						?>
+                        <?/*<span>(<? echo $arSection['ELEMENT_CNT']; ?>)</span>*/?>
+                        <?
 					}
-				?></h2>
+				?></div>
                     <div class="catalog-item-description"><span><?= $arSection["DESCRIPTION"] ? substr($arSection["DESCRIPTION"], 0, 100). " ..." : ""?></span></div>
                     <?
 				}
@@ -202,7 +206,9 @@ if (0 < $arResult["SECTIONS_COUNT"])
 				?><li id="<?=$this->GetEditAreaId($arSection['ID']);?>"><h2 class="bx_sitemap_li_title"><a href="<? echo $arSection["SECTION_PAGE_URL"]; ?>"><? echo $arSection["NAME"];?><?
 				if ($arParams["COUNT_ELEMENTS"])
 				{
-					?> <span>(<? echo $arSection["ELEMENT_CNT"]; ?>)</span><?
+					?>
+                    <?/*<span>(<? echo $arSection["ELEMENT_CNT"]; ?>)</span>*/?>
+                <?
 				}
 				?></a></h2><?
 

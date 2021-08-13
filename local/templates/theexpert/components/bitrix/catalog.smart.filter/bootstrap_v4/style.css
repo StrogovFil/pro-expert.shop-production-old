@@ -41,7 +41,8 @@
 .filter-options-popup-countries,
 .filter-options-popup-razdel,
 .filter-options-popup-color,
-.filter-options-popup-sections
+.filter-options-popup-sections,
+.filter-options-popup-functional
 {display: none}
 
 .filter-options-popup.apartment,
@@ -52,6 +53,7 @@
 .filter-options-popup.sections,
 .filter-options-popup.razdel,
 .filter-options-popup.color,
+.filter-options-popup.functional,
 .filter-options-popup.apartment .filter-options-popup-apartment,
 .filter-options-popup.style .filter-options-popup-style,
 .filter-options-popup.size .filter-options-popup-size,
@@ -59,7 +61,8 @@
 .filter-options-popup.countries .filter-options-popup-countries,
 .filter-options-popup.razdel .filter-options-popup-razdel,
 .filter-options-popup.color .filter-options-popup-color,
-.filter-options-popup.sections .filter-options-popup-sections
+.filter-options-popup.sections .filter-options-popup-sections,
+.filter-options-popup.functional .filter-options-popup-functional
 {display: block}
 
 .filter-options-popup-buttons{margin: 30px 0 0}

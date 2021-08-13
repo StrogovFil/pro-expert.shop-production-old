@@ -156,22 +156,20 @@ $cnt = CIBlockSection::GetSectionElementsCount($arIBlock['ID']);
 	$component
 );?>
 </div>
-    </section>
-<?
-$dbSection = CIBlockSection::GetByID(663);
+</section>
 
+<?/*
+$dbSection = CIBlockSection::GetByID(663);
 if ($arSection = $dbSection->GetNext()):
 	$sectCnt = CIBlockSection::GetSectionElementsCount($arSection['ID']);
 ?>
-<section class="bottomblock" data-bleed="100" data-parallax="scroll" data-z-index="1" data-speed="0.5"
-             data-image-src="<?=SITE_TEMPLATE_PATH?>/images/bottom-block-1.jpeg "
-             style="background-image: url('<?=SITE_TEMPLATE_PATH?>/images/bottom-block-1.jpeg ');">
-        <div class="container">
-            <div class="h1 bottomblock-title"><?=$arSection['NAME']?></div>
-            <div class="bottomblock-note">Всего <?=$sectCnt?></div>
-            <a href="<?=$arSection['SECTION_PAGE_URL']?>" class="bottomblock-triangle">
-                <i class="icon icon-triangle-down"></i>
-            </a>
-        </div>
-    </section>
-<?endif;?>
+<section class="bottomblock" data-bleed="100" data-parallax="scroll" data-z-index="1" data-speed="0.5" data-image-src="<?=SITE_TEMPLATE_PATH?>/images/bottom-block-2.jpeg " style="background-image: url('<?=SITE_TEMPLATE_PATH?>/images/bottom-block-2.jpeg');">
+    <div class="container">
+        <div class="h1 bottomblock-title"><?=$arSection['NAME']?></div>
+        <div class="bottomblock-note">Всего <?=$sectCnt?></div>
+        <a href="<?=$arSection['SECTION_PAGE_URL']?>" class="bottomblock-triangle">
+            <i class="icon icon-triangle-down"></i>
+        </a>
+    </div>
+</section>
+<?endif;*/?>

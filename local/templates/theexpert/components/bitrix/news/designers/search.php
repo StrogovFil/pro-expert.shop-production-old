@@ -21,6 +21,7 @@ $this->setFrameMode(false);
 		"arrFILTER" => Array("iblock_".$arParams["IBLOCK_TYPE"]),
 		"SHOW_WHERE" => "N",
 		//"PAGE_RESULT_COUNT" => "",
+		"RESTART" => "Y",
 		"CACHE_TYPE" => $arParams["CACHE_TYPE"],
 		"CACHE_TIME" => $arParams["CACHE_TIME"],
 		"SET_TITLE" => $arParams["SET_TITLE"],

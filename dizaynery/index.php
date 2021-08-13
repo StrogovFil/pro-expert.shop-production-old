@@ -3,8 +3,8 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Дизайнеры продуктов");
 ?>
 <?$APPLICATION->IncludeComponent(
-	"bitrix:news",
-	"designers",
+	"bitrix:news", 
+	"designers", 
 	array(
 		"ADD_ELEMENT_CHAIN" => "Y",
 		"ADD_SECTIONS_CHAIN" => "Y",
@@ -97,13 +97,14 @@ $APPLICATION->SetTitle("Дизайнеры продуктов");
 		"USE_RATING" => "N",
 		"USE_REVIEW" => "N",
 		"USE_RSS" => "N",
-		"USE_SEARCH" => "N",
+		"USE_SEARCH" => "Y",
 		"USE_SHARE" => "N",
 		"COMPONENT_TEMPLATE" => "designers",
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "",
 			"section" => "",
 			"detail" => "#ELEMENT_CODE#/",
+			"search" => "search/",
 		)
 	),
 	false

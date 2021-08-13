@@ -5,9 +5,11 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 
 if ($arResult["isFormErrors"] == "Y"):?><?=$arResult["FORM_ERRORS_TEXT"];?><?endif;?>
 
-<?echo $arResult["FORM_NOTE"];
+<div class="form-note">
+	<?echo $arResult["FORM_NOTE"];?>
+</div>
 
-if ($arResult["isFormNote"] != "Y")
+<?if ($arResult["isFormNote"] != "Y")
 {
 echo $arResult["FORM_HEADER"];
 

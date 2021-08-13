@@ -89,7 +89,6 @@
 					margin: [0, 0]
 				});
 			});
-
 		this.$doc.find('[data-fancybox]').fancybox({
 			animationEffect: 'zoom-in-out',
 			buttons: ['thumbs', 'zoom', 'close']
@@ -124,23 +123,27 @@
 			},
 			$productMain = this.$doc.find('#galleryMain'),
 			$productThumbs = this.$doc.find('#galleryThumbs');
-
-		$owlAuto.owlCarousel({
-			responsive: {
-				0: {
-					margin: 6
+			$owlAuto.owlCarousel({
+				responsive: {
+					0: {
+						items: 1,
+						margin: 3
+					},
+					768: {
+						items: 2,
+						margin: 5
+					},
+					1104: {
+						items: 3
+					}
 				},
-				768: {
-					margin: 10
-				}
-			},
-			autoWidth: true,
-			loop: true,
-			//rewind: true, // Раскомментировать эту строку и закомментировать loop: true, если нужно, чтобы карусель не зацикливалась, а докручивалась до конца и возвращалась к началу
-			dots: false,
-			nav: true,
-			navText: ['', '<i class="icon icon-triangle-left"></i>']
-		});
+				autoWidth: false,
+				loop: false,
+				//rewind: true, // Раскомментировать эту строку и закомментировать loop: true, если нужно, чтобы карусель не зацикливалась, а докручивалась до конца и возвращалась к началу
+				dots: false,
+				nav: true,
+				navText: ['<i class="icon icon-triangle-left"></i>', '<i class="icon icon-triangle-right"></i>']
+			});
 
 		$("#myModal").owlCarousel({
 			responsive: {
@@ -193,16 +196,17 @@
 			responsive: {
 				0: {
 					margin: 6,
-					items: 1
+					items: 1,
 				},
 				768: {
 					margin: 10,
 					items: 2
 				}
 			},
-			rewind: true,
+			// rewind: true,
 			dots: false,
 			nav: true,
+			loop:false,
 			navText: ['<i class="icon icon-triangle-left"></i>', '<i class="icon icon-triangle-right"></i>'],
 			onInitialized: function(e) {
 				var items_length = this.items().length;
@@ -316,7 +320,6 @@
 		});
 
 		if ($productMain.length || $productThumbs.length) {
-
 			$productMain
 				.owlCarousel({
 					items: 1,
@@ -402,24 +405,24 @@
 		selector: '#addToCart',
 		templates: {
 			linked: '<div class="modal-buy-linked-item">\n' +
-			'    <a href="__url__" class="modal-buy-linked-item-pic">\n' +
-			'        <img src="__picture__" alt="">\n' +
-			'    </a>\n' +
-			'    <div class="modal-buy-linked-item-title"><a href="__url__">__title__</a></div>\n' +
-			'    <div class="modal-buy-linked-item-bottom">\n' +
-			'        <span class="modal-buy-linked-item-price">__price__ ₽</span>\n' +
-			'        <div class="modal-buy-linked-item-buy">\n' +
-			'            <a href=""><i class="icon icon-bag"></i></a>\n' +
-			'        </div>\n' +
-			'    </div>\n' +
-			'</div>',
+				'    <a href="__url__" class="modal-buy-linked-item-pic">\n' +
+				'        <img src="__picture__" alt="">\n' +
+				'    </a>\n' +
+				'    <div class="modal-buy-linked-item-title"><a href="__url__">__title__</a></div>\n' +
+				'    <div class="modal-buy-linked-item-bottom">\n' +
+				'        <span class="modal-buy-linked-item-price">__price__ ₽</span>\n' +
+				'        <div class="modal-buy-linked-item-buy">\n' +
+				'            <a href=""><i class="icon icon-bag"></i></a>\n' +
+				'        </div>\n' +
+				'    </div>\n' +
+				'</div>',
 			inform: '<div class="infographic">\n' +
-			'    <div class="infographic-col">\n' +
-			'        <div class="h1 infographic-title">__title__</div>\n' +
-			'        <div class="infographic-text">__text__</div>\n' +
-			'        <a href="__url__" class="infographic-link btn btn-transparent"><i class="icon icon-arrow-left"></i> подробнее</a>\n' +
-			'    </div>\n' +
-			'</div>'
+				'    <div class="infographic-col">\n' +
+				'        <div class="h1 infographic-title">__title__</div>\n' +
+				'        <div class="infographic-text">__text__</div>\n' +
+				'        <a href="__url__" class="infographic-link btn btn-transparent"><i class="icon icon-arrow-left"></i> подробнее</a>\n' +
+				'    </div>\n' +
+				'</div>'
 		},
 		/**
 		 * Здесь обрабатывается добавление товара в корзину.
@@ -494,7 +497,6 @@
 					if (!inform.hasOwnProperty(key)) continue;
 					informTpl = informTpl.replace('__' + key + '__', inform[key]);
 				}
-				console.log(informTpl);
 				$modal.find('[data-add-inform]').html(informTpl);
 			}
 			$.fancybox.open({
@@ -525,23 +527,20 @@
 
 	if (arCatalogTabs.length)
 		for(var i = 0; i < arCatalogTabs.length; i++)
-			arCatalogTabs[i].onclick = function()
-			{
+			arCatalogTabs[i].onclick = function() {
 				var	arCatTab = document.querySelectorAll('.catalog-tabs'),
 					arCatTabs = document.querySelectorAll('.catalog-tab'),
 					curId = this.getAttribute('data-id');
-					$.cookie('catab', curId);
+				$.cookie('catab', curId);
 
-				for(var j = 0; j < arCatTabs.length; j++)
-				{
+				for(var j = 0; j < arCatTabs.length; j++) {
 					if (curId == arCatTabs[j].getAttribute('data-id'))
 						arCatTabs[j].style.display = '';
 					else
 						arCatTabs[j].style.display = 'none';
 				}
 
-				for(var j = 0; j < arCatTab.length; j++)
-				{
+				for(var j = 0; j < arCatTab.length; j++) {
 					if (arCatTab[j] == this)
 						arCatTab[j].classList.remove('btn-white');
 					else
@@ -549,35 +548,31 @@
 				}
 			};
 
-$('#product_designer_more').on("click", function()
-{
-	var	childs = $('#product_designer').children(),
-		countProd = childs.length,
-		countShow = 100,
-		countCur = 0, countAll = 0;
-	for(var i = 0; i < countProd; i++)
-	{
-		if (childs[i].style.display == 'none')
-		{
-			if (countAll <= countShow)
-			{
-				childs[i].style.display = '';
-				countCur++;
+	$('#product_designer_more').on("click", function() {
+		var	childs = $('#product_designer').children(),
+			countProd = childs.length,
+			countShow = 100,
+			countCur = 0, countAll = 0;
+		for(var i = 0; i < countProd; i++) {
+			if (childs[i].style.display == 'none') {
+				if (countAll <= countShow) {
+					childs[i].style.display = '';
+					countCur++;
+				}
+
+				countAll++;
 			}
-
-			countAll++;
 		}
-	}
 
-	if (countAll <= countShow)
-		this.style.display = 'none';
+		if (countAll <= countShow)
+			this.style.display = 'none';
 
-	return false;
-});
+		return false;
+	});
 }) (window, document, jQuery);
 
 $('.owl-item-my').on('click', function() {
-  $("#myModal").css("visibility", "visible");
+	$("#myModal").css("visibility", "visible");
 	$(".close").css("display", "block");
 });
 
@@ -586,33 +581,57 @@ $("span.close").click(function(){
 	$(".close").css("display", "none");
 });
 
-$(".header-menu-trigger").on("click",function(){
-	$(".header-menu-container").css({
-		display:'block'
-	})
-	$(".header-menu-trigger").css({
-		display:'none'
-	})
+const btnMenu = document.querySelector('.header-top-icons');
+const menu = document.querySelector('.form-header-input');
+const toggleMenu = function() {
+	menu.classList.toggle('is-active');
+};
+
+if(btnMenu) {
+	btnMenu.addEventListener('click', function(e) {
+		e.stopPropagation();
+		toggleMenu();
+	});
+}
+
+
+document.addEventListener('click', function(e) {
+	const target = e.target;
+	const its_menu = target == menu || menu.contains(target);
+	const its_btnMenu = target == btnMenu;
+	const menu_is_active = menu.classList.contains('is-active');
+
+	if (!its_menu && !its_btnMenu && menu_is_active) {
+		toggleMenu();
+		$(".header_input").val("");
+		$(".live-search").remove();
+	}
 });
 
-$(".header-menu-close").on("click",function(){
-	$(".header-menu-container").css({
-		display:'none'
-	})
-	$(".header-menu-trigger").css({
-		display:'block'
-	})
-});
+const mobileButtonMenu = document.querySelector('.is-mobile-menu-trigger');
+const mobileMenu = document.querySelector('.header-menu-container');
+const mobileTriggerMenu = document.querySelector('.header-menu-trigger');
+const searchInputField = document.querySelector('.form-header-input');
+
+const toggleMobileMenu = function() {
+	 mobileMenu.classList.toggle('is-active');
+	 mobileButtonMenu.classList.toggle('is-active');
+	 mobileTriggerMenu.classList.toggle('is-active');
+	 searchInputField.classList.remove('is-active');
+};
+
+if (mobileButtonMenu) {
+	mobileButtonMenu.addEventListener('click', function(e) {
+		e.stopPropagation();
+		toggleMobileMenu();
+	});
+}
 
 $(".header_input").on('change keyup paste', function() {
 	if($(".header_input").val().length >= 3){
-		$(".input_search_change").css({
-			display:'block'
-		})
+		$(".input_search_change").css({display:'block'})
 	}else{
-		$(".input_search_change").css({
-			display:'none'
-		})
+		$(".input_search_change").css({display:'none'})
 	}
 });
 
@@ -621,53 +640,147 @@ $(".search_input_close").on("click",function(){
 	$(".header-top-icons-search").addClass("is-active");
 });
 
-$(".header-top-icons-search").on("click",function(e){
-	$(".form-header-input").toggle('is-active');
-	$(document).mouseup(function (e) {
-		var container = $(".form-header-input");
-		if (container.has(e.target).length === 0){
-			container.hide();
-		}
-	});
-});
+if (jQuery(window).width() > 1103 ) {
+	const childBtnMenuDesctop = document.querySelector('.js-submenu');
+	const childMenuDesctop = document.querySelector('.child-menu');
+	const childMenuDesctopDropdownIcon = document.querySelector('.menu-dropdown');
 
-$(".js-submenu").on("click",function(e){
-	e.preventDefault();
-	$(this).siblings(".child-menu").addClass("is-active");
-	$($(this)).on("click",function(e){
+	const toggleChildMenuDesctop = function() {
+		childMenuDesctop.classList.toggle('is-active');
+		childMenuDesctopDropdownIcon.classList.toggle('is-active');
+		childBtnMenuDesctop.classList.toggle('is-active');
+	};
+
+	if (childBtnMenuDesctop) {
+		childBtnMenuDesctop.addEventListener('click', function(e) {
+			e.preventDefault();
+			e.stopPropagation();
+			toggleChildMenuDesctop();
+			childBtnMenuDesctop.addEventListener('click', function(e) {
+				if(!childMenuDesctop.classList.contains('is-active')) {
+					location.href = '/catalog/';
+				}
+			});
+		});
+	}
+
+	document.addEventListener('click', function(e) {
+		const target = e.target;
+		const its_menu = target == childMenuDesctop || childMenuDesctop.contains(target);
+		const its_btnMenu = target == childBtnMenuDesctop;
+		const menu_is_active = childMenuDesctop.classList.contains('is-active');
+
+		if (!its_menu && !its_btnMenu && menu_is_active) {
+			toggleChildMenuDesctop();
+		}
+	});
+} else {
+	const childBtnMenu = document.querySelector('.js-submenu');
+	const childMenu = document.querySelector('.child-menu');
+	const childMenuMobileDropdownIcon = document.querySelector('.menu-dropdown');
+	const toggleChildMenu = function() {
+		childMenu.classList.toggle('is-active');
+		childMenuMobileDropdownIcon.classList.toggle('is-active');
+	};
+
+	childBtnMenu.addEventListener('click', function(e) {
 		e.preventDefault();
-		if($(this).siblings(".child-menu").hasClass("is-active")) {
-			location.href='/catalog/';
-		}
+		e.stopPropagation();
+		toggleChildMenu();
+		childBtnMenu.addEventListener('click', function(e) {
+			location.href = '/catalog/';
+		});
 	});
-	$(document).mouseup(function (e) {
-		var container = $(".child-menu");
-		if (container.has(e.target).length === 0){
-			$(".child-menu").removeClass("is-active");
-		}
-	});
-});
+}
 
 $(".search_input_close,.fon_input").on("click",function(){
-	$(".fon_input").css({
-		display:'none'
-	})
+	$(".fon_input").css({display:'none'})
 });
 
 $(".header-menu-trigger").on("click",function(){
-	$(".header-base-logo").css({
-		zIndex:'-1'
-	});
-	$(".header-top-cart,.header-top-icons").css({
-		zIndex:'-1'
-	});
+	$(".header-base-logo").css({zIndex:'-1'});
+	$(".header-top-cart,.header-top-icons").css({zIndex:'-1'});
 });
 
 $(".header-menu-close").on("click",function(){
-	$(".header-base-logo").css({
-		zIndex:'30'
-	});
-	$(".header-top-cart,.header-top-icons").css({
-		zIndex:'28'
-	});
+	$(".header-base-logo").css({zIndex:'30'});
+	$(".header-top-cart,.header-top-icons").css({zIndex:'28'});
 });
+
+$(function() {
+	// Открыть/закрыть категории на мобильных устройствах
+	var widthWindow = $(window).width();
+
+	$(window).on('resize', function(){
+		widthWindow = $(window).width();
+	});
+
+	if($('.js-catalog-category-default').length){
+		$('.js-catalog-category-default').on('click', function(e) {
+			if(widthWindow < 768){
+				e.preventDefault();
+				$('.js-catalog-category').removeClass('active');
+				$(this).closest('.js-catalog-category').addClass('active');
+			}
+		});
+	}
+
+	$(document).on('click', function(event) {
+		if ($(event.target).closest(".js-catalog-category").length) return;
+		$('.js-catalog-category').removeClass('active');
+		event.stopPropagation();
+	});
+
+	// Прокрутка страницы после сортировки
+	if($('.js-filters-sort').length){
+		if($('.js-filters-sort').data('sort') == true){
+			var posSort = $('.js-filters-sort').offset().top - $('.header').outerHeight() - 40;
+
+			$(window).on('resize', function(){
+				posSort = $('.js-filters-sort').offset().top - $('.header').outerHeight() - 40;
+			});
+		
+			$(document).scrollTop(posSort);
+		}
+	}
+
+	// Прокрутка страницы после показать по
+	if($('.js-cat-page-count').length){
+		if($('.js-cat-page-count').hasClass('is-active')){
+			var posPageCount = $('.js-cat-page-count').offset().top - $('.header').outerHeight() - 80;
+
+			$(window).on('resize', function(){
+				posPageCount = $('.js-cat-page-count').offset().top - $('.header').outerHeight() - 80;
+			});
+		
+			$(document).scrollTop(posPageCount);
+		}
+	}
+});
+
+// Закрыть fancybox по тени
+// $('[data-fancybox="carousel"]').on('click', function(event) {
+
+// 	console.log('22222');
+// 	console.log($('.fancybox-slide--image').length);
+
+// 	$('.fancybox-slide--image').on('touchend', function(event) {
+// 		if(widthWindow < 768){
+// 			if ($(event.target).closest(".fancybox-slide--image").length) return;
+// 			$.fancybox.close();
+// 			event.stopPropagation();
+// 		}
+// 	});
+	
+	
+// 	// $('.fancybox-slide--image').on('click touchend', function(event) {
+// 	// 	console.log('11111');
+// 	// 	// $.fn.fancybox.close();
+// 	// 	$.fancybox.close();
+// 	// });
+
+// 	// $('.fancybox-image-wrap').on('touchend', function(event) {
+// 	// 	console.log('3333');
+// 	// 	event.preventDefault();
+// 	// });
+// });

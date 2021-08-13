@@ -113,7 +113,7 @@ use \Bitrix\Main\Localization\Loc;
 	</a>
 	<div class="catalog-item-content">
 		<a href="<?=$item['DETAIL_PAGE_URL']?>" title="<?=$imgTitle?>" class="catalog-item-title"><span><?=$productTitle?></span></a>
-		<!-- <div class="catalog-item-description"><span><?//=$item['PREVIEW_TEXT']?></span></div> -->
+<!--		 <div class="catalog-item-description"><span>--><?//=$item['PREVIEW_TEXT']?><!--</span></div>-->
 		<div class="catalog-item-description">
 			<div><?=$item['DISPLAY_PROPERTIES']['BRAND']['DISPLAY_VALUE']?></div>
 			<div><?=$item['DISPLAY_PROPERTIES']['COUNTRIES']['DISPLAY_VALUE']?></div>
@@ -212,12 +212,15 @@ use \Bitrix\Main\Localization\Loc;
 				if ($actualItem['CAN_BUY'])
 				{
 					?>
+                    <?/*
 					<div class="product-item-button-container" id="<?=$itemIds['BASKET_ACTIONS']?>">
 						<button class="btn catalog-item-buy <?=$buttonSizeClass?> <?if($item['PROPERTIES']['NO_PRICE']['VALUE'] == 'Y'){?>hbtn<?}?>" id="<?=$itemIds['BUY_LINK']?>">
-							<?$arParams['MESS_BTN_ADD_TO_BASKET'] = "Купить";?>
-							<?=($arParams['ADD_TO_BASKET_ACTION'] === 'BUY' ? $arParams['MESS_BTN_BUY'] : $arParams['MESS_BTN_ADD_TO_BASKET'])?>
+                            Заказать
+							<?//$arParams['MESS_BTN_ADD_TO_BASKET'] = "Заказать";?>
+							<?//=($arParams['ADD_TO_BASKET_ACTION'] === 'BUY' ? $arParams['MESS_BTN_BUY'] : $arParams['MESS_BTN_ADD_TO_BASKET'])?>
 						</button>
 					</div>
+                    */?>
 					<?
 				}
 				else

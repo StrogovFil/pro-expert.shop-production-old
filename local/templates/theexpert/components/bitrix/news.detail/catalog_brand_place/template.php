@@ -17,6 +17,8 @@ $propName = '';
 $arProducts = array();
 $arNotInclude = array();
 
+$dir = $APPLICATION->GetCurDir();
+
 	if (isset($_REQUEST['sort']) && $_REQUEST['sort'] == 'price'){
 		$arParams['CATALOG_PARAMS']['ELEMENT_SORT_FIELD'] = 'catalog_PRICE_1';
 	}elseif (isset($_REQUEST['sort']) && $_REQUEST['sort'] == 'name') {
@@ -41,6 +43,11 @@ switch($arResult['IBLOCK_CODE'])
 {
 	case 'place':
 		$arrFilter['PROPERTY_APARTMENT'] = $arResult['ID'];
+		if($_GET['sectionId'])
+        {
+            $arrFilter['SECTION_ID'] = $_GET['sectionId'];
+            $arrFilter['INCLUDE_SUBSECTIONS'] = 'Y';
+        }
 		$propName = 'PROPERTY_APARTMENT';
 		$arNotInclude[] = 'APARTMENT';
 		break;
@@ -88,6 +95,13 @@ else
 {
 	$basketAction = isset($arParams['CATALOG_PARAMS']['SECTION_ADD_TO_BASKET_ACTION']) ? $arParams['CATALOG_PARAMS']['SECTION_ADD_TO_BASKET_ACTION'] : '';
 }
+
+$curDurId = '';
+if(strstr($dir, 'brand-') === false) {
+    $curDurId = $arResult['ID'];
+} else {
+    $curDurId = '';
+}
 ?>
 
 	<section class="page catalog">
@@ -134,7 +148,7 @@ else
 				</div>
 			</div>
 		</div>
-		<div class="catalog-items-bordered container">
+		<div class="catalog-items-bordered container catalog-container-page">
 			<? if ($arParams['CATALOG_PARAMS']['USE_FILTER'] == 'Y'): ?>
 			<div class="filters catalog-filters">
 				<?$APPLICATION->IncludeComponent(
@@ -165,16 +179,24 @@ else
 						"INSTANT_RELOAD" => $arParams['CATALOG_PARAMS']["INSTANT_RELOAD"],
 						'NOT_INCLUDE' => $arNotInclude,
                         'FILTER_SECTION' => true,
+						'FILTER_TYPE' => $arParams['FILTER_TYPE'],
+                        'SECTION_FILTER_ID' => $curDurId
 					),
 					$component,
 					array('HIDE_ICONS' => 'Y')
 				);
 				?>
                 <div class="filters-sort">
-                    Сортировать по:&emsp;
-                    <a href="?sort=name&order=<?=$strOrder?>" class="filter-sort-<?=$strOrder?> filter-sort-item <?if($_REQUEST['sort'] == 'name' || $_REQUEST['sort'] == ''){?>filter-sort-active<?}?>">алфавиту <i class="icon icon-dropdown"></i></a>
-                    <a href="?sort=id&order=<?=$strOrder?>" class="filter-sort-<?=$strOrder?> filter-sort-item <?if($_REQUEST['sort'] == 'id'){?>filter-sort-active<?}?>">новизне <i class="icon icon-dropdown"></i></a>
-                    <a href="?sort=price&order=<?=$strOrder?>" class="filter-sort-<?=$strOrder?> filter-sort-item <?if($_REQUEST['sort'] == 'price'){?>filter-sort-active<?}?>">цене <i class="icon icon-dropdown"></i></a>
+                    Сортировать:&emsp;
+                    <?if($_REQUEST['order'] == ''):?>
+                        <a href="?sort=name&order=DESC" class="filter-sort-ASC filter-sort-item filter-sort-active">A - Z <i class="icon icon-dropdown"></i></a>
+                    <?elseif($strOrder == 'ASC'):?>
+                        <a href="?sort=name&order=ASC" class="filter-sort-DESC filter-sort-item filter-sort-active">Z - A <i class="icon icon-dropdown"></i></a>
+                    <?elseif($strOrder == 'DESC'):?>
+                        <a href="?sort=name&order=DESC" class="filter-sort-ASC filter-sort-item filter-sort-active">A - Z <i class="icon icon-dropdown"></i></a>
+                    <?endif?>
+                    <?/*<a href="?sort=id&order=<?=$strOrder?>" class="filter-sort-<?=$strOrder?> filter-sort-item <?if($_REQUEST['sort'] == 'id'){?>filter-sort-active<?}?>">по новизне <i class="icon icon-dropdown"></i></a>*/?>
+                    <?/*<a href="?sort=price&order=<?=$strOrder?>" class="filter-sort-<?=$strOrder?> filter-sort-item <?if($_REQUEST['sort'] == 'price'){?>filter-sort-active<?}?>">по цене <i class="icon icon-dropdown"></i></a>*/?>
                 </div>
 			</div>
 		<? endif ?>
@@ -304,7 +326,7 @@ else
 					'BACKGROUND_IMAGE' => (isset($arParams['CATALOG_PARAMS']['SECTION_BACKGROUND_IMAGE']) ? $arParams['CATALOG_PARAMS']['SECTION_BACKGROUND_IMAGE'] : ''),
 					'COMPATIBLE_MODE' => (isset($arParams['CATALOG_PARAMS']['COMPATIBLE_MODE']) ? $arParams['CATALOG_PARAMS']['COMPATIBLE_MODE'] : ''),
 					'DISABLE_INIT_JS_IN_COMPONENT' => (isset($arParams['CATALOG_PARAMS']['DISABLE_INIT_JS_IN_COMPONENT']) ? $arParams['CATALOG_PARAMS']['DISABLE_INIT_JS_IN_COMPONENT'] : ''),
-				//	'SHOW_ALL_WO_SECTION' => 'Y',
+					'SHOW_ALL_WO_SECTION' => 'Y',
 				)
 );
 			?>

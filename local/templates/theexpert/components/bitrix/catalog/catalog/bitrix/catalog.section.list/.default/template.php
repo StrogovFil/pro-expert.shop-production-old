@@ -72,6 +72,10 @@ if (0 < $arResult["SECTIONS_COUNT"])
 				$this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], $strSectionEdit);
 				$this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete, $arSectionDeleteParams);
 
+				if($arSection['ELEMENT_CNT'] < 1) {
+                    continue;
+                }
+
 				if (false === $arSection['PICTURE'])
 					$arSection['PICTURE'] = array(
 						'SRC' => $arCurView['EMPTY_IMG'],
@@ -96,7 +100,9 @@ if (0 < $arResult["SECTIONS_COUNT"])
 				<h2 class="bx_catalog_line_title"><a href="<? echo $arSection['SECTION_PAGE_URL']; ?>"><? echo $arSection['NAME']; ?></a><?
 				if ($arParams["COUNT_ELEMENTS"])
 				{
-					?> <span>(<? echo $arSection['ELEMENT_CNT']; ?>)</span><?
+					?>
+                    <?/*<span>(<? echo $arSection['ELEMENT_CNT']; ?>)</span>*/?>
+                    <?
 				}
 				?></h2><?
 				if ('' != $arSection['DESCRIPTION'])
@@ -116,10 +122,16 @@ if (0 < $arResult["SECTIONS_COUNT"])
 				$this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], $strSectionEdit);
 				$this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete, $arSectionDeleteParams);
 
+                if($arSection['ELEMENT_CNT'] < 1) {
+                    continue;
+                }
+
 				?><li id="<? echo $this->GetEditAreaId($arSection['ID']); ?>"><a href="<? echo $arSection['SECTION_PAGE_URL']; ?>"><? echo $arSection['NAME']; ?></a><?
 				if ($arParams["COUNT_ELEMENTS"])
 				{
-					?> <span>(<? echo $arSection['ELEMENT_CNT']; ?>)</span><?
+					?>
+                    <?/*<span>(<? echo $arSection['ELEMENT_CNT']; ?>)</span>*/?>
+                    <?
 				}
 				?></li><?
 			}
@@ -132,6 +144,10 @@ if (0 < $arResult["SECTIONS_COUNT"])
 			{
 				$this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], $strSectionEdit);
 				$this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete, $arSectionDeleteParams);
+
+                if($arSection['ELEMENT_CNT'] < 1) {
+                    continue;
+                }
 
 				if (false === $arSection['PICTURE'])
 					$arSection['PICTURE'] = array(
@@ -156,12 +172,14 @@ if (0 < $arResult["SECTIONS_COUNT"])
 					> </a><?
 				if ('Y' != $arParams['HIDE_SECTION_NAME'])
 				{
-					?><h2 class="bx_catalog_tile_title"><a href="<? echo $arSection['SECTION_PAGE_URL']; ?>"><? echo $arSection['NAME']; ?></a><?
+					?><div class="bx_catalog_tile_title"><a href="<? echo $arSection['SECTION_PAGE_URL']; ?>"><? echo $arSection['NAME']; ?></a><?
 					if ($arParams["COUNT_ELEMENTS"])
 					{
-						?> <span>(<? echo $arSection['ELEMENT_CNT']; ?>)</span><?
+						?>
+                        <?/*<span>(<? echo $arSection['ELEMENT_CNT']; ?>)</span>*/?>
+					<?
 					}
-				?></h2><?
+				?></div><?
 				}
 				?></li><?
 			}
@@ -173,6 +191,10 @@ if (0 < $arResult["SECTIONS_COUNT"])
 
 			foreach($arResult['SECTIONS'] as $key => $arSection)
 			{
+                if($arSection['ELEMENT_CNT'] < 1) {
+                    continue;
+                }
+
 				if ($arSection['DEPTH_LEVEL'] == 1)
 				{
 					$arNewSections[$arSection['ID']] = $arSection;
@@ -187,9 +209,13 @@ if (0 < $arResult["SECTIONS_COUNT"])
 			{
 				$this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], $strSectionEdit);
 				$this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete, $arSectionDeleteParams);
-?>
-				<div class="catalog-category">
-                    <div class="catalog-category-default">
+
+                if($arSection['ELEMENT_CNT'] < 1) {
+                    continue;
+                }
+				?>
+				<div class="catalog-category js-catalog-category">
+                    <div class="catalog-category-default js-catalog-category-default">
                         <div class="catalog-category-icon">
 						<?if (!empty($arSection['PICTURE'])):?>
                             <img src="<?=$arSection['PICTURE']['SRC']?>" alt="<?=$arSection['PICTURE']['ALT']?>"
@@ -205,7 +231,7 @@ if (0 < $arResult["SECTIONS_COUNT"])
                         </ul>
 						<?endif*/?>
                     </div>
-                    <div class="catalog-category-hover">
+                    <div class="catalog-category-hover js-catalog-category-hover">
                         <a href="<?=$arSection['SECTION_PAGE_URL']?>" class="catalog-category-icon">
 						<?if (!empty($arSection['PICTURE'])):?>
                             <img src="<?=$arSection['PICTURE']['SRC']?>" alt="<?=$arSection['PICTURE']['ALT']?>"

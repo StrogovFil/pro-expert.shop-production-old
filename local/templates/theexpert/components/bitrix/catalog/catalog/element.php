@@ -1058,6 +1058,7 @@ else
 			<? } ?>
 		<? } ?>
     <!-- Bottom Block -->
+<?/*
 <?
 $res = CIBlockSection::GetList(
 	array(),
@@ -1070,30 +1071,30 @@ if ($arSection["PICTURE"])
 {
 	/*$dbIBlockPicture = CFile::GetByID($arSection["PICTURE"]);
 $arSectionPicture = $dbIBlockPicture->GetNext();*/
-	$pathIblockPicture = CFile::GetPath($arSection["PICTURE"]);
-}
+	//$pathIblockPicture = CFile::GetPath($arSection["PICTURE"]);
+//}
 
-if (!empty($arSection)):
-	$sectCnt = CIBlockSection::GetSectionElementsCount($arSection['ID']);
-?>
-    <section class="bottomblock" data-bleed="100" data-parallax="scroll" data-z-index="1" data-speed="0.5"
-             data-image-src="<?=SITE_TEMPLATE_PATH?>/images/bottom-block-1.jpeg "
-             style="background-image: url('<?=SITE_TEMPLATE_PATH?>/images/bottom-block-1.jpeg');">
-        <div class="container">
-            <a href="<?=$arSection['SECTION_PAGE_URL']?>" class="bottomblock-icon">
-                <img src="<?=pathIblockPicture?>" alt="" onerror="this.onerror = null; this.src = '<?=pathIblockPicture?>'">
-            </a>
-            <div class="h1 bottomblock-title"><a href="<?=$arSection['SECTION_PAGE_URL']?>"><?=$arSection['NAME']?></a></div>
-            <div class="bottomblock-note">Всего <?=$sectCnt?></div>
-            <div class="bottomblock-text">
-                <p><?=htmlspecialchars_decode($arSection['PREVIEW_TEXT'])?></p>
-            </div>
-            <a href="<?=$arSection['SECTION_PAGE_URL']?>" class="bottomblock-triangle">
-                <i class="icon icon-triangle-down"></i>
-            </a>
+//if (!empty($arSection)):
+//	$sectCnt = CIBlockSection::GetSectionElementsCount($arSection['ID']);
+//?>
+<?/*
+<section class="bottomblock" data-bleed="100" data-parallax="scroll" data-z-index="1" data-speed="0.5" data-image-src="<?=SITE_TEMPLATE_PATH?>/images/bottom-block-1.jpeg " style="background-image: url('<?=SITE_TEMPLATE_PATH?>/images/bottom-block-1.jpeg');">
+    <div class="container">
+        <a href="<?=$arSection['SECTION_PAGE_URL']?>" class="bottomblock-icon">
+            <img src="<?=$pathIblockPicture?>" alt="" onerror="this.onerror = null; this.src = '<?=$pathIblockPicture?>'">
+        </a>
+        <div class="h1 bottomblock-title"><a href="<?=$arSection['SECTION_PAGE_URL']?>"><?=$arSection['NAME']?></a></div>
+        <div class="bottomblock-note">Всего <?=$sectCnt?></div>
+        <div class="bottomblock-text">
+            <p><?=htmlspecialchars_decode($arSection['PREVIEW_TEXT'])?></p>
         </div>
-    </section>
+        <a href="<?=$arSection['SECTION_PAGE_URL']?>" class="bottomblock-triangle">
+            <i class="icon icon-triangle-down"></i>
+        </a>
+    </div>
+</section>
 <?endif?>
+*/?>
 
 <?if($_REQUEST["set_filter"]){?>
     <script type="text/javascript">

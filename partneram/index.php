@@ -7,10 +7,10 @@ $APPLICATION->SetTitle("Партнерам");
         <div class="page-top">
         	 <div class="container">
 		        <nav aria-label="breadcrumb">
-				  <ol class="breadcrumb">
-				    <li class="breadcrumb-item"><a href="#">Главная </a></li>
+                <ul class="breadcrumb">
+				    <li class="breadcrumb-item breadcrumb-home"><a href="/">Главная </a></li>
 				    <li class="breadcrumb-item active" aria-current="page">Партнерам</li>
-				  </ol>
+				  </ul>
 				</nav>
 			</div>
             <div class="container">
@@ -18,7 +18,7 @@ $APPLICATION->SetTitle("Партнерам");
                 <div class="page-top-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.</div>
             </div>
         </div>
-       
+
         <div class="page-content">
             <div class="container">
                 <div class="container-inner">

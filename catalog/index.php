@@ -1,9 +1,10 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Каталог");
-?><?$APPLICATION->IncludeComponent(
+
+$APPLICATION->IncludeComponent(
 	"bitrix:catalog", 
-	"catalog", 
+	"catalog",
 	array(
 		"ACTION_VARIABLE" => "action",
 		"ADD_ELEMENT_CHAIN" => "Y",
@@ -80,11 +81,11 @@ $APPLICATION->SetTitle("Каталог");
 			26 => "COLLECTION",
 			27 => "USED",
 			28 => "COUNTRIES",
-			29 => "FUNCTIONAL",
-			30 => "CHARACTERISTIC",
-			31 => "razdel_mebeli",
-			32 => "PROPERTY",
-			33 => "APARTMENT",
+			29 => "APARTMENT",
+			30 => "FUNCTIONAL",
+			31 => "CHARACTERISTIC",
+			32 => "razdel_mebeli",
+			33 => "PROPERTY",
 			34 => "SiZE_Y",
 			35 => "DESCRIPTION_3",
 			36 => "MORE_PHOTO_2",
@@ -153,9 +154,10 @@ $APPLICATION->SetTitle("Каталог");
 			3 => "STYLE",
 			4 => "BRAND",
 			5 => "COUNTRIES",
-			6 => "RAZDEL_MEBEL",
-			7 => "APARTMENT",
-			8 => "",
+			6 => "APARTMENT",
+			7 => "FUNCTIONAL",
+			8 => "RAZDEL_MEBEL",
+			9 => "",
 		),
 		"FILTER_VIEW_MODE" => "VERTICAL",
 		"GIFTS_DETAIL_BLOCK_TITLE" => "Выберите один из подарков",
@@ -222,10 +224,10 @@ $APPLICATION->SetTitle("Каталог");
 		"PAGER_DESC_NUMBERING" => "N",
 		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
 		"PAGER_SHOW_ALL" => "Y",
-		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_SHOW_ALWAYS" => "Y",
 		"PAGER_TEMPLATE" => "pro-exp",
 		"PAGER_TITLE" => "Товары",
-		"PAGE_ELEMENT_COUNT" => "30",
+		"PAGE_ELEMENT_COUNT" => $_REQUEST['SIZEN_1']?$_REQUEST['SIZEN_1']:"30",
 		"PARTIAL_PRODUCT_PROPERTIES" => "N",
 		"PRICE_CODE" => array(
 			0 => "BASIC",
@@ -307,6 +309,7 @@ $APPLICATION->SetTitle("Каталог");
 		"USE_REVIEW" => "N",
 		"USE_SALE_BESTSELLERS" => "Y",
 		"USE_STORE" => "N",
+		"MESS_BTN_LAZY_LOAD" => "Показать ещё",
 		"SEF_URL_TEMPLATES" => array(
 			"sections" => "",
 			"section" => "#SECTION_CODE_PATH#/",

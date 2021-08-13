@@ -177,9 +177,10 @@ if ($iRequestDesigner)
 	),
 	$component
 );?>
-        </div>
-    </section>
-<?
+    </div>
+</section>
+
+<?/*
 $arSection = array();
 
 if (count($arSections))
@@ -217,3 +218,4 @@ if (!empty($arSection)):
         </div>
     </section>
 <?endif?>
+*/?>

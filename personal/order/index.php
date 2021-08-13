@@ -36,7 +36,7 @@ $APPLICATION->SetTitle("Заказ");
 		"MESS_REG_BLOCK_NAME" => "Регистрация",	// Название блока регистрации
 		"ONLY_FULL_PAY_FROM_ACCOUNT" => "N",	// Разрешить оплату с внутреннего счета только в полном объеме
 		"PATH_TO_AUTH" => "/auth/",	// Путь к странице авторизации
-		"PATH_TO_BASKET" => "/personal/basket/",	// Путь к странице корзины
+		"PATH_TO_BASKET" => "/personal/request/",	// Путь к странице корзины
 		"PATH_TO_PAYMENT" => "payment.php",	// Страница подключения платежной системы
 		"PATH_TO_PERSONAL" => "index.php",	// Путь к странице персонального раздела
 		"PAY_FROM_ACCOUNT" => "N",	// Разрешить оплату с внутреннего счета

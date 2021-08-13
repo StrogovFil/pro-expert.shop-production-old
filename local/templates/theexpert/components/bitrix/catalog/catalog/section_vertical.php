@@ -23,12 +23,15 @@ else
     $strSectionCodePath = '';
 
 $filterSection = false;
+$filterType = true;
 if ($strSectionCodePath)
 {
     if (strpos($strSectionCodePath, 'place-') !== FALSE)
     {
         $strSectionCode = str_replace('place-', '', $strSectionCodePath);
         $iBlockId = 2;
+        $filterType = false;
+        $filterSection = true;
     }
     elseif (strpos($strSectionCodePath, 'brand-') !== FALSE)
     {
@@ -96,8 +99,8 @@ else
     $basketAction = isset($arParams['SECTION_ADD_TO_BASKET_ACTION']) ? $arParams['SECTION_ADD_TO_BASKET_ACTION'] : '';
 }
 ?>
-    <nav class="breadcrumb-wrap">
-        <div class="container">
+    <nav class="breadcrumb-wrap bread-sticky">
+        <div class="container box-sticky">
             <?$APPLICATION->IncludeComponent(
                 "bitrix:breadcrumb",
                 "catalog",
@@ -163,6 +166,7 @@ else
             "USE_SHARE" => "N", // Отображать панель соц. закладок
             "CATALOG_PARAMS" => $arParams,
             "MESSAGE_404" => $arParams["~MESSAGE_404"],
+            'FILTER_TYPE' => $filterType,
         //"SET_STATUS_404" => $arParams["SET_STATUS_404"],
         //"SHOW_404" => $arParams["SHOW_404"],
         //"FILE_404" => $arParams["FILE_404"]
@@ -309,7 +313,7 @@ elseif (!empty($arFields) && $iBlockId == 1)
                                 "CACHE_TYPE" => $arParams["CACHE_TYPE"],
                                 "CACHE_TIME" => $arParams["CACHE_TIME"],
                                 "CACHE_GROUPS" => $arParams["CACHE_GROUPS"],
-                                "COUNT_ELEMENTS" => $arParams["SECTION_COUNT_ELEMENTS"],
+                                "COUNT_ELEMENTS" => "Y",
                                 "TOP_DEPTH" => $arParams["SECTION_TOP_DEPTH"],
                                 "SECTION_URL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["section"],
                                 "VIEW_MODE" => $arParams["SECTIONS_VIEW_MODE"],
@@ -324,7 +328,7 @@ elseif (!empty($arFields) && $iBlockId == 1)
                 </div>
             </div>
         </div>
-        <div class="catalog-items-bordered container">
+        <div class="catalog-items-bordered container catalog-container-page">
             <? if ($isFilter && !$arFields["UF_COLLECTION"]): ?>
             <div class="filters catalog-filters">
                 <?
@@ -356,16 +360,38 @@ elseif (!empty($arFields) && $iBlockId == 1)
                         "INSTANT_RELOAD" => $arParams["INSTANT_RELOAD"],
                         'DISPLAY_ELEMENT_COUNT' => 'N',
                         'FILTER_SECTION' => $filterSection,
+                        'FILTER_TYPE' => $filterType,
+                        //'SECTION_FILTER_ID' => $arSection['ID']
                     ),
                     $component,
                     array('HIDE_ICONS' => 'Y')
                 );
                 ?>
-                <div class="filters-sort">
-                    Сортировать:&emsp;
-                    <a href="?sort=name&order=<?=$strOrder?>" class="filter-sort-<?=$strOrder?> filter-sort-item <?if($_REQUEST['sort'] == 'name' || $_REQUEST['sort'] == ''){?>filter-sort-active<?}?>">по алфавиту <i class="icon icon-dropdown"></i></a>
-                    <?/*<a href="?sort=id&order=<?=$strOrder?>" class="filter-sort-<?=$strOrder?> filter-sort-item <?if($_REQUEST['sort'] == 'id'){?>filter-sort-active<?}?>">по новизне <i class="icon icon-dropdown"></i></a>*/?>
-                    <a href="?sort=price&order=<?=$strOrder?>" class="filter-sort-<?=$strOrder?> filter-sort-item <?if($_REQUEST['sort'] == 'price'){?>filter-sort-active<?}?>">по цене <i class="icon icon-dropdown"></i></a>
+                
+                <div class="filters-sort-wrap">
+                    <?$page = $APPLICATION->GetCurUri();?>
+                    <div class="show-block-wrap">
+                        <div class="show-block-title">Показать по:</div>
+                        <div class="show-block-war">
+                            <a class="pagen-size<?if(strstr($page, 'SIZEN_1=30') !== false || strstr($page, 'SIZEN_1') === false):?> is-active<?endif?>" href="<?=$APPLICATION->GetCurPageParam("SIZEN_1=30", array("SIZEN_1"));?>">30</a>  /
+                            <a class="pagen-size<?if(strstr($page, 'SIZEN_1=50') !== false):?> is-active<?endif?> js-cat-page-count" href="<?=$APPLICATION->GetCurPageParam("SIZEN_1=50", array("SIZEN_1"));?>">50</a> /
+                            <a class="pagen-size<?if(strstr($page, 'SIZEN_1=100') !== false):?> is-active<?endif?> js-cat-page-count" href="<?=$APPLICATION->GetCurPageParam("SIZEN_1=100", array("SIZEN_1"));?>">100</a>
+                        </div>
+                    </div>
+
+                    <?$sort = $_GET['sort'];?>
+                    <div class="filters-sort js-filters-sort" data-sort="<?if($sort){?>true<?}else{?>false<?}?>">
+                        Сортировать:&emsp;
+                        <?if($_REQUEST['order'] == ''):?>
+                            <a href="?sort=name&order=DESC" class="filter-sort-ASC filter-sort-item filter-sort-active">A - Z <i class="icon icon-dropdown"></i></a>
+                        <?elseif($strOrder == 'ASC'):?>
+                            <a href="?sort=name&order=ASC" class="filter-sort-DESC filter-sort-item filter-sort-active">Z - A <i class="icon icon-dropdown"></i></a>
+                        <?elseif($strOrder == 'DESC'):?>
+                            <a href="?sort=name&order=DESC" class="filter-sort-ASC filter-sort-item filter-sort-active">A - Z <i class="icon icon-dropdown"></i></a>
+                        <?endif?>
+                        <?/*<a href="?sort=id&order=<?=$strOrder?>" class="filter-sort-<?=$strOrder?> filter-sort-item <?if($_REQUEST['sort'] == 'id'){?>filter-sort-active<?}?>">по новизне <i class="icon icon-dropdown"></i></a>*/?>
+                        <?/*<a href="?sort=price&order=<?=$strOrder?>" class="filter-sort-<?=$strOrder?> filter-sort-item <?if($_REQUEST['sort'] == 'price'){?>filter-sort-active<?}?>">по цене <i class="icon icon-dropdown"></i></a>*/?>
+                    </div>
                 </div>
             </div>
         <? endif ?>
@@ -383,7 +409,7 @@ elseif (!empty($arFields) && $iBlockId == 1)
                         "CACHE_TYPE" => $arParams["CACHE_TYPE"],
                         "CACHE_TIME" => $arParams["CACHE_TIME"],
                         "CACHE_GROUPS" => $arParams["CACHE_GROUPS"],
-                        "COUNT_ELEMENTS" => $arParams["SECTION_COUNT_ELEMENTS"],
+                        "COUNT_ELEMENTS" => "Y",
                         "TOP_DEPTH" => $arParams["SECTION_TOP_DEPTH"],
                         "SECTION_URL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["section"],
                         "VIEW_MODE" => "TILE",
@@ -528,8 +554,8 @@ elseif (!empty($arFields) && $iBlockId == 1)
             ?>
         </div>
     </section>
-<? }
-$GLOBALS['CATALOG_CURRENT_SECTION_ID'] = $intSectionID;?>
+<?}?>
+<?//$GLOBALS['CATALOG_CURRENT_SECTION_ID'] = $intSectionID;?>
 <?/*$APPLICATION->IncludeComponent("bitrix:news.list", "catalog_news", array(
 	"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "N",
@@ -594,19 +620,37 @@ $GLOBALS['CATALOG_CURRENT_SECTION_ID'] = $intSectionID;?>
 	"ACTIVE_COMPONENT" => "N"
 	)
 );*/?>
-    <?$APPLICATION->IncludeComponent(
-        "bitrix:main.include",
-        "",
-        Array(
-            "AREA_FILE_RECURSIVE" => "Y",
-            "AREA_FILE_SHOW" => "file",
-            "AREA_FILE_SUFFIX" => "",
-            "EDIT_TEMPLATE" => "",
-            "PATH" => SITE_TEMPLATE_PATH . "/includes/catalog/insert.php"
-        )
-    );
 
+<?if($arResult['VARIABLES']['SECTION_ID']):?>
+    <?$sectionAddBlockTitle = '';
+    $sectionAddBlockDesc = '';
+    $arSelect = Array('ID', 'NAME', 'UF_*' );
+    $arFilter = Array('IBLOCK_ID' => $arFields['IBLOCK_ID'], 'GLOBAL_ACTIVE' => 'Y', 'ID' => $arResult['VARIABLES']['SECTION_ID']);
+    $dbList = CIBlockSection::GetList(Array(), $arFilter, true, $arSelect);
+    while($ar_result = $dbList->GetNext()) {
+        $sectionAddBlockTitle = $ar_result['UF_TITLE_ADDBLOCK'];
+        $sectionAddBlockDesc = $ar_result['UF_DESC_ADDBLOCK'];
+    }?>
+<?endif?>
 
+<?if(!empty($sectionAddBlockDesc)):?>
+    <section class="insert">
+        <div class="insert-inner container">
+            <div class="container-inner">
+                <?if(!empty($sectionAddBlockTitle)):?>
+                    <div class="h1 insert-title color-orange"><?=$sectionAddBlockTitle?></div>
+                <?endif?>
+                <?if(!empty($sectionAddBlockDesc)):?>
+                    <div class="insert-text">
+                        <p><?=$sectionAddBlockDesc?></p>
+                    </div>
+                <?endif?>
+            </div>
+        </div>
+    </section>
+<?endif?>
+
+<?/*
 if (!count($arFields))
 {
     $dbSections = CIBlockSection::GetList(
@@ -633,9 +677,7 @@ if (!count($arFields))
         $sectCnt = CIBlockSection::GetSectionElementsCount($arSection['ID']);
         $pathPicture = CFile::GetPath($arSection['PREVIEW_PICTURE']);
 ?>
-    <section class="bottomblock" data-bleed="100" data-parallax="scroll" data-z-index="1" data-speed="0.5"
-             data-image-src="<?=SITE_TEMPLATE_PATH?>/images/bottom-block-1.jpeg "
-             style="background-image: url('<?=SITE_TEMPLATE_PATH?>/images/bottom-block-1.jpeg ');">
+    <section class="bottomblock" data-bleed="100" data-parallax="scroll" data-z-index="1" data-speed="0.5" data-image-src="<?=SITE_TEMPLATE_PATH?>/images/bottom-block-1.jpeg " style="background-image: url('<?=SITE_TEMPLATE_PATH?>/images/bottom-block-1.jpeg ');">
         <div class="container">
             <a href="<?=$arSection['SECTION_PAGE_URL']?>" class="bottomblock-icon">
                 <img src="<?=pathPicture?>" alt="" onerror="this.onerror = null; this.src = '<?=pathPicture?>'">
@@ -671,4 +713,4 @@ if (!count($arFields))
         </div>
     </section>
 <?  endif;
-}?>
+}*/?>

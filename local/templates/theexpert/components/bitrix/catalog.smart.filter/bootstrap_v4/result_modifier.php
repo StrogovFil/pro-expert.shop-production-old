@@ -47,7 +47,11 @@ foreach($arResult["ITEMS"] as $arFilterItem)
 {
 	if (isset($arParams['NOT_INCLUDE']) && in_array($arFilterItem['CODE'], $arParams['NOT_INCLUDE']))
 		continue;
-	
+
+
+
+
+
 	switch($arFilterItem['CODE'])
 	{
 		// case 'SIZE_X':
@@ -59,31 +63,103 @@ foreach($arResult["ITEMS"] as $arFilterItem)
 		// 	$arResult['FILTER_ITEMS']['COLOR'] = $arFilterItem;
 		// 	break;
 		case 'BRAND':
-			$arResult['FILTER_ITEMS']['BRAND'] = $arFilterItem;
-			break;
+            global $arrFilter;
+            $brand = [];
+
+            $arSelect = Array("ID", "IBLOCK_ID", "NAME", "PROPERTY_FUNCTIONAL", "PROPERTY_BRAND", "PROPERTY_COUNTRIES", "PROPERTY_APARTMENT");
+            $arFilter = Array("IBLOCK_ID" => $arParams['IBLOCK_ID'], "ACTIVE" => "Y", "PROPERTY_BRAND" => $arrFilter['PROPERTY_27'], "PROPERTY_APARTMENT" => $arParams['SECTION_FILTER_ID']);
+            $res = CIBlockElement::GetList(Array(), $arFilter, false, false, $arSelect);
+            while($ob = $res->GetNextElement())
+            {
+                $arFields = $ob->GetFields();
+                if(!in_array($arFields['PROPERTY_BRAND_VALUE'], $brand)) {
+                    $brand[] = $arFields['PROPERTY_BRAND_VALUE'];
+                }
+            }
+
+            foreach($arFilterItem['VALUES'] as $key => $value) {
+                if(!in_array($key, $brand)) {
+                    unset($arFilterItem['VALUES'][$key]);
+                } else {
+                    $arFilterItem['VALUES'][$key] = $value;
+                }
+            }
+            $arResult['FILTER_ITEMS']['BRAND'] = $arFilterItem;
+            break;
 		case 'COUNTRIES':
-			$arResult['FILTER_ITEMS']['COUNTRIES'] = $arFilterItem;
-			break;
+            global $arrFilter;
+            $countries = [];
+
+            $arSelect = Array("ID", "IBLOCK_ID", "NAME", "PROPERTY_FUNCTIONAL", "PROPERTY_BRAND", "PROPERTY_COUNTRIES", "PROPERTY_APARTMENT");
+            $arFilter = Array("IBLOCK_ID" => $arParams['IBLOCK_ID'], "ACTIVE" => "Y", "PROPERTY_BRAND" => $arrFilter['PROPERTY_27'], "PROPERTY_APARTMENT" => $arParams['SECTION_FILTER_ID']);
+            $res = CIBlockElement::GetList(Array(), $arFilter, false, false, $arSelect);
+            while($ob = $res->GetNextElement())
+            {
+                $arFields = $ob->GetFields();
+                if(!in_array($arFields['PROPERTY_COUNTRIES_VALUE'], $countries)) {
+                    $countries[] = $arFields['PROPERTY_COUNTRIES_VALUE'];
+                }
+            }
+
+            foreach($arFilterItem['VALUES'] as $key => $value) {
+                if(!in_array($key, $countries)) {
+                    unset($arFilterItem['VALUES'][$key]);
+                } else {
+                    $arFilterItem['VALUES'][$key] = $value;
+                }
+            }
+            $arResult['FILTER_ITEMS']['COUNTRIES'] = $arFilterItem;
+            break;
 		case 'STYLE':
-			$arResult['FILTER_ITEMS']['STYLE'] = $arFilterItem;
-			break;
+//			$arResult['FILTER_ITEMS']['STYLE'] = $arFilterItem;
+//			break;
 		case 'RAZDEL_MEBEL':
 			$arResult['FILTER_ITEMS']['RAZDEL_MEBEL'] = $arFilterItem;
 			break;
-		// case 'APARTMENT':
-		// 	$arResult['FILTER_ITEMS']['APARTMENT'] = $arFilterItem;
-		// 	break;
+		case 'APARTMENT':
+			$arResult['FILTER_ITEMS']['APARTMENT'] = $arFilterItem;
+			break;
+		case 'FUNCTIONAL':
+            global $arrFilter;
+            $functional = [];
+
+            $arSelect = Array("ID", "IBLOCK_ID", "NAME", "PROPERTY_FUNCTIONAL", "PROPERTY_BRAND");
+            $arFilter = Array("IBLOCK_ID" => $arParams['IBLOCK_ID'], "ACTIVE" => "Y", "PROPERTY_BRAND" => $arrFilter['PROPERTY_27']);
+            $res = CIBlockElement::GetList(Array(), $arFilter, false, false, $arSelect);
+            while($ob = $res->GetNextElement())
+            {
+                $arFields = $ob->GetFields();
+                if(!in_array($arFields['PROPERTY_FUNCTIONAL_VALUE'], $functional)) {
+                    $functional[] = $arFields['PROPERTY_FUNCTIONAL_VALUE'];
+                }
+            }
+
+            foreach($arFilterItem['VALUES'] as $key => $value) {
+                if(!in_array($key, $functional)) {
+                    unset($arFilterItem['VALUES'][$key]);
+                } else {
+                    $arFilterItem['VALUES'][$key] = $value;
+                }
+            }
+			$arResult['FILTER_ITEMS']['FUNCTIONAL'] = $arFilterItem;
+            break;
 	}
 }
 
 if($arParams['FILTER_SECTION']) {
     global $arrFilter;
     $arSections = [];
-    $res = CIBlockElement::GetList([], ['IBLOCK_ID' => $arParams['ID'], 'PROPERTY_27' => $arrFilter['PROPERTY_27']], false, false, ['IBLOCK_SECTION_ID']);
-    while ($data = $res->Fetch()) {
-        $arSections[] = $data['IBLOCK_SECTION_ID'];
+
+    $arSelect = Array("ID", "IBLOCK_ID", "NAME", "PROPERTY_FUNCTIONAL", "PROPERTY_BRAND", "PROPERTY_APARTMENT", "IBLOCK_SECTION_ID");
+    $arFilter = Array("IBLOCK_ID" => $arParams['IBLOCK_ID'], "ACTIVE" => "Y", "PROPERTY_BRAND" => $arrFilter['PROPERTY_27'], "PROPERTY_APARTMENT" => $arParams['SECTION_FILTER_ID']);
+    $res = CIBlockElement::GetList(Array(), $arFilter, false, false, $arSelect);
+    while($ob = $res->GetNextElement())
+    {
+        $arFields = $ob->GetFields();
+        $arSections[] = $arFields['IBLOCK_SECTION_ID'];
     }
-    $rsSections = CIBlockSection::GetList(['DEPTH_LEVEL' => 'ASC', 'SORT' => 'ASC'], ['IBLOCK_ID' => $arParams['ID']], false, ['IBLOCK_ID', 'ID', 'NAME', 'DEPTH_LEVEL', 'IBLOCK_SECTION_ID']);
+
+    $rsSections = CIBlockSection::GetList(['DEPTH_LEVEL' => 'ASC', 'SORT' => 'ASC'], ['IBLOCK_ID' => 1], false, ['IBLOCK_ID', 'ID', 'NAME', 'DEPTH_LEVEL', 'IBLOCK_SECTION_ID']);
 
     $sectionLinc = array();
     while ($arSection = $rsSections->GetNext()) {

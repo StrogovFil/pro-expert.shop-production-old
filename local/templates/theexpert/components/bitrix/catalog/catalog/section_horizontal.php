@@ -193,7 +193,7 @@ else
 						"CACHE_TYPE" => $arParams["CACHE_TYPE"],
 						"CACHE_TIME" => $arParams["CACHE_TIME"],
 						"CACHE_GROUPS" => $arParams["CACHE_GROUPS"],
-						"COUNT_ELEMENTS" => $arParams["SECTION_COUNT_ELEMENTS"],
+						"COUNT_ELEMENTS" => "Y",
 						"TOP_DEPTH" => $arParams["SECTION_TOP_DEPTH"],
 						"SECTION_URL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["section"],
 						"VIEW_MODE" => $arParams["SECTIONS_VIEW_MODE"],

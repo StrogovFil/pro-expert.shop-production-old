@@ -149,7 +149,7 @@ $containerName = 'container-'.$navParams['NavNum'];
 
 if ($showTopPager)
 {
-	?><div data-pagination-num="<?=$navParams['NavNum']?>">
+	?><div data-pagination-num="<?=$navParams['NavNum']?>" id="pagination">
 		<!-- pagination-container -->
 		<?=$arResult['NAV_STRING']?>
 		<!-- pagination-container -->
@@ -174,6 +174,10 @@ if ($arParams['HIDE_SECTION_DESCRIPTION'] !== 'Y')
 
 		foreach ($arResult['ITEMS'] as $k=>$item)
 		{
+            if(($k+1) == 30) {
+                $arResult['ITEMS'][$k]['LAST'] = 'Y';
+            }
+
 		    if(in_array($item['ID'], $arParams["EXCLUDE"])){
 		        unset($arResult['ITEMS'][$k]);
 		        continue;
@@ -183,9 +187,16 @@ if ($arParams['HIDE_SECTION_DESCRIPTION'] !== 'Y')
 			$this->AddEditAction($uniqueId, $item['EDIT_LINK'], $elementEdit);
 			$this->AddDeleteAction($uniqueId, $item['DELETE_LINK'], $elementDelete, $elementDeleteParams);
 		}
+		foreach ($arResult['ITEMS'] as $k=>$items)
+		{
+			$filterstype = $items['PROPERTIES']['FUNCTIONAL']['VALUE'];
+			// print_r($filterstype);
+		}
 		?>
 		<!-- items-container -->
 		<?
+		$numElem = 0;
+		$tempLastElem = $_GET['last_elem'];
 		foreach ($arResult['ITEM_ROWS'] as $rowData)
 		{
 			$rowItems = array_splice($arResult['ITEMS'], 0, $rowData['COUNT']);
@@ -201,6 +212,7 @@ if ($arParams['HIDE_SECTION_DESCRIPTION'] !== 'Y')
 								<div class="col-xs-12 product-item-big-card">
 									<div class="row">
 										<div class="col-md-12">
+										
 											<?
 											$item = reset($rowItems);
 											$APPLICATION->IncludeComponent(
@@ -239,6 +251,7 @@ if ($arParams['HIDE_SECTION_DESCRIPTION'] !== 'Y')
 								foreach ($rowItems as $item)
 								{
 									?>
+									
 									<div class="col-xs-6 product-item-big-card">
 										<div class="row">
 											<div class="col-md-12">
@@ -280,7 +293,8 @@ if ($arParams['HIDE_SECTION_DESCRIPTION'] !== 'Y')
 								foreach ($rowItems as $item)
 								{
 									?>
-									<div class="catalog-items-col">
+									<?$numElem++;?>
+									<div class="catalog-items-col<?if($item['LAST_ELEMENT'] == "Y"):?> last-element-box<?endif?><?if($numElem == $tempLastElem){?> js-temp-last-element-box<?}?>" data-id="<?=$numElem?>">
 												<?
 												$APPLICATION->IncludeComponent(
 													'bitrix:catalog.item',
@@ -741,7 +755,7 @@ if ($arParams['HIDE_SECTION_DESCRIPTION'] !== 'Y')
 if ($showBottomPager)
 {
 	?>
-	<div data-pagination-num="<?=$navParams['NavNum']?>">
+	<div data-pagination-num="<?=$navParams['NavNum']?>" id="pagination">
 		<!-- pagination-container -->
 		<?=$arResult['NAV_STRING']?>
 		<!-- pagination-container -->

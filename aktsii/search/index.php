@@ -2,8 +2,8 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Каталог");
 ?><?$APPLICATION->IncludeComponent(
-	"bitrix:catalog", 
-	"catalog", 
+	"bitrix:catalog",
+	"catalog",
 	array(
 		"ACTION_VARIABLE" => "action",
 		"ADD_ELEMENT_CHAIN" => "Y",
@@ -15,7 +15,7 @@ $APPLICATION->SetTitle("Каталог");
 		"AJAX_OPTION_HISTORY" => "N",
 		"AJAX_OPTION_JUMP" => "N",
 		"AJAX_OPTION_STYLE" => "Y",
-		"BASKET_URL" => "/personal/basket/",
+		"BASKET_URL" => "/personal/request/",
 		"BIG_DATA_RCM_TYPE" => "personal",
 		"CACHE_FILTER" => "N",
 		"CACHE_GROUPS" => "N",

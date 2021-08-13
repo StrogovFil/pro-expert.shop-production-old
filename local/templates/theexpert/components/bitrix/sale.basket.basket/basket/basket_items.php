@@ -80,13 +80,13 @@ if ($normalCount > 0):
 							</td>
 					<?
 					endforeach;
-					
+
 					if ($bSumColumn && $sumId):
 					?>
 						<td class="cart-header-cell"><?=$arResult["GRID"]["HEADERS"][$sumId]["name"]; ?></td>
 					<?
 					endif;
-					
+
 					if ($bDeleteColumn || $bDelayColumn):
 					?>
 						<td class="cart-header-cell"></td>
@@ -113,8 +113,8 @@ if ($normalCount > 0):
 
 							if ($arHeader["name"] == '')
 								$arHeader["name"] = GetMessage("SALE_".$arHeader["id"]);
-							
-							
+
+
 							if ($arHeader["id"] == "SUM")
 							{
 								$sumId = $arHeader["id"];
@@ -323,24 +323,28 @@ if ($normalCount > 0):
 							elseif ($arHeader["id"] == "QUANTITY"):
 							?>
 								<td class="cart-row-cell cart-row-count-wrap price">
+									<div class="cart-row-label">Количество:</div>
 									<div class="centered">
 										<div class="cart-row-count">
 										<?
 										$ratio = isset($arItem["MEASURE_RATIO"]) ? $arItem["MEASURE_RATIO"] : 0;
 										$useFloatQuantity = ($arParams["QUANTITY_FLOAT"] == "Y") ? true : false;
 										$useFloatQuantityJS = ($useFloatQuantity ? "true" : "false");
-										
+
 										if (!isset($arItem["MEASURE_RATIO"]))
 											$arItem["MEASURE_RATIO"] = 1;
-											
+
 										if (floatval($arItem["MEASURE_RATIO"]) != 0)
 										{?>
+										    <?/*<span href="javascript:void(0);" class="cart-row-count-btn minus"><i class="icon icon-angle-left"></i></span>*/?>
 											<span href="javascript:void(0);" class="cart-row-count-btn minus" onclick="setQuantity(<?=$arItem["ID"]?>, <?=$arItem["MEASURE_RATIO"]?>, 'down', <?=$useFloatQuantityJS?>);"><i class="icon icon-angle-left"></i></span>
 										<? } ?>
-											<input class="cart-row-count-input" type="text" size="3" id="QUANTITY_INPUT_<?=$arItem["ID"]?>" name="QUANTITY_INPUT_<?=$arItem["ID"]?>" maxlength="18" value="<?=$arItem["QUANTITY"]?>" onchange="updateQuantity('QUANTITY_INPUT_<?=$arItem["ID"]?>', '<?=$arItem["ID"]?>', <?=$ratio?>, <?=$useFloatQuantityJS?>)" />
+										    <?/*<input class="cart-row-count-input" type="text" size="3" id="QUANTITY_INPUT_<?=$arItem["ID"]?>" name="QUANTITY_INPUT_<?=$arItem["ID"]?>" maxlength="18" value="1" readonly disabled/>*/?>
+											 <input class="cart-row-count-input" type="text" size="3" id="QUANTITY_INPUT_<?=$arItem["ID"]?>" name="QUANTITY_INPUT_<?=$arItem["ID"]?>" maxlength="18" value="<?=$arItem["QUANTITY"]?>" onchange="updateQuantity('QUANTITY_INPUT_<?=$arItem["ID"]?>', '<?=$arItem["ID"]?>', <?=$ratio?>, <?=$useFloatQuantityJS?>)" />
 										<? if (floatval($arItem["MEASURE_RATIO"]) != 0)
 										{?>
-											<span href="javascript:void(0);" class="cart-row-count-btn plus" onclick="setQuantity(<?=$arItem["ID"]?>, <?=$arItem["MEASURE_RATIO"]?>, 'up', <?=$useFloatQuantityJS?>);"><i class="icon icon-angle-right"></i></span>
+										    <?/*<span href="javascript:void(0);" class="cart-row-count-btn plus"><i class="icon icon-angle-right"></i></span>*/?>
+                                            <span href="javascript:void(0);" class="cart-row-count-btn plus" onclick="setQuantity(<?=$arItem["ID"]?>, <?=$arItem["MEASURE_RATIO"]?>, 'up', <?=$useFloatQuantityJS?>);"><i class="icon icon-angle-right"></i></span>
 										<? }
 										if (isset($arItem["MEASURE_TEXT"]))
 										{?>
@@ -354,9 +358,18 @@ if ($normalCount > 0):
 							elseif ($arHeader["id"] == "PRICE"):
 							?>
 								<td class="cart-row-cell cart-row-price-wrap">
-										<div class="cart-row-price" id="current_price_<?=$arItem["ID"]?>">
+										<div class="cart-row-label">Цена:</div>
+										<?/*<div class="cart-row-price" id="current_price_<?=$arItem["ID"]?>">*/?>
+										<div class="cart-row-price">
 											<?//=$arItem["PRICE_FORMATED"]?>
-											<?echo "По запросу";?>
+
+											<div class="cart-row-price__text cart-row-price__text_desktop">
+												<?echo "По запросу";?>
+											</div>
+
+											<div class="cart-row-price__text cart-row-price__text_mobile">
+												<?echo "Стоимость по запросу";?>
+											</div>
 										</div>
 										<div class="old_price" id="old_price_<?=$arItem["ID"]?>">
 											<?if (floatval($arItem["DISCOUNT_PRICE_PERCENT"]) > 0):?>
@@ -387,16 +400,16 @@ if ($normalCount > 0):
 							?>
 								<td class="custom">
 									<span><?=$arHeader["name"]; ?>:</span>
-									<?									
+									<?
 									echo $arItem[$arHeader["id"]];
 									?>
 								</td>
 							<?
 							endif;
 						endforeach;
-						
+
 						if ($bSumColumn && $sumId):
-						?>						
+						?>
 						<td class="cart-row-cell cart-row-price-wrap cart-row-price-wrap2">
 							<div id="sum_<?=$arItem["ID"]?>" class="cart-row-price">
 								<?//echo $arItem[$sumId];?>
@@ -404,7 +417,7 @@ if ($normalCount > 0):
 							</div>
 						</td>
 						<?endif;
-						
+
 						if ($bDelayColumn || $bDeleteColumn):
 						?>
 							<td class="cart-row-cell cart-row-remove-wrap">
@@ -435,6 +448,7 @@ if ($normalCount > 0):
 				?>
 			</tbody>
 		</table>
+
 	</div>
 	<input type="hidden" id="column_headers" value="<?=htmlspecialcharsbx(implode($arHeaders, ","))?>" />
 	<input type="hidden" id="offers_props" value="<?=htmlspecialcharsbx(implode($arParams["OFFERS_PROPS"], ","))?>" />
@@ -446,7 +460,7 @@ if ($normalCount > 0):
 	<input type="hidden" id="auto_calculation" value="<?=($arParams["AUTO_CALCULATION"] == "N") ? "N" : "Y"?>" />
 
 	<div class="bx_ordercart_order_pay">
-
+        <a class="clear-basket-button" href="<?=$APPLICATION->GetCurPageParam('clear')?>">Очистить корзину</a>
 		<div class="bx_ordercart_order_pay_left" id="coupons_block">
 		<?
 		if ($arParams["HIDE_COUPON"] != "Y")
@@ -493,7 +507,7 @@ if ($normalCount > 0):
 		</div>
 	</div>
 
-	
+
 		<div class="cart-summary">
 
 			<div class="container" style="margin-bottom: 0;">
@@ -517,6 +531,12 @@ if ($normalCount > 0):
 							<span class="form-label-title">E-mail <span class="form-label-note">Введите e-mail</span></span>
 						</label>
 					</div>
+					<div class="form-order-row">
+						<label class="form-label form-label-shorttitle">
+							<textarea class="form-input form-input-comment"></textarea>
+							<span class="form-label-title">Комментарий <span class="form-label-note">Введите комментарий</span></span>
+						</label>
+					</div>
 					<div class="form-order-row form-order-row-btn" style="text-align: center;">
 						<button type="submit" form="form-order" class="btn" id="btn-order">Отправить запрос</button>
 					</div>
@@ -532,7 +552,7 @@ if ($normalCount > 0):
 					var mail_val = $(this).find(".form-input-mail").val();
 					$.ajax({
 						type: 'POST',
-						url: '/personal/basket/ajax.php',
+						url: '/personal/request/ajax.php',
 						data: {name : name_val, phone : phone_val, mail : mail_val},
 						success: function(res) {
 							$('#form-order').html(res);

@@ -10,12 +10,12 @@
                     <div class="main-rubricator-item-title"><span>Отели <br> и апартаменты</span></div>
                 </a>
                  <a href="/catalog/place-zagorodnye-doma/" class="main-rubricator-item main-rubricator-item-bottom" style="background-image: url();">
-                    <div class="main-rubricator-item-title"><span>Загородные дома</span></div>
+                    <div class="main-rubricator-item-title inverse-box"><span>Загородные дома</span></div>
                 </a>
             </div>
             <div class="main-rubricator-cell">
                 <a href="/catalog/place-sportivnye-uchrezhdeniya-i-stadiony/" class="main-rubricator-item main-rubricator-item-top" style="background-image: url();">
-                    <div class="main-rubricator-item-title"><span>Спортивные учреждения <br>и стадионы</span></div>
+                    <div class="main-rubricator-item-title inverse-box"><span>Спортивные учреждения <br>и стадионы</span></div>
                 </a>
                 <a href="/catalog/place-meditsinskie-uchrezhdeniya-i-spa-salony/" class="main-rubricator-item main-rubricator-item-bottom main-rubricator-item-red" style="background-image: url();">
                     <div class="main-rubricator-item-title"><span>Медицинские учреждения <br>и SPA салоны</span></div>
@@ -23,10 +23,10 @@
             </div>
             <div class="main-rubricator-cell">
                 <a href="/catalog/place-skladskaya-i-proizvodstvennaya-nedvizhimost/" class="main-rubricator-item main-rubricator-item-top" style="background-image: url();">
-                    <div class="main-rubricator-item-title"><span>Складская <br>и производственная <br>недвижимость</span></div>
+                    <div class="main-rubricator-item-title inverse-box"><span>Складская <br>и производственная <br>недвижимость</span></div>
                 </a>
                 <a href="/catalog/place-shou-rumy-i-butiki/" class="main-rubricator-item main-rubricator-item-bottom main-rubricator-item-white" style="background-image: url();">
-                    <div class="main-rubricator-item-title"><span>Торговая недвижимость</span></div>
+                    <div class="main-rubricator-item-title inverse-box"><span>Торговая недвижимость</span></div>
                 </a>
             </div>
             <div class="main-rubricator-cell">
@@ -36,10 +36,10 @@
             </div>
             <div class="main-rubricator-cell">
                 <a href="/catalog/place-obrazovatelnye-uchrezhdeniya/" class="main-rubricator-item main-rubricator-item-top main-rubricator-item-white" style="background-image: url();">
-                    <div class="main-rubricator-item-title"><span>Образовательные <br>учреждения</span></div>
+                    <div class="main-rubricator-item-title inverse-box"><span>Образовательные <br>учреждения</span></div>
                 </a>
                 <a href="/catalog/place-teatry-i-kinoteatry/" class="main-rubricator-item main-rubricator-item-bottom" style="background-image: url();">
-                    <div class="main-rubricator-item-title"><span>Театры и кинотеатры</span></div>
+                    <div class="main-rubricator-item-title inverse-box"><span>Театры и кинотеатры</span></div>
                 </a>
             </div>
             <div class="main-rubricator-cell">
@@ -47,7 +47,7 @@
                     <div class="main-rubricator-item-title"><span>Вокзалы и аэропорты</span></div>
                 </a>
                 <a href="/catalog/place-banki/" class="main-rubricator-item main-rubricator-item-bottom main-rubricator-item-white" style="background-image: url();">
-                    <div class="main-rubricator-item-title"><span>Банки</span></div>
+                    <div class="main-rubricator-item-title inverse-box"><span>Банки</span></div>
                 </a>
             </div>
             <div class="main-rubricator-cell">
@@ -57,7 +57,7 @@
             </div>
             <div class="main-rubricator-cell">
                 <a href="/catalog/place-avtosalony/" class="main-rubricator-item main-rubricator-item-white" style="background-image: url();">
-                    <div class="main-rubricator-item-title"><span>Автосалоны</span></div>
+                    <div class="main-rubricator-item-title inverse-box"><span>Автосалоны</span></div>
                 </a>
             </div>
         </div>
